@@ -1,0 +1,187 @@
+# About the Course{-}
+
+The course, “Computational Analysis of Data from Audition Statements--with R”, aims to introduce students to the main methods of data analysis that would be suitable for historical data. Students will learn the basics of the programming language R, which is one of the top choices in the field of Digital Humanities and Digital History. By the end of the course, students will understand how to work with data and how to extract the most valuable insights from it (exploratory data analysis). Students will practice on a dataset created from audition statements from medieval Damascus, thus also gaining original insights into the social history of medieval Islamic learning. There are no prerequisites for this course, except the basic knowledge of Arabic, since the data from audition statements is in Arabic. The course is complimentary to 57-521, where students will be learning how to read the original handwritten audition statements.
+
+## Syllabus{-}
+
+* **Full nomenclature**: [UHH AAI WiSe 23] 57-528 Digital Humanities in African-Asian Studies: Analysis of prosopographical data with programming language “R”
+* **Language of instruction**: English
+* **Hours per week**: 2
+* **Credits**: 6.0
+* **Meeting time**: <...>
+* **Additional meeting time**: *we will need to find a time slot when you can all join and work on your HW assignments together*
+* **Meeting place**: for convenience, all meetings will be held online via Zoom, link: <...>;
+* **Course resources:** <https://eis1600.github.io/hdis-pua/>;
+* **Meeting link**: *shared via Slack*; other details are available via STiNE
+* **Office hours**: *tbd* (on Zoom); if you have any questions, please, post them on Slack
+* **Instructor**: Dr. Maxim Romanov, [maxim.romanov@uni-hamburg.de](maxim.romanov@uni-hamburg.de)
+
+### General Description{-}
+
+This hands-on course provides a practical introduction to the R programming language for historians with a specific focus on analyzing prosopographical data. The primary dataset we will explore comes from the “Prosopografía de ulemas de al-Andalus” (PUA) project (https://www.eea.csic.es/pua/), which contains information on Muslim scholars from al-Andalus. The course is designed for those with no prior programming experience but assumes some familiarity with Arabic and Spanish, as the PUA data is primarily in these languages. The language of instruction will be English.
+
+Personal computers are required both for in-class work and for your homework. Your computer must run a full version of either Windows, MacOS, or Linux; unfortunately, neither tablets nor Chrome-based laptops are suitable for this course. No prior programming experience is required, but familiarity with the command line and basic principles of programming will be beneficial.
+
+### Learning objectives{-}
+
+1. Get basic familiarity with the programming language R;
+2. Learn basic analytical techniques;
+3. Gain an understanding of working with data and modeling data;
+4. Practice these skills on a collection of historical data;
+
+### Didactic concept{-}
+
+This is a hands-on practical course, which requires regular attendance and completion of homework assignments. The participants of the course are encouraged to attend weekly “office hours”, where they can work on their homework assignments and get immediate feedback from the instructor. The main didactic approach of the course is to maximize the engagement of the participants with the programming language: this will provide a level of confidence and comfort in dealing with admittedly an alien subject within the scope of African and Asian studies; attaining this level of comfort is the key to absorbing the necessary theoretical, conceptual, and practical knowledge. Upon the completion of assigned tasks, the students are encouraged to bring their own datasets, since the engagement with their own data will provide a better grounding in this new subject.
+
+### Main Object of the Course: PUA Dataset
+
+In the course we will focus on the data from “Prosopografía de ulemas de al-Andalus” (PUA) ([https://www.eea.csic.es/pua/](https://www.eea.csic.es/pua/)). Below is a slightly reworked description of the project from the official website (should be further reworked):
+
+> The aim of prosopography is the historical study of a group of people---as defined by a particular feature or common characteristic---through an analysis of their biographical data. Prosopography is not a simple collection of biographies, because, although it is closely related to that literary genre, it is distinct from it because its interest is not focused on the individual, but rather on the group. It analyzes common characteristics and the structure of relationships between the people belonging to that sector of society. In the case of PUA, that group is the *ʿulamāʾ* (scholars) who lived in al-Andalus during the 2nd–9th centuries AH / 8th–14th centuries CE. *ʿUlamāʾ* are defined as specialists in Islamic religious knowledge, whose biographies can be found in biographical dictionaries, a characteristic genre of Arabic literature which underwent substantial development during the Middle Ages in al-Andalus. It should be added, however, that the project includes all those persons who have their own entry in biographical dictionaries, even if they cannot be truly be labelled as *ʿulamāʾ*. These include poets, men of letters and people devoted to “the sciences of the ancient” are also included.
+
+The dataset includes:
+
+A total of 31,117 biographies belonging to 205 sources have been consulted, which allowed to compile:
+
+- 11,832 - persons (12,817 records; 985 reference records)
+- 509 *nisbaŧ*s
+	-   281 geographic
+	-   184 tribal
+	-   13 family
+	-   31 other type
+- 817 families
+- 848 places
+	-   554 in al-Andalus
+	-   294 outside of al-Andalus
+
+The following is a list of just some of the points for which the prosopographic method may be of use.
+
+-  **Reconstructing families**: Reconstructing families and research into family relationships between the ulemas, as well as producing genealogical trees, is a task that will be facilitated by having all of the information available in digital format. Bringing together all of these genealogical trees and studying the geographical and tribal origins of all of the families is a fundamental task that still remains to be done. It must also be pointed out that achievements of other partial works (Molina, “Taʾrīj de Ibn al-Faraḍīi”) lead us to think that this is the best method for carrying out a true critical review of the data provided by biographical dictionaries. 
+-   **Research into the world of knowledge**: Master-disciple relationships, establishing transmission networks for the main works and disciplines. This topic is in turn very closely connected to kinship, as the marriage strategies that were established within the group of the ulemas were linked to the transmission of knowledge and to the control of knowledge as a means of power.
+-   **Local elites**: The distribution of these ulemas across different areas allows us to look at which were the main centres of knowledge and to study local elites. Many of these studies have already been carried out using this database, such as the study of the scholarss of Algeciras by Marín y and Fierro.
+-   **Demographic studies**: It is these that can benefit the most from the information being available in a database. Some examples of this are the calculation of the median age at death of the ulemas (studies by Ávila and Zanón), the results of which have shown a very high rate for this group, and other more complex calculations such as working out the age of procreation, for which it is necessary to turn to the study of families and which up to the present has been calculated as 35 years old (Molina).
+-   **Legal-religious posts**: Studying the offices held by the ulemas and their links to political power. It is possible to establish the relationships of people who held a particular office by order of succession, as well as studying the characteristics of a certain office or activity through the minor details that are given for each of the individuals who held it or by looking at the different expressions that are used to refer to it, whether or not they were paid for carrying out their duties, whether they were involved in any other professional activity at the same time, etc.
+-   **Research into onomastics**: Important studies on the onomastic traditions of the Andalusi ulemas have already been carried out (Marín). We hope, however, to be able to research this area in greater depth once the project has progressed further. The main objective of studies on onomastics will be to investigate homonymy, in particular family homonymy, and to reflect on the name Muḥammad in al-Andalus, which has already been the subject of research (Granja).
+
+The PUA Project Team:
+
+-  scientific team:
+	- **María Luisa Ávila (Coordinator)**, Scientific Researcher CSIC
+	- **Luis Molina**, Scientific Researcher CSIC
+	- **Mayte Penelas**, Tenured Scientist CSIC  
+	- **María López Fernández**, Research assistant CSIC
+	- the detailed list of other contributors can be found at: [https://www.eea.csic.es/pua/info/otroscolaboradores.php](https://www.eea.csic.es/pua/info/otroscolaboradores.php).
+
+- web design and programming:
+	- **Carlos Bueno**, telecom engineer, graphic designer (design, programming and data structures);
+	- **Ángel Isidro Vega Zafra** , Technical Engineer in Computer Systems – Web developer;
+
+Detailed description of the project: <https://www.eea.csic.es/pua/info/proyecto.php> (available in English and Spanish).
+
+A note on prosopography as a method:
+
+> Prosopography is a research method used in history and social sciences to study the collective biography of a specific group of people, such as a social class, a profession, or a community, through the analysis of their social, political, economic, and cultural interactions. The term "prosopography" comes from the Greek words "prosopon" (meaning "person") and "graphein" (meaning "to write"), and was first used in the 19th century to describe a method of identifying and describing individuals mentioned in historical documents. In practice, prosopography involves collecting and analyzing data from a variety of sources, such as official records, archives, and correspondence, in order to construct a database of biographical information about the individuals in the group being studied. This can include information such as their occupation, social status, family connections, religious affiliations, and political activities. By analyzing this biographical data, scholars can gain insights into the social, political, and cultural dynamics of the group being studied, as well as broader historical and cultural trends. Prosopography is a useful method for understanding the lives and experiences of people who may have been overlooked by traditional historical narratives, and for identifying patterns and trends that may not be apparent through other methods of analysis.
+
+
+#### Course structure and learning objectives:
+
+1.  Introduction to R programming language: learn the basics of R, including syntax, data types, and core functions.
+2.  Data manipulation and analysis: understand how to clean, transform, and analyze data using R.
+3.  Visualization techniques: Create chronological graphs, cartograms, and network diagrams to visually represent the data.
+4.  Working with prosopographical data: apply learned techniques to the PUA dataset, focusing on the analysis of Muslim scholars from al-Andalus.
+5.  Independent research: Encourage students to bring their own datasets for analysis and receive guidance from the instructor.
+
+By the end of the course, students will have a foundational understanding of R programming, basic data analysis techniques, and experience working with prosopographical data. They will be better equipped to tackle research questions in African and Asian studies using computational methods.
+
+### Literature{-}
+
+All the necessary study materials will be provided. Below you can find a list of additional materials.
+
+### Course Evaluation: requirements for the full credit{-}
+
+- mandatory attendance and participation;
+- timely homework assignments;
+- final project (computational analysis + analytical commentary);
+- no examination;
+
+Final projects can be prepared either individually or in groups.
+
+### Class Participation{-}
+
+Each class session will consist in large part of practical hands-on exercises led by the instructor. Personal computers are required. We can accommodate whatever operating system you use (Windows, Mac, Linux), but it should be a full computer/laptop, not a tablet that uses an "incomplete" version of any major operating system. Don’t forget that asking for help counts as participation!
+
+### Homework{-}
+
+Just as in research and real life, collaboration is a very good way to learn and is therefore encouraged. If you need help with any assignment, you are welcome to ask a fellow student. If you do work together on homework assignments, then when you submit it please include a brief note (just a sentence or two) to indicate who did what.
+
+**NB:** On submitting homework, see below.
+
+### Final Project{-}
+
+Final project will be discussed later. You will have an option to build on what we will be doing in class, but you are most encouraged to pick a topic of your own. The best option will be to work on something relevant to your field of study, your term paper or your thesis.
+
+### Additional Study Materials{-}
+
+* Arnold, Taylor, and Lauren Tilton. *Humanities Data in R*. New York, NY: Springer Science+Business Media, 2015 (shared via Slack)
+* Healy, Kieran. *Data Visualization: A Practical Guide.* Princeton University Press, 2018. ISBN: 978-0691181622. <http://socviz.co/>
+* Hadley Wickham & Garrett Grolemund, *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data.* O’Reilly, 2017. ISBN: 978-1491910399. <https://r4ds.had.co.nz/>
+* Wickham, Hadley. *Advanced R*, Second Edition. 2 edition. Boca Raton: Chapman and Hall/CRC, 2019. <http://adv-r.had.co.nz/>
+* Also check <https://bookdown.org/> for more books on R
+* *Coding Club R Tutorials* (focus on Ecology and Environmental Sciences), <https://ourcodingclub.github.io/tutorials.html>
+
+*NB:* By the way, this website is also built with R. Check: Yihui Xie. *bookdown: Authoring Books and Technical Documents with R Markdown*, 2022 <https://bookdown.org/yihui/bookdown/>
+
+### Software, Tools, & Technologies:{-}
+
+The following is the list of software, applications and packages that we will be using in the course. Make sure to have them installed by the class when we are supposed to use them.
+
+The main tools for the course will be the programming language `R` and `RStudio`, the premier integrated development environment for `R`.
+
+- `R`: <https://cloud.r-project.org/> (choose the version for your operating system!)
+- `RStudio`: <https://rstudio.com/products/rstudio/download/> (RStudio Desktop, Open Source License — the free version)
+
+We will also use a variety of packages for `R`, which we will be installing when necessary.
+
+### Submitting Homework:{-}
+
+* Homework assignments are to be submitted by the beginning of the next class;
+* For the first few classes you must email them to the instructor (as attachments)
+	*  In the subject of your email, please, use the following format: `CourseAPPREVIATION-LessonID-HW-Lastname-matriculationNumber`, for example, if I were to submit homework for the first lesson, my subject header would look like: `CADAS-L01-HW-Romanov-12435687`.
+* DH is a collaborative field, so you are most welcome to work on your homework assignments in groups, however, you must still submit it. That is, if a groups of three works on one assignment, there must be three separate submissions: either emailed from each member’s email and published at each member’s github page. 
+
+### Schedule{-}
+
+**Location**: Online
+
+- `01 Fri, 20. Oct. 2023 16:00-18:00`
+- `02 Fri, 27. Oct. 2023 16:00-18:00`
+- `03 Fri, 03. Nov. 2023 16:00-18:00`
+- `04 Fri, 10. Nov. 2023 16:00-18:00`
+- `05 Fri, 17. Nov. 2023 16:00-18:00`
+- `06 Fri, 24. Nov. 2023 16:00-18:00` (*)
+- `07 Fri, 01. Dec. 2023 16:00-18:00`
+
+- `08 Fri, 08. Dec. 2023 16:00-18:00` (*)
+- `09 Fri, 15. Dec. 2023 16:00-18:00` (*)
+- `10 Fri, 22. Dec. 2023 16:00-18:00`
+- `11 Fri, 12. Jan. 2024 16:00-18:00`
+- `12 Fri, 19. Jan. 2024 16:00-18:00`
+- `13 Fri, 26. Jan. 2024 16:00-18:00`
+- `14 Fri, 02. Feb. 2024 16:00-18:00`
+
+### Lesson Topics (*subject to modifications*){-}
+
+- **[ `#01` ]** Introduction; Syllabus; Setting Everything Up;
+- **[ `#02` ]** Part I—Basics: RStudio, Basic R Commands, Swirl Tutorials
+- **[ `#03` ]** Part I—Basics: R Markdown and R Notebooks
+- **[ `#04` ]** Part I—Basics: Control Flow; Regular Expressions;
+- **[ `#05` ]** Part I—Basics: Data Manipulations;
+- **[ `#06` ]** Part I—Basics: Visualizations with `plot()` and `ggplot()`;
+- **[ `#07` ]** Part I—Basics: Tidying Data;
+- **[ `#08` ]** Part II—Analyses: Audition Statement Data;
+- **[ `#09` ]** Part II—Analyses: Audition Statement Data;
+- **[ `#10` ]** Part II—Analyses: Audition Statement Data;
+- **[ `#11` ]** Part II—Analyses: Audition Statement Data;
+- **[ `#12` ]** Part II—Analyses: Audition Statement Data;
+- **[ `#13` ]** Part II—Analyses: Audition Statement Data;
+- **[ `#14` ]** Part II—Analyses: Audition Statement Data;
