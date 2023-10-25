@@ -12,6 +12,7 @@ documentclass: book
 link-citations: yes
 bibliography:
 - book.bib
+- references.bib
 - packages.bib
 biblio-style: apalike
 ---

@@ -1,16 +1,16 @@
 # About the Course{-}
 
-The course, “Computational Analysis of Data from Audition Statements--with R”, aims to introduce students to the main methods of data analysis that would be suitable for historical data. Students will learn the basics of the programming language R, which is one of the top choices in the field of Digital Humanities and Digital History. By the end of the course, students will understand how to work with data and how to extract the most valuable insights from it (exploratory data analysis). Students will practice on a dataset created from audition statements from medieval Damascus, thus also gaining original insights into the social history of medieval Islamic learning. There are no prerequisites for this course, except the basic knowledge of Arabic, since the data from audition statements is in Arabic. The course is complimentary to 57-521, where students will be learning how to read the original handwritten audition statements.
+This hands-on course provides a practical introduction to the R programming language for historians, with a specific focus on analyzing prosopographical data. The primary dataset we will explore comes from the “Prosopografía de ulemas de al-Andalus” (PUA) project (https://www.eea.csic.es/pua/), which contains information on about 12,000 Muslim scholars from al-Andalus. The course is designed for those with no prior programming experience but assumes some familiarity with Arabic and Spanish, as the PUA data is primarily in these languages. The language of instruction will be English.
 
 ## Syllabus{-}
 
-* **Full nomenclature**: [UHH AAI WiSe 23] 57-528 Digital Humanities in African-Asian Studies: Analysis of prosopographical data with programming language “R”
+* **Full nomenclature**: [UHH AAI SoSe 23] 57-528 Digital Humanities in African-Asian Studies: Analysis of prosopographical data with programming language “R”
 * **Language of instruction**: English
 * **Hours per week**: 2
 * **Credits**: 6.0
-* **Meeting time**: <...>
+* **Meeting time**: ...
 * **Additional meeting time**: *we will need to find a time slot when you can all join and work on your HW assignments together*
-* **Meeting place**: for convenience, all meetings will be held online via Zoom, link: <...>;
+* **Meeting place**: for convenience, all meetings will be held online via Zoom: <...>;
 * **Course resources:** <https://eis1600.github.io/hdis-pua/>;
 * **Meeting link**: *shared via Slack*; other details are available via STiNE
 * **Office hours**: *tbd* (on Zoom); if you have any questions, please, post them on Slack
@@ -18,7 +18,7 @@ The course, “Computational Analysis of Data from Audition Statements--with R�
 
 ### General Description{-}
 
-This hands-on course provides a practical introduction to the R programming language for historians with a specific focus on analyzing prosopographical data. The primary dataset we will explore comes from the “Prosopografía de ulemas de al-Andalus” (PUA) project (https://www.eea.csic.es/pua/), which contains information on Muslim scholars from al-Andalus. The course is designed for those with no prior programming experience but assumes some familiarity with Arabic and Spanish, as the PUA data is primarily in these languages. The language of instruction will be English.
+The course aims to introduce students to the main methods of data analysis that would be suitable for historical data. Students will learn the basics of the programming language R, which is one of the top choices in the field of Digital Humanities and Digital History. By the end of the course, students will understand how to work with data and how to extract the most valuable insights from it (exploratory data analysis). Students will practice on a prosopographical dataset created from data from medieval Arabic biographical collections.
 
 Personal computers are required both for in-class work and for your homework. Your computer must run a full version of either Windows, MacOS, or Linux; unfortunately, neither tablets nor Chrome-based laptops are suitable for this course. No prior programming experience is required, but familiarity with the command line and basic principles of programming will be beneficial.
 
@@ -31,7 +31,17 @@ Personal computers are required both for in-class work and for your homework. Yo
 
 ### Didactic concept{-}
 
-This is a hands-on practical course, which requires regular attendance and completion of homework assignments. The participants of the course are encouraged to attend weekly “office hours”, where they can work on their homework assignments and get immediate feedback from the instructor. The main didactic approach of the course is to maximize the engagement of the participants with the programming language: this will provide a level of confidence and comfort in dealing with admittedly an alien subject within the scope of African and Asian studies; attaining this level of comfort is the key to absorbing the necessary theoretical, conceptual, and practical knowledge. Upon the completion of assigned tasks, the students are encouraged to bring their own datasets, since the engagement with their own data will provide a better grounding in this new subject.
+This is a hands-on practical course, which requires regular attendance and completion of homework assignments. The participants of the course are encouraged to attend weekly “office hours”, where they can work on their homework assignments and get immediate feedback from the instructor. The main didactic approach of the course is to maximize the engagement of the participants with the programming language: this will provide a level of confidence and comfort in dealing with admittedly an alien subject within the scope of African and Asian studies; attaining this level of comfort is the key to absorbing the necessary theoretical, conceptual, and practical knowledge. Upon the completion of assigned tasks, the students are encouraged to bring their own datasets, since the engagement with their own data will provide a better grounding in this new subject.  
+
+### Course structure and learning objectives:
+
+1.  Introduction to R programming language: Learn the basics of R, including syntax, data types, and core functions.
+2.  Data manipulation and analysis: Understand how to clean, transform, and analyze data using R.
+3.  Visualization techniques: Create chronological graphs, cartograms, and network diagrams to visually represent the data.
+4.  Working with prosopographical data: Apply learned techniques to the PUA dataset, focusing on the analysis of Muslim scholars from al-Andalus.
+5.  Independent research: Encourage students to bring their own datasets for analysis and receive guidance from the instructor.
+
+By the end of the course, students will have a foundational understanding of R programming, basic data analysis techniques, and experience working with prosopographical data. They will be better equipped to tackle research questions in African and Asian studies using computational methods.
 
 ### Main Object of the Course: PUA Dataset
 
@@ -51,8 +61,8 @@ A total of 31,117 biographies belonging to 205 sources have been consulted, whic
 	-   31 other type
 - 817 families
 - 848 places
-	-   554 in al-Andalus
-	-   294 outside of al-Andalus
+	-   554 al-Andalus
+	-   294 non-andalusi
 
 The following is a list of just some of the points for which the prosopographic method may be of use.
 
@@ -67,9 +77,9 @@ The PUA Project Team:
 
 -  scientific team:
 	- **María Luisa Ávila (Coordinator)**, Scientific Researcher CSIC
-	- **Luis Molina**, Scientific Researcher CSIC
-	- **Mayte Penelas**, Tenured Scientist CSIC  
-	- **María López Fernández**, Research assistant CSIC
+	-  **Luis Molina**, Scientific Researcher CSIC
+	-  **Mayte Penelas**, Tenured Scientist CSIC  
+	-  **María López Fernández**, Research assistant CSIC
 	- the detailed list of other contributors can be found at: [https://www.eea.csic.es/pua/info/otroscolaboradores.php](https://www.eea.csic.es/pua/info/otroscolaboradores.php).
 
 - web design and programming:
@@ -81,21 +91,6 @@ Detailed description of the project: <https://www.eea.csic.es/pua/info/proyecto.
 A note on prosopography as a method:
 
 > Prosopography is a research method used in history and social sciences to study the collective biography of a specific group of people, such as a social class, a profession, or a community, through the analysis of their social, political, economic, and cultural interactions. The term "prosopography" comes from the Greek words "prosopon" (meaning "person") and "graphein" (meaning "to write"), and was first used in the 19th century to describe a method of identifying and describing individuals mentioned in historical documents. In practice, prosopography involves collecting and analyzing data from a variety of sources, such as official records, archives, and correspondence, in order to construct a database of biographical information about the individuals in the group being studied. This can include information such as their occupation, social status, family connections, religious affiliations, and political activities. By analyzing this biographical data, scholars can gain insights into the social, political, and cultural dynamics of the group being studied, as well as broader historical and cultural trends. Prosopography is a useful method for understanding the lives and experiences of people who may have been overlooked by traditional historical narratives, and for identifying patterns and trends that may not be apparent through other methods of analysis.
-
-
-#### Course structure and learning objectives:
-
-1.  Introduction to R programming language: learn the basics of R, including syntax, data types, and core functions.
-2.  Data manipulation and analysis: understand how to clean, transform, and analyze data using R.
-3.  Visualization techniques: Create chronological graphs, cartograms, and network diagrams to visually represent the data.
-4.  Working with prosopographical data: apply learned techniques to the PUA dataset, focusing on the analysis of Muslim scholars from al-Andalus.
-5.  Independent research: Encourage students to bring their own datasets for analysis and receive guidance from the instructor.
-
-By the end of the course, students will have a foundational understanding of R programming, basic data analysis techniques, and experience working with prosopographical data. They will be better equipped to tackle research questions in African and Asian studies using computational methods.
-
-### Literature{-}
-
-All the necessary study materials will be provided. Below you can find a list of additional materials.
 
 ### Course Evaluation: requirements for the full credit{-}
 
@@ -122,10 +117,15 @@ Final project will be discussed later. You will have an option to build on what 
 
 ### Additional Study Materials{-}
 
-* Arnold, Taylor, and Lauren Tilton. *Humanities Data in R*. New York, NY: Springer Science+Business Media, 2015 (shared via Slack)
-* Healy, Kieran. *Data Visualization: A Practical Guide.* Princeton University Press, 2018. ISBN: 978-0691181622. <http://socviz.co/>
-* Hadley Wickham & Garrett Grolemund, *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data.* O’Reilly, 2017. ISBN: 978-1491910399. <https://r4ds.had.co.nz/>
-* Wickham, Hadley. *Advanced R*, Second Edition. 2 edition. Boca Raton: Chapman and Hall/CRC, 2019. <http://adv-r.had.co.nz/>
+You can also find recommended literature in the Bibliography below and in the section References.
+
+[**#todo**: add references to the `references.bib` file]
+
+* [@ArnoldHumanities2015] Arnold, Taylor, and Lauren Tilton. *Humanities Data in R*. New York, NY: Springer Science+Business Media, 2015 (shared via Slack)
+* [@HealyData2018] Healy, Kieran. *Data Visualization: A Practical Guide.* Princeton University Press, 2018. ISBN: 978-0691181622. <http://socviz.co/>
+* [@HadleyGgplot22016] Hadley, Wickham. *Ggplot2: Elegant Graphics for Data Analysis.* New York, NY: Springer, 2016.
+* [@HadleyRfoDataScience2017] Hadley Wickham & Garrett Grolemund, *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data.* O’Reilly, 2017. ISBN: 978-1491910399. <https://r4ds.had.co.nz/>
+* [@HadleyAdvanced2014] Wickham, Hadley. *Advanced R*, Second Edition. 2 edition. Boca Raton: Chapman and Hall/CRC, 2019. <http://adv-r.had.co.nz/>
 * Also check <https://bookdown.org/> for more books on R
 * *Coding Club R Tutorials* (focus on Ecology and Environmental Sciences), <https://ourcodingclub.github.io/tutorials.html>
 
@@ -146,28 +146,8 @@ We will also use a variety of packages for `R`, which we will be installing when
 
 * Homework assignments are to be submitted by the beginning of the next class;
 * For the first few classes you must email them to the instructor (as attachments)
-	*  In the subject of your email, please, use the following format: `CourseAPPREVIATION-LessonID-HW-Lastname-matriculationNumber`, for example, if I were to submit homework for the first lesson, my subject header would look like: `CADAS-L01-HW-Romanov-12435687`.
+	*  In the subject of your email, please, use the following format: `CourseAPPREVIATION-LessonID-HW-Lastname-matriculationNumber`, for example, if I were to submit homework for the first lesson, my subject header would look like: `PUA-L01-HW-Romanov-12435687`.
 * DH is a collaborative field, so you are most welcome to work on your homework assignments in groups, however, you must still submit it. That is, if a groups of three works on one assignment, there must be three separate submissions: either emailed from each member’s email and published at each member’s github page. 
-
-### Schedule{-}
-
-**Location**: Online
-
-- `01 Fri, 20. Oct. 2023 16:00-18:00`
-- `02 Fri, 27. Oct. 2023 16:00-18:00`
-- `03 Fri, 03. Nov. 2023 16:00-18:00`
-- `04 Fri, 10. Nov. 2023 16:00-18:00`
-- `05 Fri, 17. Nov. 2023 16:00-18:00`
-- `06 Fri, 24. Nov. 2023 16:00-18:00` (*)
-- `07 Fri, 01. Dec. 2023 16:00-18:00`
-
-- `08 Fri, 08. Dec. 2023 16:00-18:00` (*)
-- `09 Fri, 15. Dec. 2023 16:00-18:00` (*)
-- `10 Fri, 22. Dec. 2023 16:00-18:00`
-- `11 Fri, 12. Jan. 2024 16:00-18:00`
-- `12 Fri, 19. Jan. 2024 16:00-18:00`
-- `13 Fri, 26. Jan. 2024 16:00-18:00`
-- `14 Fri, 02. Feb. 2024 16:00-18:00`
 
 ### Lesson Topics (*subject to modifications*){-}
 
@@ -178,10 +158,10 @@ We will also use a variety of packages for `R`, which we will be installing when
 - **[ `#05` ]** Part I—Basics: Data Manipulations;
 - **[ `#06` ]** Part I—Basics: Visualizations with `plot()` and `ggplot()`;
 - **[ `#07` ]** Part I—Basics: Tidying Data;
-- **[ `#08` ]** Part II—Analyses: Audition Statement Data;
-- **[ `#09` ]** Part II—Analyses: Audition Statement Data;
-- **[ `#10` ]** Part II—Analyses: Audition Statement Data;
-- **[ `#11` ]** Part II—Analyses: Audition Statement Data;
-- **[ `#12` ]** Part II—Analyses: Audition Statement Data;
-- **[ `#13` ]** Part II—Analyses: Audition Statement Data;
-- **[ `#14` ]** Part II—Analyses: Audition Statement Data;
+- **[ `#08` ]** Part II—Analyses: PUA Data;
+- **[ `#09` ]** Part II—Analyses: PUA Data;
+- **[ `#10` ]** Part II—Analyses: PUA Data;
+- **[ `#11` ]** Part II—Analyses: PUA Data;
+- **[ `#12` ]** Part II—Analyses: PUA Data;
+- **[ `#13` ]** Part II—Analyses: PUA Data;
+- **[ `#14` ]** Part II—Analyses: PUA Data;

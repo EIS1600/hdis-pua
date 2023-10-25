@@ -1,13 +1,6 @@
-# Class 02: RStudio, Basic R Commands, Swirl Tutorials
+# RStudio, Basic R Commands, Swirl Tutorials
 
-[*subject to updates and corrections*]
-
-## Last Class Review
-
-- syllabus, course requirements;
-- software: `R` and `RStudio`—must be installed by now;
-
-## This Class
+## This Chapter
 
 - Overview of R
 - RStudio and its interface;

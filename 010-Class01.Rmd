@@ -1,4 +1,4 @@
-# Class 01. Setting Everything Up
+# Setting Everything Up
 
 [*subject to updates and corrections*]
 
@@ -17,12 +17,12 @@ We will need to set everything up so that it is much easier during the course. C
 
 **Setting up our main folder:**
 
-- `CADAS-R`
+- `PUA-R`
 	- Create that folder in “Documents” (one of the default folders both on Mac and Windows); or anywhere else—ideally where you keep all your other folders related to other courses that you are taking; just remember where you create it;
 	- In your folder then create the following structure:
 
 ```
-CADAS-R/
+PUA-R/
     ├── downloads/
     ├── data/
     │   ├── raw_data/
@@ -34,7 +34,7 @@ CADAS-R/
     │   ├── class_01/
     │   ├── class_02/
     │   └── class_03/
-    ├── pPresentations/
+    ├── presentations/
     └── meeting_notes/
 ```
 
@@ -46,11 +46,6 @@ CADAS-R/
 - `/literature/`
 	- This is a way to organize readings, relevant to your project; we will keep here relevant files;
 	- Using bibliography managers, like Zotero, is a better option though;
-	- Download the following books, and place them in your folder (these are mainly for your reference):
-		- <https://www.dropbox.com/s/n1vp6ix87js0j5k/ArnoldHumanities2015.pdf?dl=0>
-		- <https://www.dropbox.com/s/zfryoznbkogqssg/HadleyAdvanced2014.pdf?dl=0>
-		- <https://www.dropbox.com/s/kh18de2cym65gfi/HadleyGgplot22016.pdf?dl=0>
-	- Note, how the names of PDFs are following the same pattern: `AuthorTitleYEAR.pdf`.
 - `/classes/`
 	- here we will be placing files relevant to specific classes; mainly, these folders will keep the scripts that you will be working on;
 - `/presentations/`
@@ -81,5 +76,3 @@ So, how to create a project?
 	- **Command Line** is the most foundational tool for anyone interested in doing anything remotely interesting with computers. Unlike graphical-user-interfaces (GIU), here you give commands to the computer by typing them in directly. You will need one of the following two tutorials, depending on whether you use Mac or Windows. You should try to repeat at least some of the commands given in tutorials. These tutorials are a little bit more detailed than what you will need for now; the most important thing for you to understand is how to navigate your computer (i.s., move from one folder to another), copy and move files, create folders, etc.
 		- **Mac**. Ian Milligan and James Baker, "Introduction to the Bash Command Line," *Programming Historian 3* (2014), https://doi.org/10.46430/phen0037
 		- **Windows**. Ted Dawson, "Introduction to the Windows Command Line with PowerShell," *Programming Historian 5* (2016), https://doi.org/10.46430/phen0054
-
-
