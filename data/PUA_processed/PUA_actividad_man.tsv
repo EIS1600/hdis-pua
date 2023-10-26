@@ -1,0 +1,124 @@
+idActividad	nombre	nombre_castellano	cat1	gender
+ACT00001	أبار	fabricante de agujas	NA	m
+ACT00159	أخباري	historiador	NA	m
+ACT00002	أديب	letrado	NA	m
+ACT00003	أديبة	letrada	NA	f
+ACT00134	أستاذ	maestro	NA	m
+ACT00111	أصولي	experto en uṣūl	NA	m
+ACT00032	أمين	alamín	NA	m
+ACT00030	إمام	imán	NA	m
+ACT00110	بزار	comerciante de grano	NA	m
+ACT00090	بزاز	comerciante de tejidos	NA	m
+ACT00115	بناء	albañil; arquitecto	NA	m
+ACT00007	بواب	portero	NA	m
+ACT00054	بيطار	veterinario	NA	m
+ACT00034	تاجر	comerciante	NA	m
+ACT00035	تاريخي	historiador	NA	m
+ACT00164	جباب	fabricante de aljubas	NA	m
+ACT00009	جنان	jardinero	NA	m
+ACT00094	جندي	soldado	NA	m
+ACT00140	حاسب	persona dedicada al cálculo	NA	m
+ACT00010	حجام	sangrador, barbero	NA	m
+ACT00173	حداد	herrero, comerciante en hierro	NA	m
+ACT00165	حذاء	zapatero	NA	m
+ACT00160	حرار	sedero	NA	m
+ACT00011	حصار	espartero, esterero	NA	m
+ACT00128	حفار	sepulturero	NA	m
+ACT00148	حكيم	médico	NA	m
+ACT00124	حمار	acemilero	NA	m
+ACT00013	حناط	comerciante de trigo	NA	m
+ACT00137	خازن	tesorero	NA	m
+ACT00108	خراز	zapatero remendón	NA	m
+ACT00104	خراط	tornero	NA	m
+ACT00138	خشاب	comerciante de madera	NA	m
+ACT00175	خطيب	predicador	NA	m
+ACT00088	خفاف	fabricante de botines	NA	m
+ACT00085	خياط	alfayate, sastre	NA	m
+ACT00147	دباغ	curtidor	NA	m
+ACT00016	دجاج	pollero	NA	m
+ACT00015	دهان	comerciante o fabricante de ungüentos, boticario	NA	m
+ACT00040	راوية	transmisor	NA	m
+ACT00103	رفاء	zurcidor	NA	m
+ACT00031	رياضي	matemático	NA	m
+ACT00167	رئيس	persona preeminente	NA	m
+ACT00052	زيات	aceitero	NA	m
+ACT00106	سراج	guarnicionero	NA	m
+ACT00008	سقاط	ropavejero	NA	m
+ACT00176	سكان	cuchillero	NA	m
+ACT00042	شاعر	poeta	NA	m
+ACT00043	شاعرة	poetisa	NA	f
+ACT00044	شاهد	testigo	NA	m
+ACT00061	شقاق	lencero	NA	m
+ACT00055	صابوني	jabonero	NA	m
+ACT00056	صائغ	orfebre	NA	m
+ACT00037	صباغ	tintorero	NA	m
+ACT00012	صفار	artesano del cobre	NA	m
+ACT00131	صيدلاني	droguero	NA	m
+ACT00045	صيقل	bruñidor	NA	m
+ACT00046	طبيب	médico	NA	m
+ACT00123	طحان	molinero	NA	m
+ACT00112	طراز	bordador	NA	m
+ACT00041	عادل	notario	NA	m
+ACT00155	عاقد	redactor de contratos	NA	m
+ACT00126	عاقد الوثائق	redactor de documentos jurídicos	NA	m
+ACT00086	عاقد للشروط	redactor de contratos	NA	m
+ACT00171	عالم	experto en ciencias islámicas	NA	m
+ACT00172	عددي	matemático	NA	m
+ACT00053	عروضي	versado en prosodia	NA	m
+ACT00014	عريف	alarife, arquitecto	NA	m
+ACT00020	عشاب	herborista	NA	m
+ACT00096	عطار	especiero, perfumista	NA	m
+ACT00100	عواد	laudista; fabricante de carretas	NA	m
+ACT00097	غاسل	lavador de cadáveres	NA	m
+ACT00024	غزال	hilandero, comerciante de hilo	NA	m
+ACT00170	فخار	alfarero	NA	m
+ACT00018	فراء	peletero	NA	m
+ACT00057	فرضي	partidor de herencias	NA	m
+ACT00059	فقيه	alfaquí	NA	m
+ACT00067	فقيه شافعي	alfaquí šāfiʿí	NA	m
+ACT00174	فقيه ظاهري	alfaquí zāhirí	NA	m
+ACT00060	فقيه مالكي	alfaquí mālikí	NA	m
+ACT00093	فيلسوف	filósofo	NA	m
+ACT00064	قارىء	lector (del Corán)	NA	m
+ACT00136	قارىء للقران	lector del Corán	NA	m
+ACT00113	قارىءة	lectora (del Corán)	NA	f
+ACT00132	قراق	fabricante de sandalias con suela de corcho	NA	m
+ACT00039	قزاز	mercader de seda	NA	m
+ACT00073	قسام	repartidor de herencias	NA	m
+ACT00143	قطان	fabricante o mercader de tejidos de algodón	NA	m
+ACT00139	قفال	cerrajero	NA	m
+ACT00152	قلاس	comerciante o fabricante de qalānis	NA	m
+ACT00065	قنازعي	fabricante de qanāziʿ	NA	m
+ACT00068	كاتب	secretario, escribano	NA	m
+ACT00114	كاتبة	secretaria, escribana	NA	f
+ACT00022	كواب	tonelero	NA	m
+ACT00144	لحام	carnicero	NA	m
+ACT00069	لغوي	lexicógrafo	NA	m
+ACT00051	لؤلؤي	comerciante de perlas	NA	m
+ACT00141	متأدب	preceptor	NA	m
+ACT00151	متطبب	médico	NA	m
+ACT00017	متكلم	teólogo dogmático	NA	m
+ACT00091	محدث	tradicionista	NA	m
+ACT00074	مدرس	preceptor	NA	m
+ACT00075	مشاور	consejero	NA	m
+ACT00076	معلم	maestro	NA	m
+ACT00077	معلم القران	maestro del Corán	NA	m
+ACT00135	معلم كتاب	maestro de escuela	NA	m
+ACT00177	معلمة	maestra	NA	f
+ACT00026	مقرىء	almocrí	NA	m
+ACT00027	مكتب	maestro de escritura	NA	m
+ACT00058	منجم	astrólogo o astrónomo	NA	m
+ACT00070	مؤدب	preceptor	NA	m
+ACT00071	مؤدب بالحساب	preceptor de cálculo	NA	m
+ACT00072	مؤدب بالعربية	preceptor de lengua árabe	NA	m
+ACT00145	مؤرخ	historiador	NA	m
+ACT00107	نباتي	herborista	NA	m
+ACT00127	نحاس	calderero	NA	m
+ACT00081	نحوي	gramático	NA	m
+ACT00082	نساب	genealogista	NA	m
+ACT00029	نسابة	genealogista	NA	f
+ACT00019	نظام	joyero	NA	m
+ACT00118	نقاش	grabador	NA	m
+ACT00169	نقاط	puntuador de manuscritos	NA	m
+ACT00083	واعظ	predicador	NA	m
+ACT00157	وراق	copista	NA	m

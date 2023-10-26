@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>16 Appendices | HDIS: Analysis of Prosopographical Data–with R</title>
+  <title>17 Appendices | HDIS: Analysis of Prosopographical Data–with R</title>
   <meta name="description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="16 Appendices | HDIS: Analysis of Prosopographical Data–with R" />
+  <meta property="og:title" content="17 Appendices | HDIS: Analysis of Prosopographical Data–with R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
   <meta name="github-repo" content="EIS1600/hdis-pua" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="16 Appendices | HDIS: Analysis of Prosopographical Data–with R" />
+  <meta name="twitter:title" content="17 Appendices | HDIS: Analysis of Prosopographical Data–with R" />
   
   <meta name="twitter:description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2023-10-25" />
+<meta name="date" content="2023-10-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -298,100 +306,136 @@ div.csl-indent {
 <li class="chapter" data-level="7.4.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#normalization"><i class="fa fa-check"></i><b>7.4.2</b> Normalization</a></li>
 <li class="chapter" data-level="7.4.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#note-proxies-features-abstractions"><i class="fa fa-check"></i><b>7.4.3</b> Note: <em>Proxies</em>, <em>Features</em>, <em>Abstractions</em></a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#deep-look-into-the-pua-dataset"><i class="fa fa-check"></i><b>7.5</b> 4. Deep Look into the PUA Dataset</a>
+<li class="chapter" data-level="7.5" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#appendix-ocr-with-r"><i class="fa fa-check"></i><b>7.5</b> Appendix: OCR with R</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html"><i class="fa fa-check"></i><b>8</b> Deep Look into the PUA Dataset</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#updated-pua-dataset"><i class="fa fa-check"></i><b>7.5.1</b> Updated PUA Dataset</a></li>
-<li class="chapter" data-level="7.5.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#normalized-and-improved-pua-dataset"><i class="fa fa-check"></i><b>7.5.2</b> Normalized and Improved PUA Dataset</a></li>
-<li class="chapter" data-level="7.5.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#modeling-pua-dataset"><i class="fa fa-check"></i><b>7.5.3</b> Modeling PUA Dataset</a></li>
-<li class="chapter" data-level="7.5.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#conceptual-models-for-your-data"><i class="fa fa-check"></i><b>7.5.4</b> Conceptual Models for Your Data</a></li>
-<li class="chapter" data-level="7.5.5" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#implementation"><i class="fa fa-check"></i><b>7.5.5</b> Implementation</a></li>
-<li class="chapter" data-level="7.5.6" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#homework-assignment"><i class="fa fa-check"></i><b>7.5.6</b> Homework assignment</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#reference-materials"><i class="fa fa-check"></i><b>7.6</b> Reference Materials</a></li>
-<li class="chapter" data-level="7.7" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#appendix-1-pua-data-tables"><i class="fa fa-check"></i><b>7.7</b> Appendix 1: PUA Data Tables</a>
+<li class="chapter" data-level="8.1" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#updated-pua-dataset"><i class="fa fa-check"></i><b>8.1</b> Updated PUA Dataset</a></li>
+<li class="chapter" data-level="8.2" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#normalized-and-improved-pua-dataset"><i class="fa fa-check"></i><b>8.2</b> Normalized and Improved PUA Dataset</a></li>
+<li class="chapter" data-level="8.3" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#modeling-pua-dataset"><i class="fa fa-check"></i><b>8.3</b> Modeling PUA Dataset</a></li>
+<li class="chapter" data-level="8.4" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#conceptual-models-for-your-data"><i class="fa fa-check"></i><b>8.4</b> Conceptual Models for Your Data</a></li>
+<li class="chapter" data-level="8.5" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#implementation"><i class="fa fa-check"></i><b>8.5</b> Implementation</a></li>
+<li class="chapter" data-level="8.6" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#homework-assignment"><i class="fa fa-check"></i><b>8.6</b> Homework assignment</a></li>
+<li class="chapter" data-level="8.7" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#reference-materials"><i class="fa fa-check"></i><b>8.7</b> Reference Materials</a></li>
+<li class="chapter" data-level="8.8" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#appendix-1-pua-data-tables"><i class="fa fa-check"></i><b>8.8</b> Appendix 1: PUA Data Tables</a>
 <ul>
-<li class="chapter" data-level="7.7.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#main-table"><i class="fa fa-check"></i><b>7.7.1</b> Main Table</a></li>
-<li class="chapter" data-level="7.7.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#connection-tables"><i class="fa fa-check"></i><b>7.7.2</b> Connection Tables</a></li>
-<li class="chapter" data-level="7.7.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#auxiliary-tables"><i class="fa fa-check"></i><b>7.7.3</b> Auxiliary Tables</a></li>
-<li class="chapter" data-level="7.7.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#metadata-tables"><i class="fa fa-check"></i><b>7.7.4</b> Metadata Tables</a></li>
+<li class="chapter" data-level="8.8.1" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#main-table"><i class="fa fa-check"></i><b>8.8.1</b> Main Table</a></li>
+<li class="chapter" data-level="8.8.2" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#connection-tables"><i class="fa fa-check"></i><b>8.8.2</b> Connection Tables</a></li>
+<li class="chapter" data-level="8.8.3" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#auxiliary-tables"><i class="fa fa-check"></i><b>8.8.3</b> Auxiliary Tables</a></li>
+<li class="chapter" data-level="8.8.4" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#metadata-tables"><i class="fa fa-check"></i><b>8.8.4</b> Metadata Tables</a></li>
 </ul></li>
-<li class="chapter" data-level="7.8" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#appendix-2-ocr-in-r"><i class="fa fa-check"></i><b>7.8</b> Appendix 2: OCR in R</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html"><i class="fa fa-check"></i><b>8</b> Visualizations: <code>plot()</code> and <code>ggplot()</code></a>
+<li class="chapter" data-level="9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html"><i class="fa fa-check"></i><b>9</b> Visualizations: <code>plot()</code> and <code>ggplot()</code></a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#this-chapter-5"><i class="fa fa-check"></i><b>8.1</b> This Chapter</a></li>
-<li class="chapter" data-level="8.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#conceptual-issues"><i class="fa fa-check"></i><b>8.2</b> Conceptual Issues</a>
+<li class="chapter" data-level="9.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#this-chapter-5"><i class="fa fa-check"></i><b>9.1</b> This Chapter</a></li>
+<li class="chapter" data-level="9.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#conceptual-issues"><i class="fa fa-check"></i><b>9.2</b> Conceptual Issues</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#perception"><i class="fa fa-check"></i><b>8.2.1</b> Perception</a></li>
-<li class="chapter" data-level="8.2.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#the-rules-of-thumb-for-visualizations"><i class="fa fa-check"></i><b>8.2.2</b> The Rules of Thumb for Visualizations</a></li>
-<li class="chapter" data-level="8.2.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#types-of-graphs-and-when-to-use-them"><i class="fa fa-check"></i><b>8.2.3</b> Types of Graphs and When to Use Them</a></li>
+<li class="chapter" data-level="9.2.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#perception"><i class="fa fa-check"></i><b>9.2.1</b> Perception</a></li>
+<li class="chapter" data-level="9.2.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#the-rules-of-thumb-for-visualizations"><i class="fa fa-check"></i><b>9.2.2</b> The Rules of Thumb for Visualizations</a></li>
+<li class="chapter" data-level="9.2.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#types-of-graphs-and-when-to-use-them"><i class="fa fa-check"></i><b>9.2.3</b> Types of Graphs and When to Use Them</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#r-built-in-graphics-functions-quick-overview"><i class="fa fa-check"></i><b>8.3</b> R Built-in Graphics Functions: Quick Overview</a></li>
-<li class="chapter" data-level="8.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#tidyverse-graphs-ggplot2"><i class="fa fa-check"></i><b>8.4</b> <code>Tidyverse</code> Graphs: <code>ggplot2</code></a>
+<li class="chapter" data-level="9.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#r-built-in-graphics-functions-quick-overview"><i class="fa fa-check"></i><b>9.3</b> R Built-in Graphics Functions: Quick Overview</a></li>
+<li class="chapter" data-level="9.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#tidyverse-graphs-ggplot2"><i class="fa fa-check"></i><b>9.4</b> <code>Tidyverse</code> Graphs: <code>ggplot2</code></a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>8.4.1</b> Grammar of Graphics</a></li>
-<li class="chapter" data-level="8.4.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#code-breakdown"><i class="fa fa-check"></i><b>8.4.2</b> Code Breakdown</a></li>
+<li class="chapter" data-level="9.4.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>9.4.1</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#code-breakdown"><i class="fa fa-check"></i><b>9.4.2</b> Code Breakdown</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#simpler-graphs"><i class="fa fa-check"></i><b>8.5</b> Simpler graphs</a></li>
-<li class="chapter" data-level="8.6" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#other-types-of-graphs"><i class="fa fa-check"></i><b>8.6</b> Other types of graphs</a>
+<li class="chapter" data-level="9.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#simpler-graphs"><i class="fa fa-check"></i><b>9.5</b> Simpler graphs</a></li>
+<li class="chapter" data-level="9.6" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#other-types-of-graphs"><i class="fa fa-check"></i><b>9.6</b> Other types of graphs</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#scatter-plots"><i class="fa fa-check"></i><b>8.6.1</b> 1. Scatter plots</a></li>
-<li class="chapter" data-level="8.6.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts"><i class="fa fa-check"></i><b>8.6.2</b> 2. Line charts</a></li>
-<li class="chapter" data-level="8.6.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts"><i class="fa fa-check"></i><b>8.6.3</b> 3. Bar charts</a></li>
-<li class="chapter" data-level="8.6.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms"><i class="fa fa-check"></i><b>8.6.4</b> 4. Histograms</a></li>
-<li class="chapter" data-level="8.6.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds"><i class="fa fa-check"></i><b>8.6.5</b> 5. Wordclouds</a></li>
+<li class="chapter" data-level="9.6.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#scatter-plots"><i class="fa fa-check"></i><b>9.6.1</b> 1. Scatter plots</a></li>
+<li class="chapter" data-level="9.6.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts"><i class="fa fa-check"></i><b>9.6.2</b> 2. Line charts</a></li>
+<li class="chapter" data-level="9.6.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts"><i class="fa fa-check"></i><b>9.6.3</b> 3. Bar charts</a></li>
+<li class="chapter" data-level="9.6.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms"><i class="fa fa-check"></i><b>9.6.4</b> 4. Histograms</a></li>
+<li class="chapter" data-level="9.6.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds"><i class="fa fa-check"></i><b>9.6.5</b> 5. Wordclouds</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-assignment-1"><i class="fa fa-check"></i><b>8.7</b> Homework assignment</a></li>
-<li class="chapter" data-level="8.8" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendices"><i class="fa fa-check"></i><b>8.8</b> Appendices</a>
+<li class="chapter" data-level="9.7" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-assignment-1"><i class="fa fa-check"></i><b>9.7</b> Homework assignment</a></li>
+<li class="chapter" data-level="9.8" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendices"><i class="fa fa-check"></i><b>9.8</b> Appendices</a>
 <ul>
-<li class="chapter" data-level="8.8.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-1-when-a-simple-table-may-suffice"><i class="fa fa-check"></i><b>8.8.1</b> Appendix 1: When a “Simple” Table May Suffice</a></li>
+<li class="chapter" data-level="9.8.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-1-when-a-simple-table-may-suffice"><i class="fa fa-check"></i><b>9.8.1</b> Appendix 1: When a “Simple” Table May Suffice</a></li>
 </ul></li>
-<li class="chapter" data-level="8.9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-interactive-graphs"><i class="fa fa-check"></i><b>8.9</b> Appendix: Interactive Graphs</a>
+<li class="chapter" data-level="9.9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-interactive-graphs"><i class="fa fa-check"></i><b>9.9</b> Appendix: Interactive Graphs</a>
 <ul>
-<li class="chapter" data-level="8.9.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-checklist-for-creating-visualizations"><i class="fa fa-check"></i><b>8.9.1</b> Appendix: Checklist for Creating Visualizations</a></li>
+<li class="chapter" data-level="9.9.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-checklist-for-creating-visualizations"><i class="fa fa-check"></i><b>9.9.1</b> Appendix: Checklist for Creating Visualizations</a></li>
 </ul></li>
-<li class="chapter" data-level="8.10" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-scientific-notation"><i class="fa fa-check"></i><b>8.10</b> Appendix: Scientific Notation</a></li>
-<li class="chapter" data-level="8.11" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-solutions-partial"><i class="fa fa-check"></i><b>8.11</b> Homework solutions (partial)</a>
+<li class="chapter" data-level="9.10" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-scientific-notation"><i class="fa fa-check"></i><b>9.10</b> Appendix: Scientific Notation</a></li>
+<li class="chapter" data-level="9.11" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-solutions-partial"><i class="fa fa-check"></i><b>9.11</b> Homework solutions (partial)</a>
 <ul>
-<li class="chapter" data-level="8.11.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts-1"><i class="fa fa-check"></i><b>8.11.1</b> Line charts</a></li>
-<li class="chapter" data-level="8.11.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts-1"><i class="fa fa-check"></i><b>8.11.2</b> 3. Bar charts</a></li>
-<li class="chapter" data-level="8.11.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms-1"><i class="fa fa-check"></i><b>8.11.3</b> 4. Histograms</a></li>
-<li class="chapter" data-level="8.11.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds---homework"><i class="fa fa-check"></i><b>8.11.4</b> 5. Wordclouds - Homework</a></li>
+<li class="chapter" data-level="9.11.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts-1"><i class="fa fa-check"></i><b>9.11.1</b> Line charts</a></li>
+<li class="chapter" data-level="9.11.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts-1"><i class="fa fa-check"></i><b>9.11.2</b> 3. Bar charts</a></li>
+<li class="chapter" data-level="9.11.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms-1"><i class="fa fa-check"></i><b>9.11.3</b> 4. Histograms</a></li>
+<li class="chapter" data-level="9.11.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds---homework"><i class="fa fa-check"></i><b>9.11.4</b> 5. Wordclouds - Homework</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="class-09.html"><a href="class-09.html"><i class="fa fa-check"></i><b>9</b> Class 09</a></li>
-<li class="chapter" data-level="10" data-path="class-10.html"><a href="class-10.html"><i class="fa fa-check"></i><b>10</b> Class 10</a></li>
-<li class="chapter" data-level="11" data-path="class-11.html"><a href="class-11.html"><i class="fa fa-check"></i><b>11</b> Class 11</a></li>
-<li class="chapter" data-level="12" data-path="class-12.html"><a href="class-12.html"><i class="fa fa-check"></i><b>12</b> Class 12</a></li>
-<li class="chapter" data-level="13" data-path="class-13.html"><a href="class-13.html"><i class="fa fa-check"></i><b>13</b> Class 13</a></li>
-<li class="chapter" data-level="14" data-path="class-14.html"><a href="class-14.html"><i class="fa fa-check"></i><b>14</b> Class 14</a></li>
-<li class="chapter" data-level="15" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html"><i class="fa fa-check"></i><b>15</b> Glossary of Computer Terms</a>
+<li class="chapter" data-level="10" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html"><i class="fa fa-check"></i><b>10</b> Overview of the PUA dataset</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#general-computer-terms"><i class="fa fa-check"></i><b>15.1</b> General Computer Terms</a></li>
-<li class="chapter" data-level="15.2" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#r-specific-terms"><i class="fa fa-check"></i><b>15.2</b> R-Specific Terms</a></li>
-<li class="chapter" data-level="15.3" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#nlp-and-linguistics"><i class="fa fa-check"></i><b>15.3</b> NLP and Linguistics</a></li>
-<li class="chapter" data-level="15.4" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#machine-learning"><i class="fa fa-check"></i><b>15.4</b> Machine Learning</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="appendices-1.html"><a href="appendices-1.html"><i class="fa fa-check"></i><b>16</b> Appendices</a>
+<li class="chapter" data-level="10.1" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#the-initial-sql-database-extraction-of-tables"><i class="fa fa-check"></i><b>10.1</b> The initial SQL Database: extraction of tables</a></li>
+<li class="chapter" data-level="10.2" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#extracting-tables-with-r"><i class="fa fa-check"></i><b>10.2</b> Extracting tables with R</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="appendices-1.html"><a href="appendices-1.html#appendix-i-importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>16.1</b> Appendix I: Importance of basic computer skills for humanists</a>
+<li class="chapter" data-level="10.2.1" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#looking-at-the-data"><i class="fa fa-check"></i><b>10.2.1</b> Looking at the data</a></li>
+<li class="chapter" data-level="10.2.2" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#reorganization-conceptual-model-for-your-data"><i class="fa fa-check"></i><b>10.2.2</b> Reorganization: Conceptual Model For Your Data</a></li>
+<li class="chapter" data-level="10.2.3" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#improving-pua-data"><i class="fa fa-check"></i><b>10.2.3</b> Improving PUA Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html"><i class="fa fa-check"></i><b>11</b> Geographical Maps &amp; Cartograms</a>
 <ul>
-<li class="chapter" data-level="16.1.1" data-path="appendices-1.html"><a href="appendices-1.html#importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>16.1.1</b> Importance of basic computer skills for humanists</a></li>
-<li class="chapter" data-level="16.1.2" data-path="appendices-1.html"><a href="appendices-1.html#access-to-information"><i class="fa fa-check"></i><b>16.1.2</b> Access to information</a></li>
-<li class="chapter" data-level="16.1.3" data-path="appendices-1.html"><a href="appendices-1.html#organization-and-management-of-research-material"><i class="fa fa-check"></i><b>16.1.3</b> Organization and management of research material</a></li>
-<li class="chapter" data-level="16.1.4" data-path="appendices-1.html"><a href="appendices-1.html#file-organization"><i class="fa fa-check"></i><b>16.1.4</b> File Organization</a></li>
-<li class="chapter" data-level="16.1.5" data-path="appendices-1.html"><a href="appendices-1.html#finding-your-way-around-the-computer"><i class="fa fa-check"></i><b>16.1.5</b> Finding your way around the computer</a></li>
-<li class="chapter" data-level="16.1.6" data-path="appendices-1.html"><a href="appendices-1.html#common-file-formats-and-extensions"><i class="fa fa-check"></i><b>16.1.6</b> Common file formats and extensions</a></li>
-<li class="chapter" data-level="16.1.7" data-path="appendices-1.html"><a href="appendices-1.html#organizing-files-and-folders-for-research-projects"><i class="fa fa-check"></i><b>16.1.7</b> Organizing files and folders for research projects</a></li>
-<li class="chapter" data-level="16.1.8" data-path="appendices-1.html"><a href="appendices-1.html#demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac"><i class="fa fa-check"></i><b>16.1.8</b> Demonstration of file navigation using a file explorer (Windows) or Finder (Mac)</a></li>
-<li class="chapter" data-level="16.1.9" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basics"><i class="fa fa-check"></i><b>16.1.9</b> Command Line Basics</a></li>
-<li class="chapter" data-level="16.1.10" data-path="appendices-1.html"><a href="appendices-1.html#introduction-to-command-line-interfaces"><i class="fa fa-check"></i><b>16.1.10</b> Introduction to command line interfaces</a></li>
-<li class="chapter" data-level="16.1.11" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basic-commands"><i class="fa fa-check"></i><b>16.1.11</b> Command Line: Basic Commands</a></li>
-<li class="chapter" data-level="16.1.12" data-path="appendices-1.html"><a href="appendices-1.html#creating-moving-renaming-and-deleting-files-and-folders"><i class="fa fa-check"></i><b>16.1.12</b> Creating, moving, renaming, and deleting files and folders</a></li>
-<li class="chapter" data-level="16.1.13" data-path="appendices-1.html"><a href="appendices-1.html#tips-for-efficient-command-line-usage"><i class="fa fa-check"></i><b>16.1.13</b> Tips for efficient command line usage</a></li>
+<li class="chapter" data-level="11.1" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#creating-base-maps"><i class="fa fa-check"></i><b>11.1</b> Creating Base Maps</a></li>
+<li class="chapter" data-level="11.2" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#core-concepts-and-their-practical-implementations"><i class="fa fa-check"></i><b>11.2</b> Core concepts and their practical implementations</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#projection-issues"><i class="fa fa-check"></i><b>11.2.1</b> Projection Issues</a></li>
+<li class="chapter" data-level="11.2.2" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#a-digital-map-layers-of-goodness"><i class="fa fa-check"></i><b>11.2.2</b> A Digital Map: Layers of Goodness</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#main-types-of-data-points-lines-polygons"><i class="fa fa-check"></i><b>11.3</b> Main Types of Data: Points, Lines, Polygons</a></li>
+<li class="chapter" data-level="11.4" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#base-maps"><i class="fa fa-check"></i><b>11.4</b> Base maps</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#new-libraries"><i class="fa fa-check"></i><b>11.4.1</b> New libraries</a></li>
+<li class="chapter" data-level="11.4.2" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#compiling-the-base-map"><i class="fa fa-check"></i><b>11.4.2</b> Compiling the base map</a></li>
+<li class="chapter" data-level="11.4.3" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#adding-data"><i class="fa fa-check"></i><b>11.4.3</b> Adding data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#raster-base-maps"><i class="fa fa-check"></i><b>11.5</b> Raster base maps</a></li>
+<li class="chapter" data-level="11.6" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#homework-2"><i class="fa fa-check"></i><b>11.6</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html"><i class="fa fa-check"></i><b>12</b> Modeling Complex Entities</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#modeling-regions"><i class="fa fa-check"></i><b>12.1</b> Modeling Regions</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#base-map-for-al-andalus"><i class="fa fa-check"></i><b>12.1.1</b> Base map for al-Andalus</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#modeling-periods"><i class="fa fa-check"></i><b>12.2</b> Modeling Periods</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#a-1000-and-1-tries"><i class="fa fa-check"></i><b>12.2.1</b> A 1000 And 1 Tries</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i><b>17</b> Bibliography</a></li>
+<li class="chapter" data-level="13" data-path="class-12.html"><a href="class-12.html"><i class="fa fa-check"></i><b>13</b> Class 12</a></li>
+<li class="chapter" data-level="14" data-path="class-13.html"><a href="class-13.html"><i class="fa fa-check"></i><b>14</b> Class 13</a></li>
+<li class="chapter" data-level="15" data-path="class-14.html"><a href="class-14.html"><i class="fa fa-check"></i><b>15</b> Class 14</a></li>
+<li class="chapter" data-level="16" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html"><i class="fa fa-check"></i><b>16</b> Glossary of Computer Terms</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#general-computer-terms"><i class="fa fa-check"></i><b>16.1</b> General Computer Terms</a></li>
+<li class="chapter" data-level="16.2" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#r-specific-terms"><i class="fa fa-check"></i><b>16.2</b> R-Specific Terms</a></li>
+<li class="chapter" data-level="16.3" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#nlp-and-linguistics"><i class="fa fa-check"></i><b>16.3</b> NLP and Linguistics</a></li>
+<li class="chapter" data-level="16.4" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#machine-learning"><i class="fa fa-check"></i><b>16.4</b> Machine Learning</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="appendices-1.html"><a href="appendices-1.html"><i class="fa fa-check"></i><b>17</b> Appendices</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="appendices-1.html"><a href="appendices-1.html#appendix-i-importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>17.1</b> Appendix I: Importance of basic computer skills for humanists</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="appendices-1.html"><a href="appendices-1.html#importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>17.1.1</b> Importance of basic computer skills for humanists</a></li>
+<li class="chapter" data-level="17.1.2" data-path="appendices-1.html"><a href="appendices-1.html#access-to-information"><i class="fa fa-check"></i><b>17.1.2</b> Access to information</a></li>
+<li class="chapter" data-level="17.1.3" data-path="appendices-1.html"><a href="appendices-1.html#organization-and-management-of-research-material"><i class="fa fa-check"></i><b>17.1.3</b> Organization and management of research material</a></li>
+<li class="chapter" data-level="17.1.4" data-path="appendices-1.html"><a href="appendices-1.html#file-organization"><i class="fa fa-check"></i><b>17.1.4</b> File Organization</a></li>
+<li class="chapter" data-level="17.1.5" data-path="appendices-1.html"><a href="appendices-1.html#finding-your-way-around-the-computer"><i class="fa fa-check"></i><b>17.1.5</b> Finding your way around the computer</a></li>
+<li class="chapter" data-level="17.1.6" data-path="appendices-1.html"><a href="appendices-1.html#common-file-formats-and-extensions"><i class="fa fa-check"></i><b>17.1.6</b> Common file formats and extensions</a></li>
+<li class="chapter" data-level="17.1.7" data-path="appendices-1.html"><a href="appendices-1.html#organizing-files-and-folders-for-research-projects"><i class="fa fa-check"></i><b>17.1.7</b> Organizing files and folders for research projects</a></li>
+<li class="chapter" data-level="17.1.8" data-path="appendices-1.html"><a href="appendices-1.html#demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac"><i class="fa fa-check"></i><b>17.1.8</b> Demonstration of file navigation using a file explorer (Windows) or Finder (Mac)</a></li>
+<li class="chapter" data-level="17.1.9" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basics"><i class="fa fa-check"></i><b>17.1.9</b> Command Line Basics</a></li>
+<li class="chapter" data-level="17.1.10" data-path="appendices-1.html"><a href="appendices-1.html#introduction-to-command-line-interfaces"><i class="fa fa-check"></i><b>17.1.10</b> Introduction to command line interfaces</a></li>
+<li class="chapter" data-level="17.1.11" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basic-commands"><i class="fa fa-check"></i><b>17.1.11</b> Command Line: Basic Commands</a></li>
+<li class="chapter" data-level="17.1.12" data-path="appendices-1.html"><a href="appendices-1.html#creating-moving-renaming-and-deleting-files-and-folders"><i class="fa fa-check"></i><b>17.1.12</b> Creating, moving, renaming, and deleting files and folders</a></li>
+<li class="chapter" data-level="17.1.13" data-path="appendices-1.html"><a href="appendices-1.html#tips-for-efficient-command-line-usage"><i class="fa fa-check"></i><b>17.1.13</b> Tips for efficient command line usage</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i><b>18</b> Bibliography</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -412,12 +456,12 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendices-1" class="section level1 hasAnchor" number="16">
-<h1><span class="header-section-number">16</span> Appendices<a href="appendices-1.html#appendices-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="appendix-i-importance-of-basic-computer-skills-for-humanists" class="section level2 hasAnchor" number="16.1">
-<h2><span class="header-section-number">16.1</span> Appendix I: Importance of basic computer skills for humanists<a href="appendices-1.html#appendix-i-importance-of-basic-computer-skills-for-humanists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="importance-of-basic-computer-skills-for-humanists" class="section level3 hasAnchor" number="16.1.1">
-<h3><span class="header-section-number">16.1.1</span> Importance of basic computer skills for humanists<a href="appendices-1.html#importance-of-basic-computer-skills-for-humanists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="appendices-1" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">17</span> Appendices<a href="appendices-1.html#appendices-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="appendix-i-importance-of-basic-computer-skills-for-humanists" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Appendix I: Importance of basic computer skills for humanists<a href="appendices-1.html#appendix-i-importance-of-basic-computer-skills-for-humanists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="importance-of-basic-computer-skills-for-humanists" class="section level3 hasAnchor" number="17.1.1">
+<h3><span class="header-section-number">17.1.1</span> Importance of basic computer skills for humanists<a href="appendices-1.html#importance-of-basic-computer-skills-for-humanists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The importance of basic computer skills for historians lies in several key areas:</p>
 <ol style="list-style-type: decimal">
 <li>Access to information: Historians rely heavily on accessing various sources of information, such as archives, databases, and digital libraries. Basic computer skills enable historians to efficiently search, navigate, and retrieve relevant documents and data from these sources.</li>
@@ -429,8 +473,8 @@ div.csl-indent {
 </ol>
 <p>In summary, basic computer skills are essential for historians in the digital age. They help to streamline research processes, enable effective communication and collaboration, and open up new possibilities for data analysis and visualization. As a result, historians with strong computer skills are better positioned to uncover new insights and contribute to the ongoing advancement of historical research.</p>
 </div>
-<div id="access-to-information" class="section level3 hasAnchor" number="16.1.2">
-<h3><span class="header-section-number">16.1.2</span> Access to information<a href="appendices-1.html#access-to-information" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="access-to-information" class="section level3 hasAnchor" number="17.1.2">
+<h3><span class="header-section-number">17.1.2</span> Access to information<a href="appendices-1.html#access-to-information" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Access to information is a critical aspect of historical research. Historians need to consult a wide range of sources to gather evidence and build a comprehensive understanding of the past. With the digitization of archives, databases, and libraries, basic computer skills have become increasingly important for historians to access, search, and navigate these sources effectively. Here are some ways basic computer skills can facilitate access to information for historians:</p>
 <ol style="list-style-type: decimal">
 <li>Search engines and databases: Basic computer skills enable historians to use search engines like Google, specialized databases like JSTOR or Project MUSE, and online catalogs of libraries and archives to locate relevant books, articles, and primary sources. Knowing how to use advanced search functions and apply filters to refine search results can save time and improve the accuracy of search results.</li>
@@ -443,8 +487,8 @@ div.csl-indent {
 </ol>
 <p>In summary, basic computer skills are essential for historians to effectively access, search, and navigate the vast array of digital resources available today. These skills not only save time and effort but also open up new research possibilities by providing easier access to primary and secondary sources that may have been difficult or impossible to access in the past.</p>
 </div>
-<div id="organization-and-management-of-research-material" class="section level3 hasAnchor" number="16.1.3">
-<h3><span class="header-section-number">16.1.3</span> Organization and management of research material<a href="appendices-1.html#organization-and-management-of-research-material" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="organization-and-management-of-research-material" class="section level3 hasAnchor" number="17.1.3">
+<h3><span class="header-section-number">17.1.3</span> Organization and management of research material<a href="appendices-1.html#organization-and-management-of-research-material" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Organization and management of research material are crucial skills for historians, as they often deal with a large number of documents, data, and other resources. Effective organization and management of these materials enable historians to work more efficiently and improve the quality of their research. Here are some strategies and tools historians can use to better organize and manage their research material:</p>
 <ol style="list-style-type: decimal">
 <li>File organization: Creating a well-structured file organization system is essential for easy access and retrieval of research materials. This can include creating separate folders for different projects or topics, organizing files by date, type, or source, and using clear, descriptive file names.</li>
@@ -457,8 +501,8 @@ div.csl-indent {
 </ol>
 <p>By effectively organizing and managing research materials, historians can streamline their research process, reduce the risk of losing or overlooking important information, and enhance the overall quality of their work. Utilizing digital tools and strategies for organization and management can greatly improve the efficiency and effectiveness of historical research.</p>
 </div>
-<div id="file-organization" class="section level3 hasAnchor" number="16.1.4">
-<h3><span class="header-section-number">16.1.4</span> File Organization<a href="appendices-1.html#file-organization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="file-organization" class="section level3 hasAnchor" number="17.1.4">
+<h3><span class="header-section-number">17.1.4</span> File Organization<a href="appendices-1.html#file-organization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>File organization is essential for managing research materials, projects, and documents effectively. Implementing best practices in file organization can help save time, reduce stress, and improve the overall efficiency of your work. Here are some best practices for file organization:</p>
 <ol style="list-style-type: decimal">
 <li>Establish a clear hierarchy: Create a well-structured folder hierarchy based on your needs and workflow. This can include organizing folders by projects, topics, or themes, and then subdividing them into subfolders for specific aspects or components. A clear hierarchy makes it easier to locate and navigate files quickly.</li>
@@ -474,10 +518,10 @@ div.csl-indent {
 </ol>
 <p>By following these best practices for file organization, you can create a more efficient and streamlined workspace, making it easier to locate, access, and manage your files and documents.</p>
 </div>
-<div id="finding-your-way-around-the-computer" class="section level3 hasAnchor" number="16.1.5">
-<h3><span class="header-section-number">16.1.5</span> Finding your way around the computer<a href="appendices-1.html#finding-your-way-around-the-computer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="explanation-of-file-system-and-directories" class="section level4 hasAnchor" number="16.1.5.1">
-<h4><span class="header-section-number">16.1.5.1</span> Explanation of file system and directories<a href="appendices-1.html#explanation-of-file-system-and-directories" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="finding-your-way-around-the-computer" class="section level3 hasAnchor" number="17.1.5">
+<h3><span class="header-section-number">17.1.5</span> Finding your way around the computer<a href="appendices-1.html#finding-your-way-around-the-computer" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="explanation-of-file-system-and-directories" class="section level4 hasAnchor" number="17.1.5.1">
+<h4><span class="header-section-number">17.1.5.1</span> Explanation of file system and directories<a href="appendices-1.html#explanation-of-file-system-and-directories" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A <strong>file system</strong> is a method used by an operating system (OS) to organize, store, and manage files and directories (also known as folders) on a storage device, such as a hard drive, SSD, or USB flash drive. The file system controls how data is stored, accessed, and retrieved, enabling users to create, modify, and delete files and directories.</p>
 <p><strong>Directories</strong> (or folders) are containers used to organize files hierarchically, making it easier to manage and navigate files within the file system. A directory can contain other directories, creating a tree-like structure that starts from a root directory.</p>
 <p>Here is an explanation of file systems and directories using a simple example:</p>
@@ -536,8 +580,8 @@ div.csl-indent {
 <p>Some popular operating systems include Microsoft Windows, macOS, Linux, iOS, and Android. Each OS has its own unique features, user interface, and compatibility with specific hardware and software applications.</p>
 </div>
 </div>
-<div id="common-file-formats-and-extensions" class="section level3 hasAnchor" number="16.1.6">
-<h3><span class="header-section-number">16.1.6</span> Common file formats and extensions<a href="appendices-1.html#common-file-formats-and-extensions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="common-file-formats-and-extensions" class="section level3 hasAnchor" number="17.1.6">
+<h3><span class="header-section-number">17.1.6</span> Common file formats and extensions<a href="appendices-1.html#common-file-formats-and-extensions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>File formats and extensions are used to identify the type and structure of a file, which helps determine the appropriate software to open, edit, and manipulate the file. Below are some common file formats and extensions, along with the important things to know when using them on Windows and Mac operating systems:</p>
 <ol style="list-style-type: decimal">
 <li>Document formats:
@@ -573,15 +617,15 @@ div.csl-indent {
 <p>When working with files on Windows and Mac, it’s important to know the appropriate software and applications needed to open and edit specific file formats. Additionally, understanding how file formats affect the quality and compatibility of files can help you choose the best format for your needs. If you need to share a file with someone who has a different operating system or software, consider using a widely supported file format or exporting the file in a format that can be opened by their software.</p>
 <p>Both Mac and Windows may hide file extensions and you may want to change settings of your file manager (Windows Explorer on Windows or Finder on MacOS) to show this information. How exactly this should be done may differ from one version of the same operating system to another. It is always best to “google” information relevant to your OS.</p>
 </div>
-<div id="organizing-files-and-folders-for-research-projects" class="section level3 hasAnchor" number="16.1.7">
-<h3><span class="header-section-number">16.1.7</span> Organizing files and folders for research projects<a href="appendices-1.html#organizing-files-and-folders-for-research-projects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="organizing-files-and-folders-for-research-projects" class="section level3 hasAnchor" number="17.1.7">
+<h3><span class="header-section-number">17.1.7</span> Organizing files and folders for research projects<a href="appendices-1.html#organizing-files-and-folders-for-research-projects" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Organizing files and folders for research projects is crucial for efficient project management and easy access to relevant information. A well-organized structure helps you keep track of your work, collaborate with others, and prevent loss of data. Here are some tips for organizing files and folders for research projects:</p>
 <ol style="list-style-type: decimal">
 <li><p>Create a main project folder: Start by creating a main folder for the entire research project. Name it clearly and descriptively, so you can easily identify it among other folders.</p></li>
 <li><p>Establish a consistent folder structure: Within the main project folder, create subfolders for different components of the research project, such as data, literature, drafts, and presentations. It’s essential to establish a consistent folder structure that is easy to understand and navigate.</p></li>
 </ol>
 <p>Example of a folder structure:</p>
-<pre><code>57-528_DH_in_AAS_PUA_R/
+<pre><code>PROJECT/
     ├── Data/
     │   ├── Raw_Data/
     │   └── Processed_Data/
@@ -617,8 +661,8 @@ div.csl-indent {
 <li><p>Document your organization system: Create a readme file or a project documentation file that explains the organization system, including the folder structure, file naming conventions, and any other relevant information. This documentation helps maintain consistency and makes it easier for team members or future researchers to understand and navigate the project files.</p></li>
 </ol>
 </div>
-<div id="demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac" class="section level3 hasAnchor" number="16.1.8">
-<h3><span class="header-section-number">16.1.8</span> Demonstration of file navigation using a file explorer (Windows) or Finder (Mac)<a href="appendices-1.html#demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac" class="section level3 hasAnchor" number="17.1.8">
+<h3><span class="header-section-number">17.1.8</span> Demonstration of file navigation using a file explorer (Windows) or Finder (Mac)<a href="appendices-1.html#demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Windows</strong></p>
 <p>Here is a step-by-step description of screenshots demonstrating file navigation using the File Explorer on Windows:</p>
 <ol style="list-style-type: decimal">
@@ -646,10 +690,10 @@ div.csl-indent {
 </ol>
 <p>By following these steps and using the features available in Finder, Mac users can effectively navigate and manage their files and folders.</p>
 </div>
-<div id="command-line-basics" class="section level3 hasAnchor" number="16.1.9">
-<h3><span class="header-section-number">16.1.9</span> Command Line Basics<a href="appendices-1.html#command-line-basics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="general-introduction" class="section level4 hasAnchor" number="16.1.9.1">
-<h4><span class="header-section-number">16.1.9.1</span> General Introduction<a href="appendices-1.html#general-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="command-line-basics" class="section level3 hasAnchor" number="17.1.9">
+<h3><span class="header-section-number">17.1.9</span> Command Line Basics<a href="appendices-1.html#command-line-basics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="general-introduction" class="section level4 hasAnchor" number="17.1.9.1">
+<h4><span class="header-section-number">17.1.9.1</span> General Introduction<a href="appendices-1.html#general-introduction" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Command line basics refer to the fundamental concepts and commands used when working with a command-line interface (CLI) on an operating system. The CLI allows users to interact with the computer by entering text-based commands instead of using a graphical user interface (GUI). Here is an outline of command line basics:</p>
 <ol style="list-style-type: decimal">
 <li>Understanding the Command Line Interface (CLI)
@@ -720,10 +764,10 @@ div.csl-indent {
 <p>By mastering these command line basics, users can become more efficient and proficient at navigating and managing files, directories, and processes within their operating system.</p>
 </div>
 </div>
-<div id="introduction-to-command-line-interfaces" class="section level3 hasAnchor" number="16.1.10">
-<h3><span class="header-section-number">16.1.10</span> Introduction to command line interfaces<a href="appendices-1.html#introduction-to-command-line-interfaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="windows-command-prompt" class="section level4 hasAnchor" number="16.1.10.1">
-<h4><span class="header-section-number">16.1.10.1</span> Windows Command Prompt<a href="appendices-1.html#windows-command-prompt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="introduction-to-command-line-interfaces" class="section level3 hasAnchor" number="17.1.10">
+<h3><span class="header-section-number">17.1.10</span> Introduction to command line interfaces<a href="appendices-1.html#introduction-to-command-line-interfaces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="windows-command-prompt" class="section level4 hasAnchor" number="17.1.10.1">
+<h4><span class="header-section-number">17.1.10.1</span> Windows Command Prompt<a href="appendices-1.html#windows-command-prompt" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In the world of computing, there are two primary ways to interact with an operating system: graphical user interfaces (GUI) and command line interfaces (CLI). While graphical user interfaces have become the norm due to their ease of use and visual appeal, command line interfaces remain a powerful and versatile tool, especially for advanced users and system administrators. In this introduction, we will focus on the Windows Command Prompt, a widely used command line interface for the Windows operating system.</p>
 <p>The Windows Command Prompt, also known as “cmd.exe” or simply “cmd,” provides a text-based interface for interacting with your computer. By entering commands into the Command Prompt, you can navigate the file system, manage files and directories, launch applications, and perform various system tasks without using a mouse or any visual elements. For many users, the Command Prompt can offer more precise control and enable faster, more efficient operations.</p>
 <p>To open the Command Prompt in Windows, press the “Win + R” keys on your keyboard to open the “Run” dialog box, then type “cmd” and hit “Enter” or click “OK.” Alternatively, you can search for “Command Prompt” in the Windows search bar and select the corresponding result.</p>
@@ -742,8 +786,8 @@ div.csl-indent {
 <p>As you become more familiar with the Command Prompt, you can begin to explore more advanced commands, such as input/output redirection, piping, and scripting. These techniques can greatly enhance your productivity and enable you to perform complex tasks with relative ease.</p>
 <p>In conclusion, the Windows Command Prompt is a powerful tool for users who wish to interact with their computer through a text-based interface. With practice and knowledge of various commands, you can unlock the full potential of the Command Prompt, making it an invaluable asset in your computing toolkit.</p>
 </div>
-<div id="mac-terminal" class="section level4 hasAnchor" number="16.1.10.2">
-<h4><span class="header-section-number">16.1.10.2</span> Mac Terminal<a href="appendices-1.html#mac-terminal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="mac-terminal" class="section level4 hasAnchor" number="17.1.10.2">
+<h4><span class="header-section-number">17.1.10.2</span> Mac Terminal<a href="appendices-1.html#mac-terminal" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Introduction to Command Line Interfaces - Mac Terminal</p>
 <p>In the world of computing, there are two primary ways to interact with an operating system: graphical user interfaces (GUI) and command line interfaces (CLI). While graphical user interfaces have become the norm due to their ease of use and visual appeal, command line interfaces remain a powerful and versatile tool, especially for advanced users and system administrators. In this introduction, we will focus on the Mac Terminal, a widely used command line interface for the macOS operating system.</p>
 <p>The Mac Terminal, simply referred to as “Terminal,” provides a text-based interface for interacting with your computer. By entering commands into the Terminal, you can navigate the file system, manage files and directories, launch applications, and perform various system tasks without using a mouse or any visual elements. For many users, the Terminal can offer more precise control and enable faster, more efficient operations.</p>
@@ -765,10 +809,10 @@ div.csl-indent {
 <p>In conclusion, the Mac Terminal is a powerful tool for users who wish to interact with their computer through a text-based interface. With practice and knowledge of various commands, you can unlock the full potential of the Terminal, making it an invaluable asset in your computing toolkit.</p>
 </div>
 </div>
-<div id="command-line-basic-commands" class="section level3 hasAnchor" number="16.1.11">
-<h3><span class="header-section-number">16.1.11</span> Command Line: Basic Commands<a href="appendices-1.html#command-line-basic-commands" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="windows-command-prompt-1" class="section level4 hasAnchor" number="16.1.11.1">
-<h4><span class="header-section-number">16.1.11.1</span> Windows Command Prompt<a href="appendices-1.html#windows-command-prompt-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="command-line-basic-commands" class="section level3 hasAnchor" number="17.1.11">
+<h3><span class="header-section-number">17.1.11</span> Command Line: Basic Commands<a href="appendices-1.html#command-line-basic-commands" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="windows-command-prompt-1" class="section level4 hasAnchor" number="17.1.11.1">
+<h4><span class="header-section-number">17.1.11.1</span> Windows Command Prompt<a href="appendices-1.html#windows-command-prompt-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here is a list of basic commands for the Windows Command Prompt that will help you get started with navigating and managing files and directories:</p>
 <ol style="list-style-type: decimal">
 <li><code>cd</code>: Change directory
@@ -828,8 +872,8 @@ div.csl-indent {
 </ol>
 <p>These basic commands will help you navigate and manage files and directories using the Windows Command Prompt. As you become more familiar with the Command Prompt, you can explore more advanced commands and techniques to further enhance your productivity.</p>
 </div>
-<div id="mac-terminal-1" class="section level4 hasAnchor" number="16.1.11.2">
-<h4><span class="header-section-number">16.1.11.2</span> Mac Terminal<a href="appendices-1.html#mac-terminal-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="mac-terminal-1" class="section level4 hasAnchor" number="17.1.11.2">
+<h4><span class="header-section-number">17.1.11.2</span> Mac Terminal<a href="appendices-1.html#mac-terminal-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Here is a list of basic commands for the Mac Terminal that will help you get started with navigating and managing files and directories:</p>
 <ol style="list-style-type: decimal">
 <li><code>cd</code>: Change directory
@@ -890,10 +934,10 @@ div.csl-indent {
 <p>These basic commands will help you navigate and manage files and directories using the Mac Terminal. As you become more familiar with the Terminal, you can explore more advanced commands and techniques to further enhance your productivity.</p>
 </div>
 </div>
-<div id="creating-moving-renaming-and-deleting-files-and-folders" class="section level3 hasAnchor" number="16.1.12">
-<h3><span class="header-section-number">16.1.12</span> Creating, moving, renaming, and deleting files and folders<a href="appendices-1.html#creating-moving-renaming-and-deleting-files-and-folders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="windows-command-prompt-2" class="section level4 hasAnchor" number="16.1.12.1">
-<h4><span class="header-section-number">16.1.12.1</span> Windows Command Prompt<a href="appendices-1.html#windows-command-prompt-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="creating-moving-renaming-and-deleting-files-and-folders" class="section level3 hasAnchor" number="17.1.12">
+<h3><span class="header-section-number">17.1.12</span> Creating, moving, renaming, and deleting files and folders<a href="appendices-1.html#creating-moving-renaming-and-deleting-files-and-folders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="windows-command-prompt-2" class="section level4 hasAnchor" number="17.1.12.1">
+<h4><span class="header-section-number">17.1.12.1</span> Windows Command Prompt<a href="appendices-1.html#windows-command-prompt-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In this short tutorial, you will learn how to create, move, rename, and delete files and folders using the Windows Command Prompt. This will help you manage your files and directories more efficiently using a text-based interface.</p>
 <p><strong>Navigating file system:</strong></p>
 <ol style="list-style-type: decimal">
@@ -947,8 +991,8 @@ div.csl-indent {
 </ol>
 <p>By following this tutorial, you can create, move, rename, and delete files and folders using the Windows Command Prompt. Practice these commands to improve your file management skills and gain confidence in using the Command Prompt.</p>
 </div>
-<div id="mac-terminal-2" class="section level4 hasAnchor" number="16.1.12.2">
-<h4><span class="header-section-number">16.1.12.2</span> Mac Terminal<a href="appendices-1.html#mac-terminal-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="mac-terminal-2" class="section level4 hasAnchor" number="17.1.12.2">
+<h4><span class="header-section-number">17.1.12.2</span> Mac Terminal<a href="appendices-1.html#mac-terminal-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>In this short tutorial, you will learn how to create, move, rename, and delete files and folders using the Mac Terminal. This will help you manage your files and directories more efficiently using a text-based interface.</p>
 <p><strong>Navigating file system:</strong></p>
 <ol style="list-style-type: decimal">
@@ -1003,8 +1047,8 @@ div.csl-indent {
 <p>By following this tutorial, you can create, move, rename, and delete files and folders using the Mac Terminal. Practice these commands to improve your file management skills and gain confidence in using the Terminal.</p>
 </div>
 </div>
-<div id="tips-for-efficient-command-line-usage" class="section level3 hasAnchor" number="16.1.13">
-<h3><span class="header-section-number">16.1.13</span> Tips for efficient command line usage<a href="appendices-1.html#tips-for-efficient-command-line-usage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="tips-for-efficient-command-line-usage" class="section level3 hasAnchor" number="17.1.13">
+<h3><span class="header-section-number">17.1.13</span> Tips for efficient command line usage<a href="appendices-1.html#tips-for-efficient-command-line-usage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here is a list of tips for efficient command line usage that can help you improve your productivity and make your command line experience more enjoyable:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Learn keyboard shortcuts:</strong> Familiarize yourself with keyboard shortcuts for common tasks, such as copying, pasting, and moving between words or lines. For example, Ctrl+C and Ctrl+V for copying and pasting, respectively, or Ctrl+Left/Right to move between words.</p></li>

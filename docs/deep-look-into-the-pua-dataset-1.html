@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 Deep Look into the PUA Dataset | HDIS: Analysis of Prosopographical Data–with R</title>
+  <meta name="description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 Deep Look into the PUA Dataset | HDIS: Analysis of Prosopographical Data–with R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
+  <meta name="github-repo" content="EIS1600/hdis-pua" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 Deep Look into the PUA Dataset | HDIS: Analysis of Prosopographical Data–with R" />
+  
+  <meta name="twitter:description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2023-10-25" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="getting-your-data-right.html"/>
+<link rel="next" href="visualizations-plot-and-ggplot.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Handbook of Digital Islamicate Studies</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html"><i class="fa fa-check"></i>About the Course</a>
+<ul>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#syllabus"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#general-description"><i class="fa fa-check"></i>General Description</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#didactic-concept"><i class="fa fa-check"></i>Didactic concept</a></li>
+<li class="chapter" data-level="0.0.1" data-path="about-the-course.html"><a href="about-the-course.html#course-structure-and-learning-objectives"><i class="fa fa-check"></i><b>0.0.1</b> Course structure and learning objectives:</a></li>
+<li class="chapter" data-level="0.0.2" data-path="about-the-course.html"><a href="about-the-course.html#main-object-of-the-course-pua-dataset"><i class="fa fa-check"></i><b>0.0.2</b> Main Object of the Course: PUA Dataset</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#course-evaluation-requirements-for-the-full-credit"><i class="fa fa-check"></i>Course Evaluation: requirements for the full credit</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#class-participation"><i class="fa fa-check"></i>Class Participation</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#homework"><i class="fa fa-check"></i>Homework</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#additional-study-materials"><i class="fa fa-check"></i>Additional Study Materials</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#software-tools-technologies"><i class="fa fa-check"></i>Software, Tools, &amp; Technologies:</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#submitting-homework"><i class="fa fa-check"></i>Submitting Homework:</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#lesson-topics-subject-to-modifications"><i class="fa fa-check"></i>Lesson Topics (<em>subject to modifications</em>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="setting-everything-up.html"><a href="setting-everything-up.html"><i class="fa fa-check"></i><b>1</b> Setting Everything Up</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="setting-everything-up.html"><a href="setting-everything-up.html#links-for-things-to-install"><i class="fa fa-check"></i><b>1.1</b> Links for things to install</a></li>
+<li class="chapter" data-level="1.2" data-path="setting-everything-up.html"><a href="setting-everything-up.html#setting-things-up"><i class="fa fa-check"></i><b>1.2</b> Setting Things Up</a></li>
+<li class="chapter" data-level="1.3" data-path="setting-everything-up.html"><a href="setting-everything-up.html#creating-a-project"><i class="fa fa-check"></i><b>1.3</b> Creating a Project</a></li>
+<li class="chapter" data-level="1.4" data-path="setting-everything-up.html"><a href="setting-everything-up.html#homework-assignments"><i class="fa fa-check"></i><b>1.4</b> Homework assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html"><i class="fa fa-check"></i><b>2</b> RStudio, Basic R Commands, Swirl Tutorials</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#this-chapter"><i class="fa fa-check"></i><b>2.1</b> This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#overview-of-r"><i class="fa fa-check"></i><b>2.2</b> Overview of R</a></li>
+<li class="chapter" data-level="2.3" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#rstudio-interface"><i class="fa fa-check"></i><b>2.3</b> RStudio Interface</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#main-file-types"><i class="fa fa-check"></i><b>2.4</b> Main File Types</a></li>
+<li class="chapter" data-level="2.5" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#projects"><i class="fa fa-check"></i><b>2.5</b> Projects</a></li>
+<li class="chapter" data-level="2.6" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-commands"><i class="fa fa-check"></i><b>2.6</b> Basic Commands</a></li>
+<li class="chapter" data-level="2.7" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#built-in-functions"><i class="fa fa-check"></i><b>2.7</b> Built-in Functions</a></li>
+<li class="chapter" data-level="2.8" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#librariespackages"><i class="fa fa-check"></i><b>2.8</b> Libraries/Packages</a></li>
+<li class="chapter" data-level="2.9" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#values-and-their-types"><i class="fa fa-check"></i><b>2.9</b> Values and their types</a></li>
+<li class="chapter" data-level="2.10" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-data-structures-and-their-practical-usage"><i class="fa fa-check"></i><b>2.10</b> Basic Data Structures and Their Practical Usage</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-data-structures"><i class="fa fa-check"></i><b>2.10.1</b> Basic data structures</a></li>
+<li class="chapter" data-level="2.10.2" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#main-properties-of-basic-data-structures"><i class="fa fa-check"></i><b>2.10.2</b> Main properties of basic data structures</a></li>
+<li class="chapter" data-level="2.10.3" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#most-common-usage-of-basic-data-structures"><i class="fa fa-check"></i><b>2.10.3</b> Most Common Usage of Basic Data Structures:</a></li>
+<li class="chapter" data-level="2.10.4" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-data-structures-examples"><i class="fa fa-check"></i><b>2.10.4</b> Basic Data Structures Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#homework-with-swirl"><i class="fa fa-check"></i><b>2.11</b> Homework with <code>swirl()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html"><i class="fa fa-check"></i><b>3</b> R Markdown and R Notebooks</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#previous-lesson"><i class="fa fa-check"></i><b>3.1</b> Previous lesson</a></li>
+<li class="chapter" data-level="3.2" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#this-lesson"><i class="fa fa-check"></i><b>3.2</b> This lesson</a></li>
+<li class="chapter" data-level="3.3" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#r-notebookmarkdown"><i class="fa fa-check"></i><b>3.3</b> R Notebook/Markdown</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#r-notebook-yml-header"><i class="fa fa-check"></i><b>3.3.1</b> R Notebook/ YML Header</a></li>
+<li class="chapter" data-level="3.3.2" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#basics-of-markdown"><i class="fa fa-check"></i><b>3.3.2</b> Basics of Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#homework-1"><i class="fa fa-check"></i><b>3.4</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#this-chapter-1"><i class="fa fa-check"></i><b>4.1</b> This Chapter</a></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-data-structures-review"><i class="fa fa-check"></i><b>4.2</b> Main Data Structures — Review</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#why-tidyverse"><i class="fa fa-check"></i><b>4.3</b> Why <code>tidyverse</code>?</a></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-data-file-formats-csv-and-tsv"><i class="fa fa-check"></i><b>4.4</b> Main Data File Formats: CSV and TSV</a></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-data-into-r"><i class="fa fa-check"></i><b>4.5</b> Loading Data into R</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-csv-and-tsv-files"><i class="fa fa-check"></i><b>4.5.1</b> Loading CSV and TSV files</a></li>
+<li class="chapter" data-level="4.5.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#r-specific-data-format-rds"><i class="fa fa-check"></i><b>4.5.2</b> R-specific Data “Format”: RDS</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-pua-data"><i class="fa fa-check"></i><b>4.6</b> Loading PUA data</a></li>
+<li class="chapter" data-level="4.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#pua-dataset-technical-description"><i class="fa fa-check"></i><b>4.7</b> PUA Dataset Technical Description</a></li>
+<li class="chapter" data-level="4.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#exploring-pua-data"><i class="fa fa-check"></i><b>4.8</b> Exploring PUA Data</a></li>
+<li class="chapter" data-level="4.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-commands-for-engaging-with-a-tibble"><i class="fa fa-check"></i><b>4.9</b> Main commands for engaging with a tibble</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#chaining-with"><i class="fa fa-check"></i><b>4.9.1</b> Chaining with <code>%&gt;%</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-dplyr"><i class="fa fa-check"></i><b>4.10</b> Important Functions from <code>dplyr</code></a></li>
+<li class="chapter" data-level="4.11" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-tidyr"><i class="fa fa-check"></i><b>4.11</b> Important Functions from <code>tidyr</code></a></li>
+<li class="chapter" data-level="4.12" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#function-usage"><i class="fa fa-check"></i><b>4.12</b> Function usage</a>
+<ul>
+<li class="chapter" data-level="4.12.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#filter"><i class="fa fa-check"></i><b>4.12.1</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="4.12.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#select"><i class="fa fa-check"></i><b>4.12.2</b> <code>select()</code></a></li>
+<li class="chapter" data-level="4.12.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#mutate-and-transmute"><i class="fa fa-check"></i><b>4.12.3</b> <code>mutate()</code> and <code>transmute()</code></a></li>
+<li class="chapter" data-level="4.12.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#rename"><i class="fa fa-check"></i><b>4.12.4</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="4.12.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#arrange"><i class="fa fa-check"></i><b>4.12.5</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="4.12.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#group_by-ungroup"><i class="fa fa-check"></i><b>4.12.6</b> <code>group_by()</code> / <code>ungroup()</code></a></li>
+<li class="chapter" data-level="4.12.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#summarise-or-summarize"><i class="fa fa-check"></i><b>4.12.7</b> <code>summarise()</code> or <code>summarize()</code></a></li>
+<li class="chapter" data-level="4.12.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#join_-functions"><i class="fa fa-check"></i><b>4.12.8</b> <code>join_*</code> functions</a></li>
+<li class="chapter" data-level="4.12.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#pivot_-functions"><i class="fa fa-check"></i><b>4.12.9</b> <code>pivot_*()</code> functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.13" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#homework-tasks"><i class="fa fa-check"></i><b>4.13</b> Homework Tasks</a></li>
+<li class="chapter" data-level="4.14" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#appendix-window-function-in-tidyverse"><i class="fa fa-check"></i><b>4.14</b> Appendix: “Window” function in <code>tidyverse</code></a></li>
+<li class="chapter" data-level="4.15" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#appendix-pua-database-description"><i class="fa fa-check"></i><b>4.15</b> Appendix: PUA Database Description</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#this-chapter-2"><i class="fa fa-check"></i><b>5.1</b> This Chapter</a></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#problems"><i class="fa fa-check"></i><b>5.2</b> Problems</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html"><i class="fa fa-check"></i><b>6</b> Control Flow; Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#this-chapter-3"><i class="fa fa-check"></i><b>6.1</b> This Chapter</a></li>
+<li class="chapter" data-level="6.2" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#control-flow"><i class="fa fa-check"></i><b>6.2</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#conditional-statements"><i class="fa fa-check"></i><b>6.2.1</b> Conditional statements</a></li>
+<li class="chapter" data-level="6.2.2" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#loops"><i class="fa fa-check"></i><b>6.2.2</b> Loops</a></li>
+<li class="chapter" data-level="6.2.3" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#functions"><i class="fa fa-check"></i><b>6.2.3</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#regular-expressions-in-r"><i class="fa fa-check"></i><b>6.3</b> Regular Expressions in R</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#basics-of-regular-expressions"><i class="fa fa-check"></i><b>6.3.1</b> Basics of Regular Expressions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#regular-expressions-in-r-1"><i class="fa fa-check"></i><b>6.3.2</b> Regular Expressions in R</a></li>
+<li class="chapter" data-level="6.3.3" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#tips-for-regular-expressions-in-r"><i class="fa fa-check"></i><b>6.3.3</b> Tips for Regular Expressions in R</a></li>
+<li class="chapter" data-level="6.3.4" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#in-class-practice"><i class="fa fa-check"></i><b>6.3.4</b> In-Class Practice</a></li>
+<li class="chapter" data-level="6.3.5" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#the-practice-regex-file"><i class="fa fa-check"></i><b>6.3.5</b> The Practice Regex File</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html"><i class="fa fa-check"></i><b>7</b> Getting Your Data Right</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#this-chapter-4"><i class="fa fa-check"></i><b>7.1</b> This Chapter</a></li>
+<li class="chapter" data-level="7.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#getting-your-own-data"><i class="fa fa-check"></i><b>7.2</b> 1. Getting your own data</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#ways-of-obtaining-data"><i class="fa fa-check"></i><b>7.2.1</b> Ways of obtaining data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#major-formats"><i class="fa fa-check"></i><b>7.2.2</b> Major formats</a></li>
+<li class="chapter" data-level="7.2.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#ways-of-obtaining-data-1"><i class="fa fa-check"></i><b>7.2.3</b> Ways of obtaining data</a></li>
+<li class="chapter" data-level="7.2.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#major-formats-1"><i class="fa fa-check"></i><b>7.2.4</b> Major formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#tidying-data"><i class="fa fa-check"></i><b>7.3</b> 2. Tidying Data</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#basic-principles-of-organizing-data-tidy-data"><i class="fa fa-check"></i><b>7.3.1</b> Basic principles of organizing data: <em>Tidy Data</em></a></li>
+<li class="chapter" data-level="7.3.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#clean-data-tidy-data-additional-explanations"><i class="fa fa-check"></i><b>7.3.2</b> Clean Data / Tidy Data: <em>additional explanations</em></a></li>
+<li class="chapter" data-level="7.3.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#discussion-a-bulliet-dataset"><i class="fa fa-check"></i><b>7.3.3</b> <em>Discussion</em>: “A Bulliet Dataset”</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#modeling-data"><i class="fa fa-check"></i><b>7.4</b> 3. Modeling Data</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#categorization-as-a-way-of-modeling-data"><i class="fa fa-check"></i><b>7.4.1</b> Categorization as a Way of modeling data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#normalization"><i class="fa fa-check"></i><b>7.4.2</b> Normalization</a></li>
+<li class="chapter" data-level="7.4.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#note-proxies-features-abstractions"><i class="fa fa-check"></i><b>7.4.3</b> Note: <em>Proxies</em>, <em>Features</em>, <em>Abstractions</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#deep-look-into-the-pua-dataset"><i class="fa fa-check"></i><b>7.5</b> 4. Deep Look into the PUA Dataset</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#updated-pua-dataset"><i class="fa fa-check"></i><b>7.5.1</b> Updated PUA Dataset</a></li>
+<li class="chapter" data-level="7.5.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#normalized-and-improved-pua-dataset"><i class="fa fa-check"></i><b>7.5.2</b> Normalized and Improved PUA Dataset</a></li>
+<li class="chapter" data-level="7.5.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#modeling-pua-dataset"><i class="fa fa-check"></i><b>7.5.3</b> Modeling PUA Dataset</a></li>
+<li class="chapter" data-level="7.5.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#conceptual-models-for-your-data"><i class="fa fa-check"></i><b>7.5.4</b> Conceptual Models for Your Data</a></li>
+<li class="chapter" data-level="7.5.5" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#implementation"><i class="fa fa-check"></i><b>7.5.5</b> Implementation</a></li>
+<li class="chapter" data-level="7.5.6" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#homework-assignment"><i class="fa fa-check"></i><b>7.5.6</b> Homework assignment</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#reference-materials"><i class="fa fa-check"></i><b>7.6</b> Reference Materials</a></li>
+<li class="chapter" data-level="7.7" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#appendix-1-pua-data-tables"><i class="fa fa-check"></i><b>7.7</b> Appendix 1: PUA Data Tables</a>
+<ul>
+<li class="chapter" data-level="7.7.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#main-table"><i class="fa fa-check"></i><b>7.7.1</b> Main Table</a></li>
+<li class="chapter" data-level="7.7.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#connection-tables"><i class="fa fa-check"></i><b>7.7.2</b> Connection Tables</a></li>
+<li class="chapter" data-level="7.7.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#auxiliary-tables"><i class="fa fa-check"></i><b>7.7.3</b> Auxiliary Tables</a></li>
+<li class="chapter" data-level="7.7.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#metadata-tables"><i class="fa fa-check"></i><b>7.7.4</b> Metadata Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="7.8" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#appendix-2-ocr-in-r"><i class="fa fa-check"></i><b>7.8</b> Appendix 2: OCR in R</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html"><i class="fa fa-check"></i><b>8</b> Deep Look into the PUA Dataset</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#updated-pua-dataset-1"><i class="fa fa-check"></i><b>8.0.1</b> Updated PUA Dataset</a></li>
+<li class="chapter" data-level="8.0.2" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#normalized-and-improved-pua-dataset-1"><i class="fa fa-check"></i><b>8.0.2</b> Normalized and Improved PUA Dataset</a></li>
+<li class="chapter" data-level="8.0.3" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#modeling-pua-dataset-1"><i class="fa fa-check"></i><b>8.0.3</b> Modeling PUA Dataset</a></li>
+<li class="chapter" data-level="8.0.4" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#conceptual-models-for-your-data-1"><i class="fa fa-check"></i><b>8.0.4</b> Conceptual Models for Your Data</a></li>
+<li class="chapter" data-level="8.0.5" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#implementation-1"><i class="fa fa-check"></i><b>8.0.5</b> Implementation</a></li>
+<li class="chapter" data-level="8.0.6" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#homework-assignment-1"><i class="fa fa-check"></i><b>8.0.6</b> Homework assignment</a></li>
+<li class="chapter" data-level="8.1" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#reference-materials-1"><i class="fa fa-check"></i><b>8.1</b> Reference Materials</a></li>
+<li class="chapter" data-level="8.2" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#appendix-1-pua-data-tables-1"><i class="fa fa-check"></i><b>8.2</b> Appendix 1: PUA Data Tables</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#main-table-1"><i class="fa fa-check"></i><b>8.2.1</b> Main Table</a></li>
+<li class="chapter" data-level="8.2.2" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#connection-tables-1"><i class="fa fa-check"></i><b>8.2.2</b> Connection Tables</a></li>
+<li class="chapter" data-level="8.2.3" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#auxiliary-tables-1"><i class="fa fa-check"></i><b>8.2.3</b> Auxiliary Tables</a></li>
+<li class="chapter" data-level="8.2.4" data-path="deep-look-into-the-pua-dataset-1.html"><a href="deep-look-into-the-pua-dataset-1.html#metadata-tables-1"><i class="fa fa-check"></i><b>8.2.4</b> Metadata Tables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html"><i class="fa fa-check"></i><b>9</b> Visualizations: <code>plot()</code> and <code>ggplot()</code></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#this-chapter-5"><i class="fa fa-check"></i><b>9.1</b> This Chapter</a></li>
+<li class="chapter" data-level="9.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#conceptual-issues"><i class="fa fa-check"></i><b>9.2</b> Conceptual Issues</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#perception"><i class="fa fa-check"></i><b>9.2.1</b> Perception</a></li>
+<li class="chapter" data-level="9.2.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#the-rules-of-thumb-for-visualizations"><i class="fa fa-check"></i><b>9.2.2</b> The Rules of Thumb for Visualizations</a></li>
+<li class="chapter" data-level="9.2.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#types-of-graphs-and-when-to-use-them"><i class="fa fa-check"></i><b>9.2.3</b> Types of Graphs and When to Use Them</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#r-built-in-graphics-functions-quick-overview"><i class="fa fa-check"></i><b>9.3</b> R Built-in Graphics Functions: Quick Overview</a></li>
+<li class="chapter" data-level="9.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#tidyverse-graphs-ggplot2"><i class="fa fa-check"></i><b>9.4</b> <code>Tidyverse</code> Graphs: <code>ggplot2</code></a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>9.4.1</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#code-breakdown"><i class="fa fa-check"></i><b>9.4.2</b> Code Breakdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#simpler-graphs"><i class="fa fa-check"></i><b>9.5</b> Simpler graphs</a></li>
+<li class="chapter" data-level="9.6" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#other-types-of-graphs"><i class="fa fa-check"></i><b>9.6</b> Other types of graphs</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#scatter-plots"><i class="fa fa-check"></i><b>9.6.1</b> 1. Scatter plots</a></li>
+<li class="chapter" data-level="9.6.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts"><i class="fa fa-check"></i><b>9.6.2</b> 2. Line charts</a></li>
+<li class="chapter" data-level="9.6.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts"><i class="fa fa-check"></i><b>9.6.3</b> 3. Bar charts</a></li>
+<li class="chapter" data-level="9.6.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms"><i class="fa fa-check"></i><b>9.6.4</b> 4. Histograms</a></li>
+<li class="chapter" data-level="9.6.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds"><i class="fa fa-check"></i><b>9.6.5</b> 5. Wordclouds</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-assignment-2"><i class="fa fa-check"></i><b>9.7</b> Homework assignment</a></li>
+<li class="chapter" data-level="9.8" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#final-word"><i class="fa fa-check"></i><b>9.8</b> Final word</a></li>
+<li class="chapter" data-level="9.9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#graphing-data"><i class="fa fa-check"></i><b>9.9</b> Graphing Data</a></li>
+<li class="chapter" data-level="9.10" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendices"><i class="fa fa-check"></i><b>9.10</b> Appendices</a>
+<ul>
+<li class="chapter" data-level="9.10.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-1-when-a-simple-table-may-suffice"><i class="fa fa-check"></i><b>9.10.1</b> Appendix 1: When a “Simple” Table May Suffice</a></li>
+</ul></li>
+<li class="chapter" data-level="9.11" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-interactive-graphs"><i class="fa fa-check"></i><b>9.11</b> Appendix: Interactive Graphs</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-checklist-for-creating-visualizations"><i class="fa fa-check"></i><b>9.11.1</b> Appendix: Checklist for Creating Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.12" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-scientific-notation"><i class="fa fa-check"></i><b>9.12</b> Appendix: Scientific Notation</a></li>
+<li class="chapter" data-level="9.13" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-solutions-partial"><i class="fa fa-check"></i><b>9.13</b> Homework solutions (partial)</a>
+<ul>
+<li class="chapter" data-level="9.13.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts-1"><i class="fa fa-check"></i><b>9.13.1</b> Line charts</a></li>
+<li class="chapter" data-level="9.13.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts-1"><i class="fa fa-check"></i><b>9.13.2</b> 3. Bar charts</a></li>
+<li class="chapter" data-level="9.13.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms-1"><i class="fa fa-check"></i><b>9.13.3</b> 4. Histograms</a></li>
+<li class="chapter" data-level="9.13.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds---homework"><i class="fa fa-check"></i><b>9.13.4</b> 5. Wordclouds - Homework</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="class-09.html"><a href="class-09.html"><i class="fa fa-check"></i><b>10</b> Class 09</a></li>
+<li class="chapter" data-level="11" data-path="class-10.html"><a href="class-10.html"><i class="fa fa-check"></i><b>11</b> Class 10</a></li>
+<li class="chapter" data-level="12" data-path="class-11.html"><a href="class-11.html"><i class="fa fa-check"></i><b>12</b> Class 11</a></li>
+<li class="chapter" data-level="13" data-path="class-12.html"><a href="class-12.html"><i class="fa fa-check"></i><b>13</b> Class 12</a></li>
+<li class="chapter" data-level="14" data-path="class-13.html"><a href="class-13.html"><i class="fa fa-check"></i><b>14</b> Class 13</a></li>
+<li class="chapter" data-level="15" data-path="class-14.html"><a href="class-14.html"><i class="fa fa-check"></i><b>15</b> Class 14</a></li>
+<li class="chapter" data-level="16" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html"><i class="fa fa-check"></i><b>16</b> Glossary of Computer Terms</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#general-computer-terms"><i class="fa fa-check"></i><b>16.1</b> General Computer Terms</a></li>
+<li class="chapter" data-level="16.2" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#r-specific-terms"><i class="fa fa-check"></i><b>16.2</b> R-Specific Terms</a></li>
+<li class="chapter" data-level="16.3" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#nlp-and-linguistics"><i class="fa fa-check"></i><b>16.3</b> NLP and Linguistics</a></li>
+<li class="chapter" data-level="16.4" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#machine-learning"><i class="fa fa-check"></i><b>16.4</b> Machine Learning</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="appendices-1.html"><a href="appendices-1.html"><i class="fa fa-check"></i><b>17</b> Appendices</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="appendices-1.html"><a href="appendices-1.html#appendix-i-importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>17.1</b> Appendix I: Importance of basic computer skills for humanists</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="appendices-1.html"><a href="appendices-1.html#importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>17.1.1</b> Importance of basic computer skills for humanists</a></li>
+<li class="chapter" data-level="17.1.2" data-path="appendices-1.html"><a href="appendices-1.html#access-to-information"><i class="fa fa-check"></i><b>17.1.2</b> Access to information</a></li>
+<li class="chapter" data-level="17.1.3" data-path="appendices-1.html"><a href="appendices-1.html#organization-and-management-of-research-material"><i class="fa fa-check"></i><b>17.1.3</b> Organization and management of research material</a></li>
+<li class="chapter" data-level="17.1.4" data-path="appendices-1.html"><a href="appendices-1.html#file-organization"><i class="fa fa-check"></i><b>17.1.4</b> File Organization</a></li>
+<li class="chapter" data-level="17.1.5" data-path="appendices-1.html"><a href="appendices-1.html#finding-your-way-around-the-computer"><i class="fa fa-check"></i><b>17.1.5</b> Finding your way around the computer</a></li>
+<li class="chapter" data-level="17.1.6" data-path="appendices-1.html"><a href="appendices-1.html#common-file-formats-and-extensions"><i class="fa fa-check"></i><b>17.1.6</b> Common file formats and extensions</a></li>
+<li class="chapter" data-level="17.1.7" data-path="appendices-1.html"><a href="appendices-1.html#organizing-files-and-folders-for-research-projects"><i class="fa fa-check"></i><b>17.1.7</b> Organizing files and folders for research projects</a></li>
+<li class="chapter" data-level="17.1.8" data-path="appendices-1.html"><a href="appendices-1.html#demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac"><i class="fa fa-check"></i><b>17.1.8</b> Demonstration of file navigation using a file explorer (Windows) or Finder (Mac)</a></li>
+<li class="chapter" data-level="17.1.9" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basics"><i class="fa fa-check"></i><b>17.1.9</b> Command Line Basics</a></li>
+<li class="chapter" data-level="17.1.10" data-path="appendices-1.html"><a href="appendices-1.html#introduction-to-command-line-interfaces"><i class="fa fa-check"></i><b>17.1.10</b> Introduction to command line interfaces</a></li>
+<li class="chapter" data-level="17.1.11" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basic-commands"><i class="fa fa-check"></i><b>17.1.11</b> Command Line: Basic Commands</a></li>
+<li class="chapter" data-level="17.1.12" data-path="appendices-1.html"><a href="appendices-1.html#creating-moving-renaming-and-deleting-files-and-folders"><i class="fa fa-check"></i><b>17.1.12</b> Creating, moving, renaming, and deleting files and folders</a></li>
+<li class="chapter" data-level="17.1.13" data-path="appendices-1.html"><a href="appendices-1.html#tips-for-efficient-command-line-usage"><i class="fa fa-check"></i><b>17.1.13</b> Tips for efficient command line usage</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i><b>18</b> Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HDIS: Analysis of Prosopographical Data–with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="deep-look-into-the-pua-dataset-1" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Deep Look into the PUA Dataset<a href="deep-look-into-the-pua-dataset-1.html#deep-look-into-the-pua-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The models of the PUA database essentially looks like the graph below.</p>
+<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2b6ee92a62bc79c910c9" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2b6ee92a62bc79c910c9">{"x":{"diagram":"\ngraph LR;\npersonaje-->personaje_lugar\npersonaje_lugar-->lugar\npersonaje-->personaje_actividad\npersonaje_actividad-->actividad\npersonaje-->personaje_disciplina\npersonaje_disciplina-->disciplina\npersonaje-->personaje_caracteristica\npersonaje_caracteristica\npersonaje-->personaje_cargo\npersonaje-->personaje_nisba\npersonaje-->personaje_obra\npersonaje-->personaje_relacion\npersonaje-->personaje_fuente\npersonaje-->personaje_referencia\n\nfuente-->author\npersonaje_cargo-->cargo\npersonaje_nisba-->nisba\npersonaje_obra-->obra\npersonaje_relacion-->personaje\npersonaje_fuente-->fuente\npersonaje_referencia-->bibliografia\n\npersonaje-->familia\npersonaje_relacion-->tiporelacion\npersonaje_lugar-->tiporelacionlugar\n"},"evals":[],"jsHooks":[]}</script>
+<p>In other words, we have::</p>
+<ul>
+<li>the <strong>main table</strong> <code>personaje</code> that contains data on individuals, limited to: their names, dates, and familial affiliations (other columns are either variants of these, or not relevant to the overall analysis);</li>
+<li><strong>connection tables</strong> that connect individuals to different characteristics as places, disciplines, professions, etc. This is done in <em>one-to-many</em> format, i.e. one person may have visited multiple cities, may have specialized in multiple disciplines, etc. The main part of these tables is the two columns with ids of individuals from <code>personaje</code> and ids of entities from auxiliary tables. These connection tables is what allows us to register multiple instances of the same type of data, which we simply cannot do in the main table. (One connection table, <code>personaje_relacion</code>, actually connects <code>personaje</code> to itself.)</li>
+<li><strong>auxiliary tables</strong> describe specific characteristics: places, disciplines, professions. These are the tables that provide additional information on those characteristics. For example, <code>lugar</code> tells us where a place is in al-Andalus or not, what are the coordinates of each place, and so on. This is also where most modeling endeavors will be taking place.</li>
+<li>lastly, we have <strong>metadata tables</strong>, which provide metadata on sources used in the creation of the database.</li>
+</ul>
+<div id="updated-pua-dataset-1" class="section level3 hasAnchor" number="8.0.1">
+<h3><span class="header-section-number">8.0.1</span> Updated PUA Dataset<a href="deep-look-into-the-pua-dataset-1.html#updated-pua-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We may consider converting PUA dataset into a somewhat different format, where we merge the main and auxiliary tables into one table that would have a structure like this:</p>
+<pre><code>============================================
+idPersonaje, type, value
+============================================
+000006, d_died_in, 163
+000006, has_gender, male
+000006, t_born, toponymID
+000006, t_visited, toponymID
+000006, has_name_AR, arabic_name
+000006, has_name_CA, castellano_name
+000006, has_profession, professionID
+000006, has_profession, professionID
+============================================</code></pre>
+<p>Essentially, we can describe each person using this triple structure, which is interpreted as <code>subject-predicate-object</code>. There are standardized approaches to implement this kind of structure, like OWL RDF, but they become truly relevant only after one has finished preparing their data and is willing to share it with the world. Using OWL RDF standard will mean that you are implementing a Linked Open Data (LOD) approach. The problem of the LOD approach in our case is that we do not have anything out there to link into. For this reason, we will focus on a Linked Local Data approach, where we will link only into our own data.</p>
+<p>Having data in this kind of format will make it easier to analyze our data, since we will not need to do too many connection (<code>left_join</code>) operations, which at times get too complicated. We will still need the <em>auxiliary</em> tables, which we will treat more as <em>interpretative schemes</em>, since we will be using them more for the purposes of modeling our historical data.</p>
+<blockquote>
+<p><em>On the use of this structure, see</em>: Romanov, M. (2017). Algorithmic Analysis of Medieval Arabic Biographical Collections. <em>Speculum</em>. <a href="https://doi.org/10.1086/693970" class="uri">https://doi.org/10.1086/693970</a> (The article is available at: <a href="https://www.journals.uchicago.edu/doi/full/10.1086/693970" class="uri">https://www.journals.uchicago.edu/doi/full/10.1086/693970</a>)</p>
+</blockquote>
+<p>The structure of the new dataset will be:</p>
+<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5bea557d11258217b4c1" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-5bea557d11258217b4c1">{"x":{"diagram":"\n    graph LR\n    personaje-->lugar\n    personaje-->actividad\n    personaje-->disciplina\n    personaje-->caracteristica\n    personaje-->cargo\n    personaje-->nisba\n    personaje-->obra\n    personaje-->fuente\n    personaje-->bibliografia\n    personaje-->familia\n    fuente-->author\n"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="normalized-and-improved-pua-dataset-1" class="section level3 hasAnchor" number="8.0.2">
+<h3><span class="header-section-number">8.0.2</span> Normalized and Improved PUA Dataset<a href="deep-look-into-the-pua-dataset-1.html#normalized-and-improved-pua-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Another thing that we need to do with the PUA dataset is to normalize it. We have already dealt with the issue of birth and death dates, where we find zeroes to be used when no date is available. Another issue that we also encountered was the information on gender which is “buried” in professions and characteristics. Additionally, professions (<code>actividad</code>) can be normalized: we have seen at least three different ways, in which jurists are described (<em>faqīh</em>, <em>faqīh šāfiʿī</em>, <em>faqīh ẓāhirī</em>, <em>faqīh mālikī</em>).</p>
+<p>One other thing that we can do to improve the dataset is to automatically transcribe unstranscribed Arabic names—we, actually, have more than half of all the Arabic names untranscribed. This is a rather tricky procedure, which I will explain later.</p>
+</div>
+<div id="modeling-pua-dataset-1" class="section level3 hasAnchor" number="8.0.3">
+<h3><span class="header-section-number">8.0.3</span> Modeling PUA Dataset<a href="deep-look-into-the-pua-dataset-1.html#modeling-pua-dataset-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The main modeling approach that we can use with the PUA dataset is categorization. As described above, we can create larger categories for professions (<code>actividad</code>), positions (<code>cargo</code>), and characteristics (<code>caracteristica</code>) in order to identify larger social, professional, and religious groups.</p>
+<p>Additionally, we can add different classifications to geographical places (<code>lugar</code>). At the moment, places are divided into <code>andalusian</code> and <code>non-andalusian</code>. Such division allows us to trace travels outside of al-Andalus, but we can do so much more than that.</p>
+<p>For example, it would make a lot of sense to split Andalusian places into subregions, which will allow us to aggregate individuals into larger geographical groups and, for example, measure how our individuals were moving within al-Andalus. this task is a bit tricky though (Cova?!). Classifying <code>non-andalusian</code> places into provinces will also be helpful as we can study into more general directions in which Andalusians were traveling. For example, base on my previous research using <em>Taʾrīḫ al-islām</em> of al-Ḏahabī (d. 748/1347), the general direction of travels was changing over time—essentially shifting between Ifrīqiyyaŧ (North Africa, centering on modern Tunisia) and Egypt-and-Syria region; or course, the Arabian peninsula with the Sacred cities of Islām was also very important, as was Baġdād during its heydays.</p>
+</div>
+<div id="conceptual-models-for-your-data-1" class="section level3 hasAnchor" number="8.0.4">
+<h3><span class="header-section-number">8.0.4</span> Conceptual Models for Your Data<a href="deep-look-into-the-pua-dataset-1.html#conceptual-models-for-your-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/PUAR/SPO-STAR.svg" /></p>
+<p>I have mentioned above the traditional <code>subject-predicate-object</code> model, with which you can describe pretty much everything that you can describe with a subject-predicate-object sentence.</p>
+</div>
+<div id="implementation-1" class="section level3 hasAnchor" number="8.0.5">
+<h3><span class="header-section-number">8.0.5</span> Implementation<a href="deep-look-into-the-pua-dataset-1.html#implementation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Essentially, we can reformat our data into new tables/tibbles, pack them into a list on a similar manner (let’s also call it <code>PUA</code> for short). We can then save this new list into an RDS file, which can be loaded with <code>readRDS()</code> function. Additionally, we can also preserve the entire original dataset, which we can simply add as another element of the list (<code>PUA$original</code>).</p>
+</div>
+<div id="homework-assignment-1" class="section level3 hasAnchor" number="8.0.6">
+<h3><span class="header-section-number">8.0.6</span> Homework assignment<a href="deep-look-into-the-pua-dataset-1.html#homework-assignment-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>categorization of places:
+<ul>
+<li>Andalusian locations<!-- : Cova / Ensar (based on the shared publication?) -->;</li>
+<li>Non-Andalusian locations<!-- : Cova / Ensar (al-Thurayya can be used for this: <https://althurayya.github.io/>) -->;</li>
+</ul></li>
+<li>professions (<code>actividad</code>)<!-- : Antonia; Sean -->;</li>
+<li>positions (<code>cargo</code>)<!-- : Antonia; Sean -->;</li>
+<li>characteristics (<code>caracteristica</code>)<!-- : Ali; Rawda -->;</li>
+<li>“descriptive names” (<code>nisba</code>)<!-- : Rawda; Ali -->;</li>
+</ul>
+<p><strong>How to do this assignment</strong>:</p>
+<ul>
+<li>you need to save the table that you are planning to work on into a TSV file;</li>
+<li>open it in some table editor. Perhaps, Google Spreadsheets will be the best option, since you can share your work with others, and/or work together. (On Mac, I really like <code>Easy CSV Editor</code>. It is not free (€6.99), but it is worth every penny.)</li>
+<li>add a column and create metacategories of your choice; keep in mind, that objectively there is no single correct way to do that. In real research you will go through multiple iterations of your categories. Additionally, as we discussed above, you may want/need to create multiple classifications with each suiting better for a particular research question.</li>
+<li>when you are done, share your tsv file.</li>
+</ul>
+</div>
+<div id="reference-materials-1" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Reference Materials<a href="deep-look-into-the-pua-dataset-1.html#reference-materials-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Wickham, Hadley. 2014. “Tidy Data.” <em>Journal of Statistical Software 59 (10)</em>. <a href="https://doi.org/10.18637/jss.v059.i10" class="uri">https://doi.org/10.18637/jss.v059.i10</a>. (The article in open access)</li>
+<li>Check these slides: A. Ginolhac, E. Koncina, R. Krause. <em>Principles of Tidy Data: tidyr</em> <a href="https://lsru.github.io/tv_course/lecture05_tidyr.html" class="uri">https://lsru.github.io/tv_course/lecture05_tidyr.html</a> (Also check their other lectures/slides: )</li>
+<li>Broman, Karl W., and Kara H. Woo. 2018. “Data Organization in Spreadsheets.” <em>The American Statistician</em> 72 (1): 2–10. <a href="https://doi.org/10.1080/00031305.2017.1375989" class="uri">https://doi.org/10.1080/00031305.2017.1375989</a>.</li>
+</ul>
+<p>The following book is a great example of modeling data for historical studies:</p>
+<ul>
+<li>Bulliet, Richard. 1979. <em>Conversion to Islam in the Medieval Period: An Essay in Quantitative History</em>. Cambridge: Harvard University Press.</li>
+<li>Morris, Ian. 2013. <em>The Measure of Civilization: How Social Development Decides the Fate of Nations</em>. Princeton: Princeton University Press.
+<ul>
+<li><strong>Note:</strong> This book is a methodological companion to: Morris, Ian. 2010. <em>Why the West Rules—for Now: The Patterns of History, and What They Reveal about the Future.</em> New York: Farrar, Straus and Giroux.</li>
+</ul></li>
+</ul>
+</div>
+<div id="appendix-1-pua-data-tables-1" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Appendix 1: PUA Data Tables<a href="deep-look-into-the-pua-dataset-1.html#appendix-1-pua-data-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="main-table-1" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Main Table<a href="deep-look-into-the-pua-dataset-1.html#main-table-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><code>personaje</code> :: this is essentially the main and the most important table that contains information on individuals;</li>
+</ul>
+</div>
+<div id="connection-tables-1" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Connection Tables<a href="deep-look-into-the-pua-dataset-1.html#connection-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following tables are <em>connection</em> tables that extend the main table by encoding additional information on individuals by connecting each individual to a specific types of information, which are described in auxiliary tables.</p>
+<p>For example, different specializations are described in the auxiliary table <code>disciplina</code>. The <em>connection</em> table <code>personaje_disciplina</code> connects IDs of individuals from the main <code>personaje</code> table with IDs of disciplines in the auxiliary table <code>disciplina</code>. Thus, each of these connection tables is connected to the table whose name appears after <code>_</code>. In some cases, these connection tables are connected to some other tables.</p>
+<ul>
+<li><code>personaje_actividad</code> :: activities of individuals;</li>
+<li><code>personaje_alias</code> :: aliases of individuals;</li>
+<li><code>personaje_caracteristica</code> :: characteristics of individuals;</li>
+<li><code>personaje_cargo</code> :: positions and offices of individuals;</li>
+<li><code>personaje_disciplina</code> :: specializations of individuals;</li>
+<li><code>personaje_fuente</code> :: sources in which individuals are mentioned; this one is connected to the metadata table <code>fuente</code>;</li>
+<li><code>personaje_lugar</code> :: connections of individuals to specific geographical places; also connected to <code>tiporelacionlugar</code>, which specify how exactly an individual is connected to a specific settlement;</li>
+<li><code>personaje_nisba</code> :: <em>associative names</em> (<em>nisbaŧ</em>s) of individuals that describe connection between individuals and some kind of entities. Here <em>nisbaŧ</em>s include: geographical, tribal, familial, and misc (unclassified).</li>
+<li><code>personaje_obra</code> :: books written by individuals; this one is not connected to any auxiliary table;</li>
+<li><code>personaje_referencia</code> :: research publications in which individuals are mentioned; this one is actually connected to the metadata table <code>bibliografia</code>;</li>
+<li><code>personaje_relacion</code> :: this table describes connections between individuals;</li>
+</ul>
+</div>
+<div id="auxiliary-tables-1" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> Auxiliary Tables<a href="deep-look-into-the-pua-dataset-1.html#auxiliary-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Auxiliary tables describe categorical entities through which individuals in the prosopographical section are described. In most cases individuals can be associated with multiple categories from each entity type (for example, individuals live in and visit multiple settlements), which requires one-to-many relationships.</p>
+<ul>
+<li><code>actividad</code> :: types of activities;</li>
+<li><code>caracteristica</code> :: types of personal characteristics;</li>
+<li><code>cargo</code> :: types of positions and offices;</li>
+<li><code>disciplina</code> :: types of specializations;</li>
+<li><code>familia</code> :: families; there is no separate table; family information is encoded in the main <code>personaje</code> table, since it is one-to-one relationship;</li>
+<li><code>keywords</code> :: ???</li>
+<li><code>lugar</code> :: settlements like villages, cities, islands;</li>
+<li><code>nisba</code> :: <em>associative/descriptive names</em> (<em>nisbaŧ</em>s);</li>
+<li><code>tiporelacion</code> :: this table described types of relationships with individuals;</li>
+<li><code>tiporelacionlugar</code> :: this table described types of relationships with settlements;</li>
+</ul>
+</div>
+<div id="metadata-tables-1" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> Metadata Tables<a href="deep-look-into-the-pua-dataset-1.html#metadata-tables-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following two tables do not have any information on individuals; rather they provide metadata on sources used in the creation of the database.</p>
+<ul>
+<li><code>autor</code> :: this table contains information on authors of primary sources used in the project;</li>
+<li><code>fuente</code> :: this table provides detailed information on each primary source;</li>
+<li><code>bibliografiA</code> :: this is the main bibliographical data of secondary sources of the project;</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-your-data-right.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizations-plot-and-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/eis1600/hdis-audition-statements/edit/main/071-Class07.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/eis1600/hdis-audition-statements/blob/main/071-Class07.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

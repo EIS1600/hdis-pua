@@ -1,0 +1,109 @@
+idDisciplina	nombre	nombre_castellano	cat1	descripcion	notas
+DIS00001	أسماء الرجال	Nombres de los tradicionistas	NA	NA	NA
+DIS00002	أصول الدين	Fundamentos de la Religión	NA	NA	NA
+DIS00003	أصول الفقه	Fundamentos del Derecho	NA	NA	NA
+DIS00004	إقراء القران	Enseñanza o recitación del Corán	NA	NA	NA
+DIS00005	الاثار	Tradiciones	NA	NA	NA
+DIS00006	الأحكام	Sentencias jurídicas	NA	NA	NA
+DIS00007	الأخبار	Noticias históricas	NA	NA	NA
+DIS00009	الأدب	Cultura literaria	NA	NA	NA
+DIS00010	الأدوية المفردة	Medicamentos simples	NA	NA	NA
+DIS00011	الأصول	Fundamentos (del Derecho o de la Religión)	NA	NA	NA
+DIS00012	الإعراب	Sintaxis desinencial	NA	NA	NA
+DIS00013	الإقراء	Recitación del Corán o enseñanza por medio de la lectura	NA	NA	NA
+DIS00015	البلاغة	Retórica	NA	NA	NA
+DIS00016	التأديب	Enseñanza de Literatura	NA	Ver sobre ello la descripción que hace al-Zubaydī en la biografía de Muḥammad b. Yaḥyà al-Rabāḥī (IZ2, p. 311).	NA
+DIS00017	التاريخ	Historia	NA	NA	NA
+DIS00019	الخط	Caligrafía	NA	NA	NA
+DIS00020	الخطابة	Retórica, arte de predicar	NA	NA	NA
+DIS00021	الخلاف	Controversias jurídico-religiosas	NA	NA	NA
+DIS00022	التعديل (صناعة)	Astronomía	NA	NA	NA
+DIS00023	الرأي	Opinión personal en materia de Derecho	NA	NA	NA
+DIS00024	الرجال	Disciplina que se ocupa del estudio de los transmisores de la Tradición Profética.	NA	NA	NA
+DIS00025	الرواية	Transmisión	NA	NA	NA
+DIS00026	الزهد	Ascetismo	NA	NA	NA
+DIS00027	الشروط	Contratos	NA	NA	NA
+DIS00028	الشعر	Poesía	NA	NA	NA
+DIS00029	الطب	Medicina	NA	NA	NA
+DIS00030	العبارة	Onirología	NA	NA	NA
+DIS00032	العدد	Aritmética	NA	NA	NA
+DIS00033	العربية	Lengua árabe	NA	NA	NA
+DIS00034	العروض	Métrica	NA	NA	NA
+DIS00036	الفتيا	Fetua, dictamen de un jurisconsulto	NA	NA	NA
+DIS00037	الفرائض	Partición de herencias	NA	NA	NA
+DIS00038	الفرض	Cálculo de herencias	NA	NA	NA
+DIS00039	الفصاحة	Elocuencia, Oratoria	NA	NA	NA
+DIS00040	الفقه	Derecho islámico	NA	NA	NA
+DIS00041	الفلسفة	Filosofía	NA	NA	NA
+DIS00042	القراءات	Lecturas coránicas	NA	Formas de leer el Corán	NA
+DIS00043	القراءة	Lectura del Corán, arte de leerlo	NA	NA	NA
+DIS00044	القران	El Corán	NA	NA	NA
+DIS00045	الكتابة	Arte u oficio de la escribanía	NA	NA	NA
+DIS00046	الكتابة السلطانية	Cancillería	NA	NA	NA
+DIS00047	الكلام	Teología dogmática	NA	NA	NA
+DIS00048	اللغة، اللغات	Lexicografía	NA	NA	NA
+DIS00049	المسائل	Cuestiones jurídicas	NA	NA	NA
+DIS00050	المساحة	Geometría	NA	NA	NA
+DIS00051	المنطق	Lógica	NA	NA	NA
+DIS00052	الموسيقية	Música	NA	NA	NA
+DIS00053	النثر	Prosa	NA	NA	NA
+DIS00054	النجوم، التنجيم	Los astros, ʿilm al-nuğūm = Astrología, Astronomía	NA	NA	NA
+DIS00055	النحو	Gramática	NA	NA	NA
+DIS00056	النوازل	Fetuas, dictámenes jurídicos	NA	NA	NA
+DIS00057	الهندسة	Geometría	NA	NA	NA
+DIS00058	الوثائق	Formularios, documentos jurídicos	NA	NA	NA
+DIS00059	تفسير القران	Exégesis coránica	NA	NA	NA
+DIS00061	فرائض المواريث	Partición de herencias	NA	NA	NA
+DIS00063	معاني الشعر	Explanación de la poesía	NA	NA	NA
+DIS00067	التفسير	Exégesis coránica	NA	NA	NA
+DIS00069	المذهب [المالكي]	Escuela jurídica [mālikí]	NA	NA	NA
+DIS00070	الحديث	Tradición profética	NA	Relato de lo que Muḥammad dijo o hizo o su aprobación tácita de algo dicho o hecho en su presencia.	Robson, J., “Ḥadīth”, in: Encyclopaedia of Islam, Second Edition, Edited by: P. Bearman, Th. Bianquis, C.E. Bosworth, E. van Donzel, W.P. Heinrichs. Consulted online on 12 July 2016 <http://dx.doi.org/10.1163/1573-3912_islam_COM_0248>
+DIS00071	علل الحديث	Reglas del ḥadīṯ	NA	NA	NA
+DIS00072	الغريب	Términos raros	NA	NA	NA
+DIS00073	الحساب	Cálculo	NA	NA	NA
+DIS00074	الفتوى	Fetua, dictamen de un jurisconsulto sobre una pregunta relativa al Derecho	NA	NA	NA
+DIS00075	‎الاعتقاد	Dogma	NA	NA	NA
+DIS00077	المناظرة	Dialéctica, controversia	NA	NA	NA
+DIS00078	سماع العلم	estudio del saber	NA	NA	NA
+DIS00080	الوراقة	oficio de copista	NA	NA	NA
+DIS00081	علم المعاني	Retórica	NA	NA	NA
+DIS00084	عقد الشروط	Redacción de contratos	NA	NA	NA
+DIS00085	الفتية	Respuesta a una consulta jurídica	NA	NA	NA
+DIS00117	الأنساب	Genealogías	NA	NA	NA
+DIS00088	فروع الفقه، الفروع	Normas prácticas derivadas de los principios fundamentales	NA	Casuística o normas prácticas derivadas de la aplicación de las fuentes del derecho. Incluirían las distintas ramas: partición de herencias (farāʾiḍ), contratos (šurūṭ), documentos (waṯāʾiq), etc.	NA
+DIS00115	علوم الرياضية	ciencias exactas	NA	aritmética, geometría, astronomía y música.	NA
+DIS00093	الموسيقى	Música	NA	NA	NA
+DIS00094	التعاليم	Matemáticas	NA	NA	NA
+DIS00096	الأداب	Humanidades	NA	NA	NA
+DIS00098	لغة العرب	Lengua árabe	NA	NA	NA
+DIS00099	معاني الحديث	Explanación del ḥadīṯ	NA	NA	NA
+DIS00108	عقد الوثائق	Redacción de documentos jurídicos	NA	NA	NA
+DIS00111	التعبير	Onirología	NA	NA	NA
+DIS00114	التلاوة	Recitación coránica	NA	NA	NA
+DIS00118	المشاهد	combates?, santuarios	NA	El término significa santuario erigido sobre la tumba de un santo, pero parece que también se aplica a algún episodio histórico, como pueden ser los combates de los primeros tiempos del Islam. A ellos harían referencia los Kutub al-mašāhid.	NA
+DIS00119	أيام العرب (الأيام)	Ayyām al-ʿarab	NA	Los ""Días de los árabes"" narran los combates entre las tribus árabes en época preislámica y en los primeros tiempos del Islam.	Mittwoch, E.. "" Ayyām al-ʿArab."" Encyclopaedia of Islam, Second Edition. Brill Online , 2012. Reference. Escuela de Estudios Arabes (CSIC). 04 September 2012 <http://referenceworks.brillonline.com/entries/encyclopaedia-of-islam-2/ayyam-al-arab-SIM_0926>
+DIS00120	النظم	Poesía	NA	NA	NA
+DIS00121	النبات	Botánica	NA	NA	NA
+DIS00122	التجويد	Recitación del Corán salmodiando	NA	NA	NA
+DIS00123	علم أقيدس	Ciencia de Euclides, Matemática	NA	NA	NA
+DIS00124	علوم الأوائل	Ciencias clásicas, de los antiguos	NA	NA	NA
+DIS00125	السنة، السنن	Tradición profética	NA	Prácticas de conducta y en especial las de Muḥammad, sus hechos y sus dichos. Constituyen una de las fuentes de la ley islámica.	NA
+DIS00126	اللسان	NA	NA	NA	NA
+DIS00127	النظر	NA	NA	NA	NA
+DIS00128	الاختلاف	diferencia de opinión entre escuelas jurídicas	NA	NA	NA
+DIS00129	المذاهب	Escuelas jurídicas	NA	NA	NA
+DIS00130	الحجة	Argumento, prueba	NA	NA	NA
+DIS00131	الدليل	Argumento, prueba	NA	NA	NA
+DIS00132	التصريف	Morfología	NA	NA	NA
+DIS00133	الجدال	Método de debate filosófico o jurídico	NA	NA	NA
+DIS00134	الأثار	Tradición	NA	NA	NA
+DIS00135	علوم الأقدمين	Ciencias de los antiguos	NA	NA	NA
+DIS00136	الأقضية	Sentencias judiciales	NA	NA	NA
+DIS00137	الخبر	ḫabar	NA	Some ḥadīth experts understand the terms ḥadīth, khabar (report), and athar (trace, vestige, relic) as synonyms. Others distinguish between khabar as any transmitted knowledge (or a historical report in particular), ḥadīth as a tradition about the Prophet, and athar as a report about the Companions and Successors.</br>
+Pavlovitch, Pavel, “Ḥadīth”, in: Encyclopaedia of Islam, THREE, Edited by: Kate Fleet, Gudrun Krämer, Denis Matringe, John Nawas, Everett Rowson. Consulted online on 17 July 2018 <http://dx.doi.org/10.1163/1573-3912_ei3_COM_30163>	NA
+DIS00138	الذكر	invocación repetida de Dios	NA	NA	NA
+DIS00139	العدالة	NA	NA	NA	NA
+DIS00140	معاني القرآن	Explanación del Corán	NA	NA	NA
+DIS00141	الحفظ	memorización	NA	NA	NA
+DIS00142	العقود	contratos	NA	NA	NA
+DIS00143	الرقائق	Admoniciones	NA	NA	NA

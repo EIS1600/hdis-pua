@@ -158,7 +158,7 @@ Organizing files and folders for research projects is crucial for efficient proj
 Example of a folder structure:
 
 ```
-57-528_DH_in_AAS_PUA_R/
+PROJECT/
     ├── Data/
     │   ├── Raw_Data/
     │   └── Processed_Data/

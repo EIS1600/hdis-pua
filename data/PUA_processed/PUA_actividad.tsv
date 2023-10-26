@@ -1,0 +1,126 @@
+idActividad	nombre	nombre_castellano	cat1
+ACT00001	أبار	fabricante de agujas	NA
+ACT00002	أديب	letrado	NA
+ACT00003	أديبة	letrada	NA
+ACT00007	بواب	portero	NA
+ACT00008	سقاط	ropavejero	NA
+ACT00009	جنان	jardinero	NA
+ACT00010	حجام	sangrador, barbero	NA
+ACT00011	حصار	espartero, esterero	NA
+ACT00012	صفار	artesano del cobre	NA
+ACT00013	حناط	comerciante de trigo	NA
+ACT00014	عريف	alarife, arquitecto	NA
+ACT00015	دهان	comerciante o fabricante de ungüentos, boticario	NA
+ACT00016	دجاج	pollero	NA
+ACT00017	متكلم	teólogo dogmático	NA
+ACT00018	فراء	peletero	NA
+ACT00019	نظام	joyero	NA
+ACT00020	عشاب	herborista	NA
+ACT00022	كواب	tonelero	NA
+ACT00024	غزال	hilandero, comerciante de hilo	NA
+ACT00026	مقرىء	almocrí	NA
+ACT00027	مكتب	maestro de escritura	NA
+ACT00029	نسابة	genealogista	NA
+ACT00030	إمام	imán	NA
+ACT00031	رياضي	matemático	NA
+ACT00032	أمين	alamín	NA
+ACT00034	تاجر	comerciante	NA
+ACT00035	تاريخي	historiador	NA
+ACT00037	صباغ	tintorero	NA
+ACT00174	فقيه ظاهري	alfaquí zāhirí	NA
+ACT00039	قزاز	mercader de seda	NA
+ACT00040	راوية	transmisor	NA
+ACT00041	عادل	notario	NA
+ACT00042	شاعر	poeta	NA
+ACT00043	شاعرة	poetisa	NA
+ACT00044	شاهد	testigo	NA
+ACT00045	صيقل	bruñidor	NA
+ACT00046	طبيب	médico	NA
+ACT00051	لؤلؤي	comerciante de perlas	NA
+ACT00052	زيات	aceitero	NA
+ACT00053	عروضي	versado en prosodia	NA
+ACT00054	بيطار	veterinario	NA
+ACT00055	صابوني	jabonero	NA
+ACT00056	صائغ	orfebre	NA
+ACT00057	فرضي	partidor de herencias	NA
+ACT00058	منجم	astrólogo o astrónomo	NA
+ACT00059	فقيه	alfaquí	NA
+ACT00060	فقيه مالكي	alfaquí mālikí	NA
+ACT00061	شقاق	lencero	NA
+ACT00064	قارىء	lector (del Corán)	NA
+ACT00065	قنازعي	fabricante de qanāziʿ	NA
+ACT00067	فقيه شافعي	alfaquí šāfiʿí	NA
+ACT00068	كاتب	secretario, escribano	NA
+ACT00069	لغوي	lexicógrafo	NA
+ACT00070	مؤدب	preceptor	NA
+ACT00071	مؤدب بالحساب	preceptor de cálculo	NA
+ACT00072	مؤدب بالعربية	preceptor de lengua árabe	NA
+ACT00073	قسام	repartidor de herencias	NA
+ACT00074	مدرس	preceptor	NA
+ACT00075	مشاور	consejero	NA
+ACT00076	معلم	maestro	NA
+ACT00077	معلم القران	maestro del Corán	NA
+ACT00081	نحوي	gramático	NA
+ACT00082	نساب	genealogista	NA
+ACT00083	واعظ	predicador	NA
+ACT00085	خياط	alfayate, sastre	NA
+ACT00086	عاقد للشروط	redactor de contratos	NA
+ACT00088	خفاف	fabricante de botines	NA
+ACT00090	بزاز	comerciante de tejidos	NA
+ACT00091	محدث	tradicionista	NA
+ACT00093	فيلسوف	filósofo	NA
+ACT00094	جندي	soldado	NA
+ACT00096	عطار	especiero, perfumista	NA
+ACT00097	غاسل	lavador de cadáveres	NA
+ACT00099	ي	NA	NA
+ACT00100	عواد	laudista; fabricante de carretas	NA
+ACT00169	نقاط	puntuador de manuscritos	NA
+ACT00103	رفاء	zurcidor	NA
+ACT00104	خراط	tornero	NA
+ACT00106	سراج	guarnicionero	NA
+ACT00107	نباتي	herborista	NA
+ACT00108	خراز	zapatero remendón	NA
+ACT00165	حذاء	zapatero	NA
+ACT00110	بزار	comerciante de grano	NA
+ACT00111	أصولي	experto en uṣūl	NA
+ACT00112	طراز	bordador	NA
+ACT00113	قارىءة	lectora (del Corán)	NA
+ACT00114	كاتبة	secretaria, escribana	NA
+ACT00115	بناء	albañil; arquitecto	NA
+ACT00118	نقاش	grabador	NA
+ACT00121	ي	NA	NA
+ACT00123	طحان	molinero	NA
+ACT00124	حمار	acemilero	NA
+ACT00126	عاقد الوثائق	redactor de documentos jurídicos	NA
+ACT00127	نحاس	calderero	NA
+ACT00128	حفار	sepulturero	NA
+ACT00172	عددي	matemático	NA
+ACT00131	صيدلاني	droguero	NA
+ACT00132	قراق	fabricante de sandalias con suela de corcho	NA
+ACT00134	أستاذ	maestro	NA
+ACT00135	معلم كتاب	maestro de escuela	NA
+ACT00136	قارىء للقران	lector del Corán	NA
+ACT00137	خازن	tesorero	NA
+ACT00138	خشاب	comerciante de madera	NA
+ACT00139	قفال	cerrajero	NA
+ACT00140	حاسب	persona dedicada al cálculo	NA
+ACT00141	متأدب	preceptor	NA
+ACT00143	قطان	fabricante o mercader de tejidos de algodón	NA
+ACT00144	لحام	carnicero	NA
+ACT00145	مؤرخ	historiador	NA
+ACT00147	دباغ	curtidor	NA
+ACT00148	حكيم	médico	NA
+ACT00151	متطبب	médico	NA
+ACT00152	قلاس	comerciante o fabricante de qalānis	NA
+ACT00155	عاقد	redactor de contratos	NA
+ACT00167	رئيس	persona preeminente	NA
+ACT00157	وراق	copista	NA
+ACT00159	أخباري	historiador	NA
+ACT00160	حرار	sedero	NA
+ACT00164	جباب	fabricante de aljubas	NA
+ACT00170	فخار	alfarero	NA
+ACT00171	عالم	experto en ciencias islámicas	NA
+ACT00173	حداد	herrero, comerciante en hierro	NA
+ACT00175	خطيب	predicador	NA
+ACT00176	سكان	cuchillero	NA
+ACT00177	معلمة	maestra	NA
