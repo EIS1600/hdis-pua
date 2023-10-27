@@ -4,7 +4,7 @@
 
 Let's begin with loading necessary libraries and the PUA data.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 
 library(tidyverse)
 

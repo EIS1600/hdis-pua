@@ -23,7 +23,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2023-10-26" />
+<meta name="date" content="2023-10-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -459,8 +459,8 @@ div.csl-indent {
 <div id="deep-look-into-the-pua-dataset" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">8</span> Deep Look into the PUA Dataset<a href="deep-look-into-the-pua-dataset.html#deep-look-into-the-pua-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The models of the PUA database essentially looks like the graph below.</p>
-<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2c33a69c06c2b75c15e8" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-2c33a69c06c2b75c15e8">{"x":{"diagram":"\ngraph LR;\npersonaje-->personaje_lugar\npersonaje_lugar-->lugar\npersonaje-->personaje_actividad\npersonaje_actividad-->actividad\npersonaje-->personaje_disciplina\npersonaje_disciplina-->disciplina\npersonaje-->personaje_caracteristica\npersonaje_caracteristica\npersonaje-->personaje_cargo\npersonaje-->personaje_nisba\npersonaje-->personaje_obra\npersonaje-->personaje_relacion\npersonaje-->personaje_fuente\npersonaje-->personaje_referencia\n\nfuente-->author\npersonaje_cargo-->cargo\npersonaje_nisba-->nisba\npersonaje_obra-->obra\npersonaje_relacion-->personaje\npersonaje_fuente-->fuente\npersonaje_referencia-->bibliografia\n\npersonaje-->familia\npersonaje_relacion-->tiporelacion\npersonaje_lugar-->tiporelacionlugar\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-57a81e5b5b423559abe2" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-57a81e5b5b423559abe2">{"x":{"diagram":"\ngraph LR;\npersonaje-->personaje_lugar\npersonaje_lugar-->lugar\npersonaje-->personaje_actividad\npersonaje_actividad-->actividad\npersonaje-->personaje_disciplina\npersonaje_disciplina-->disciplina\npersonaje-->personaje_caracteristica\npersonaje_caracteristica\npersonaje-->personaje_cargo\npersonaje-->personaje_nisba\npersonaje-->personaje_obra\npersonaje-->personaje_relacion\npersonaje-->personaje_fuente\npersonaje-->personaje_referencia\n\nfuente-->author\npersonaje_cargo-->cargo\npersonaje_nisba-->nisba\npersonaje_obra-->obra\npersonaje_relacion-->personaje\npersonaje_fuente-->fuente\npersonaje_referencia-->bibliografia\n\npersonaje-->familia\npersonaje_relacion-->tiporelacion\npersonaje_lugar-->tiporelacionlugar\n"},"evals":[],"jsHooks":[]}</script>
 <p>In other words, we have::</p>
 <ul>
 <li>the <strong>main table</strong> <code>personaje</code> that contains data on individuals, limited to: their names, dates, and familial affiliations (other columns are either variants of these, or not relevant to the overall analysis);</li>
@@ -489,8 +489,8 @@ idPersonaje, type, value
 <p><em>On the use of this structure, see</em>: Romanov, M. (2017). Algorithmic Analysis of Medieval Arabic Biographical Collections. <em>Speculum</em>. <a href="https://doi.org/10.1086/693970" class="uri">https://doi.org/10.1086/693970</a> (The article is available at: <a href="https://www.journals.uchicago.edu/doi/full/10.1086/693970" class="uri">https://www.journals.uchicago.edu/doi/full/10.1086/693970</a>)</p>
 </blockquote>
 <p>The structure of the new dataset will be:</p>
-<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-b9e4bd29925a7cfdf18f" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-b9e4bd29925a7cfdf18f">{"x":{"diagram":"\n    graph LR\n    personaje-->lugar\n    personaje-->actividad\n    personaje-->disciplina\n    personaje-->caracteristica\n    personaje-->cargo\n    personaje-->nisba\n    personaje-->obra\n    personaje-->fuente\n    personaje-->bibliografia\n    personaje-->familia\n    fuente-->author\n"},"evals":[],"jsHooks":[]}</script>
+<div class="DiagrammeR html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-84a32740d1cb276d34b2" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-84a32740d1cb276d34b2">{"x":{"diagram":"\n    graph LR\n    personaje-->lugar\n    personaje-->actividad\n    personaje-->disciplina\n    personaje-->caracteristica\n    personaje-->cargo\n    personaje-->nisba\n    personaje-->obra\n    personaje-->fuente\n    personaje-->bibliografia\n    personaje-->familia\n    fuente-->author\n"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="normalized-and-improved-pua-dataset" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Normalized and Improved PUA Dataset<a href="deep-look-into-the-pua-dataset.html#normalized-and-improved-pua-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
