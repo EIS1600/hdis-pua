@@ -52,14 +52,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
-<script src="libs/d3-3.3.8/d3.min.js"></script>
-<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
-<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
-<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/chromatography-0.1/chromatography.js"></script>
-<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -130,28 +122,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <style type="text/css">
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -231,35 +201,38 @@ div.csl-indent {
 <li class="chapter" data-level="4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation I</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#this-chapter-1"><i class="fa fa-check"></i><b>4.1</b> This Chapter</a></li>
-<li class="chapter" data-level="4.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#why-tidyverse"><i class="fa fa-check"></i><b>4.2</b> Why <code>tidyverse</code>?</a></li>
-<li class="chapter" data-level="4.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-data-file-formats-csv-and-tsv"><i class="fa fa-check"></i><b>4.3</b> Main Data File Formats: CSV and TSV</a></li>
-<li class="chapter" data-level="4.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-data-into-r"><i class="fa fa-check"></i><b>4.4</b> Loading Data into R</a>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-data-structures-review"><i class="fa fa-check"></i><b>4.2</b> Main Data Structures — Review</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#why-tidyverse"><i class="fa fa-check"></i><b>4.3</b> Why <code>tidyverse</code>?</a></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-data-file-formats-csv-and-tsv"><i class="fa fa-check"></i><b>4.4</b> Main Data File Formats: CSV and TSV</a></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-data-into-r"><i class="fa fa-check"></i><b>4.5</b> Loading Data into R</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-csv-and-tsv-files"><i class="fa fa-check"></i><b>4.4.1</b> Loading CSV and TSV files</a></li>
-<li class="chapter" data-level="4.4.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#r-specific-data-format-rds"><i class="fa fa-check"></i><b>4.4.2</b> R-specific Data “Format”: RDS</a></li>
+<li class="chapter" data-level="4.5.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-csv-and-tsv-files"><i class="fa fa-check"></i><b>4.5.1</b> Loading CSV and TSV files</a></li>
+<li class="chapter" data-level="4.5.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#r-specific-data-format-rds"><i class="fa fa-check"></i><b>4.5.2</b> R-specific Data “Format”: RDS</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-pua-data"><i class="fa fa-check"></i><b>4.5</b> Loading PUA data</a></li>
-<li class="chapter" data-level="4.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#exploring-pua-data"><i class="fa fa-check"></i><b>4.6</b> Exploring PUA Data</a></li>
-<li class="chapter" data-level="4.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-commands-for-engaging-with-a-tibble"><i class="fa fa-check"></i><b>4.7</b> Main commands for engaging with a tibble</a>
+<li class="chapter" data-level="4.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-pua-data"><i class="fa fa-check"></i><b>4.6</b> Loading PUA data</a></li>
+<li class="chapter" data-level="4.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#pua-dataset-technical-description"><i class="fa fa-check"></i><b>4.7</b> PUA Dataset Technical Description</a></li>
+<li class="chapter" data-level="4.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#exploring-pua-data"><i class="fa fa-check"></i><b>4.8</b> Exploring PUA Data</a></li>
+<li class="chapter" data-level="4.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-commands-for-engaging-with-a-tibble"><i class="fa fa-check"></i><b>4.9</b> Main commands for engaging with a tibble</a>
 <ul>
-<li class="chapter" data-level="4.7.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#chaining-with"><i class="fa fa-check"></i><b>4.7.1</b> Chaining with <code>%&gt;%</code></a></li>
+<li class="chapter" data-level="4.9.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#chaining-with"><i class="fa fa-check"></i><b>4.9.1</b> Chaining with <code>%&gt;%</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-dplyr"><i class="fa fa-check"></i><b>4.8</b> Important Functions from <code>dplyr</code></a></li>
-<li class="chapter" data-level="4.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-tidyr"><i class="fa fa-check"></i><b>4.9</b> Important Functions from <code>tidyr</code></a></li>
-<li class="chapter" data-level="4.10" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#function-usage"><i class="fa fa-check"></i><b>4.10</b> Function usage</a>
+<li class="chapter" data-level="4.10" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-dplyr"><i class="fa fa-check"></i><b>4.10</b> Important Functions from <code>dplyr</code></a></li>
+<li class="chapter" data-level="4.11" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-tidyr"><i class="fa fa-check"></i><b>4.11</b> Important Functions from <code>tidyr</code></a></li>
+<li class="chapter" data-level="4.12" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#function-usage"><i class="fa fa-check"></i><b>4.12</b> Function usage</a>
 <ul>
-<li class="chapter" data-level="4.10.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#filter"><i class="fa fa-check"></i><b>4.10.1</b> <code>filter()</code></a></li>
-<li class="chapter" data-level="4.10.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#select"><i class="fa fa-check"></i><b>4.10.2</b> <code>select()</code></a></li>
-<li class="chapter" data-level="4.10.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#mutate-and-transmute"><i class="fa fa-check"></i><b>4.10.3</b> <code>mutate()</code> and <code>transmute()</code></a></li>
-<li class="chapter" data-level="4.10.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#rename"><i class="fa fa-check"></i><b>4.10.4</b> <code>rename()</code></a></li>
-<li class="chapter" data-level="4.10.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#arrange"><i class="fa fa-check"></i><b>4.10.5</b> <code>arrange()</code></a></li>
-<li class="chapter" data-level="4.10.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#group_by-ungroup"><i class="fa fa-check"></i><b>4.10.6</b> <code>group_by()</code> / <code>ungroup()</code></a></li>
-<li class="chapter" data-level="4.10.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#summarise-or-summarize"><i class="fa fa-check"></i><b>4.10.7</b> <code>summarise()</code> or <code>summarize()</code></a></li>
-<li class="chapter" data-level="4.10.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#join_-functions"><i class="fa fa-check"></i><b>4.10.8</b> <code>join_*</code> functions</a></li>
-<li class="chapter" data-level="4.10.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#pivot_-functions"><i class="fa fa-check"></i><b>4.10.9</b> <code>pivot_*()</code> functions</a></li>
+<li class="chapter" data-level="4.12.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#filter"><i class="fa fa-check"></i><b>4.12.1</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="4.12.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#select"><i class="fa fa-check"></i><b>4.12.2</b> <code>select()</code></a></li>
+<li class="chapter" data-level="4.12.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#mutate-and-transmute"><i class="fa fa-check"></i><b>4.12.3</b> <code>mutate()</code> and <code>transmute()</code></a></li>
+<li class="chapter" data-level="4.12.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#rename"><i class="fa fa-check"></i><b>4.12.4</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="4.12.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#arrange"><i class="fa fa-check"></i><b>4.12.5</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="4.12.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#group_by-ungroup"><i class="fa fa-check"></i><b>4.12.6</b> <code>group_by()</code> / <code>ungroup()</code></a></li>
+<li class="chapter" data-level="4.12.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#summarise-or-summarize"><i class="fa fa-check"></i><b>4.12.7</b> <code>summarise()</code> or <code>summarize()</code></a></li>
+<li class="chapter" data-level="4.12.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#join_-functions"><i class="fa fa-check"></i><b>4.12.8</b> <code>join_*</code> functions</a></li>
+<li class="chapter" data-level="4.12.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#pivot_-functions"><i class="fa fa-check"></i><b>4.12.9</b> <code>pivot_*()</code> functions</a></li>
 </ul></li>
-<li class="chapter" data-level="4.11" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#homework-tasks"><i class="fa fa-check"></i><b>4.11</b> Homework Tasks</a></li>
-<li class="chapter" data-level="4.12" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#appendix-window-function-in-tidyverse"><i class="fa fa-check"></i><b>4.12</b> Appendix: “Window” function in <code>tidyverse</code></a></li>
+<li class="chapter" data-level="4.13" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#homework-tasks"><i class="fa fa-check"></i><b>4.13</b> Homework Tasks</a></li>
+<li class="chapter" data-level="4.14" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#appendix-window-function-in-tidyverse"><i class="fa fa-check"></i><b>4.14</b> Appendix: “Window” function in <code>tidyverse</code></a></li>
+<li class="chapter" data-level="4.15" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#appendix-pua-database-description"><i class="fa fa-check"></i><b>4.15</b> Appendix: PUA Database Description</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation II</a>
 <ul>
@@ -366,21 +339,23 @@ div.csl-indent {
 <li class="chapter" data-level="9.6.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds"><i class="fa fa-check"></i><b>9.6.5</b> 5. Wordclouds</a></li>
 </ul></li>
 <li class="chapter" data-level="9.7" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-assignment-1"><i class="fa fa-check"></i><b>9.7</b> Homework assignment</a></li>
-<li class="chapter" data-level="9.8" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendices"><i class="fa fa-check"></i><b>9.8</b> Appendices</a>
+<li class="chapter" data-level="9.8" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#final-word"><i class="fa fa-check"></i><b>9.8</b> Final word</a></li>
+<li class="chapter" data-level="9.9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#graphing-data"><i class="fa fa-check"></i><b>9.9</b> Graphing Data</a></li>
+<li class="chapter" data-level="9.10" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendices"><i class="fa fa-check"></i><b>9.10</b> Appendices</a>
 <ul>
-<li class="chapter" data-level="9.8.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-1-when-a-simple-table-may-suffice"><i class="fa fa-check"></i><b>9.8.1</b> Appendix 1: When a “Simple” Table May Suffice</a></li>
+<li class="chapter" data-level="9.10.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-1-when-a-simple-table-may-suffice"><i class="fa fa-check"></i><b>9.10.1</b> Appendix 1: When a “Simple” Table May Suffice</a></li>
 </ul></li>
-<li class="chapter" data-level="9.9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-interactive-graphs"><i class="fa fa-check"></i><b>9.9</b> Appendix: Interactive Graphs</a>
+<li class="chapter" data-level="9.11" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-interactive-graphs"><i class="fa fa-check"></i><b>9.11</b> Appendix: Interactive Graphs</a>
 <ul>
-<li class="chapter" data-level="9.9.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-checklist-for-creating-visualizations"><i class="fa fa-check"></i><b>9.9.1</b> Appendix: Checklist for Creating Visualizations</a></li>
+<li class="chapter" data-level="9.11.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-checklist-for-creating-visualizations"><i class="fa fa-check"></i><b>9.11.1</b> Appendix: Checklist for Creating Visualizations</a></li>
 </ul></li>
-<li class="chapter" data-level="9.10" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-scientific-notation"><i class="fa fa-check"></i><b>9.10</b> Appendix: Scientific Notation</a></li>
-<li class="chapter" data-level="9.11" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-solutions-partial"><i class="fa fa-check"></i><b>9.11</b> Homework solutions (partial)</a>
+<li class="chapter" data-level="9.12" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-scientific-notation"><i class="fa fa-check"></i><b>9.12</b> Appendix: Scientific Notation</a></li>
+<li class="chapter" data-level="9.13" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-solutions-partial"><i class="fa fa-check"></i><b>9.13</b> Homework solutions (partial)</a>
 <ul>
-<li class="chapter" data-level="9.11.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts-1"><i class="fa fa-check"></i><b>9.11.1</b> Line charts</a></li>
-<li class="chapter" data-level="9.11.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts-1"><i class="fa fa-check"></i><b>9.11.2</b> 3. Bar charts</a></li>
-<li class="chapter" data-level="9.11.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms-1"><i class="fa fa-check"></i><b>9.11.3</b> 4. Histograms</a></li>
-<li class="chapter" data-level="9.11.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds---homework"><i class="fa fa-check"></i><b>9.11.4</b> 5. Wordclouds - Homework</a></li>
+<li class="chapter" data-level="9.13.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts-1"><i class="fa fa-check"></i><b>9.13.1</b> Line charts</a></li>
+<li class="chapter" data-level="9.13.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts-1"><i class="fa fa-check"></i><b>9.13.2</b> 3. Bar charts</a></li>
+<li class="chapter" data-level="9.13.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms-1"><i class="fa fa-check"></i><b>9.13.3</b> 4. Histograms</a></li>
+<li class="chapter" data-level="9.13.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds---homework"><i class="fa fa-check"></i><b>9.13.4</b> 5. Wordclouds - Homework</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html"><i class="fa fa-check"></i><b>10</b> Overview of the PUA dataset</a>
@@ -391,6 +366,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.2.1" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#looking-at-the-data"><i class="fa fa-check"></i><b>10.2.1</b> Looking at the data</a></li>
 <li class="chapter" data-level="10.2.2" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#reorganization-conceptual-model-for-your-data"><i class="fa fa-check"></i><b>10.2.2</b> Reorganization: Conceptual Model For Your Data</a></li>
 <li class="chapter" data-level="10.2.3" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#improving-pua-data"><i class="fa fa-check"></i><b>10.2.3</b> Improving PUA Data</a></li>
+<li class="chapter" data-level="10.2.4" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#from-the-previous-lesson"><i class="fa fa-check"></i><b>10.2.4</b> From the previous lesson</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html"><i class="fa fa-check"></i><b>11</b> Understanding Geographical Maps</a>
@@ -481,36 +457,36 @@ div.csl-indent {
 <div id="modeling-regions" class="section level2 hasAnchor" number="12.1">
 <h2><span class="header-section-number">12.1</span> Modeling Regions<a href="modeling-complex-entities.html#modeling-regions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let’s begin with loading necessary libraries and the PUA data.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="modeling-complex-entities.html#cb195-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb195-2"><a href="modeling-complex-entities.html#cb195-2" tabindex="-1"></a></span>
-<span id="cb195-3"><a href="modeling-complex-entities.html#cb195-3" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb195-4"><a href="modeling-complex-entities.html#cb195-4" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
-<span id="cb195-5"><a href="modeling-complex-entities.html#cb195-5" tabindex="-1"></a><span class="fu">library</span>(rnaturalearthdata)</span>
-<span id="cb195-6"><a href="modeling-complex-entities.html#cb195-6" tabindex="-1"></a></span>
-<span id="cb195-7"><a href="modeling-complex-entities.html#cb195-7" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span>
-<span id="cb195-8"><a href="modeling-complex-entities.html#cb195-8" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span>
-<span id="cb195-9"><a href="modeling-complex-entities.html#cb195-9" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb195-10"><a href="modeling-complex-entities.html#cb195-10" tabindex="-1"></a></span>
-<span id="cb195-11"><a href="modeling-complex-entities.html#cb195-11" tabindex="-1"></a>PUA <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="modeling-complex-entities.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="modeling-complex-entities.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="modeling-complex-entities.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-4"><a href="modeling-complex-entities.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb1-5"><a href="modeling-complex-entities.html#cb1-5" tabindex="-1"></a><span class="fu">library</span>(rnaturalearthdata)</span>
+<span id="cb1-6"><a href="modeling-complex-entities.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="modeling-complex-entities.html#cb1-7" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span>
+<span id="cb1-8"><a href="modeling-complex-entities.html#cb1-8" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb1-9"><a href="modeling-complex-entities.html#cb1-9" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb1-10"><a href="modeling-complex-entities.html#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="modeling-complex-entities.html#cb1-11" tabindex="-1"></a>PUA <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList.rds&quot;</span>)</span></code></pre></div>
 <p>We now can load the prepared basemap and then customize its appearance with a theme, or load a basemaps with a theme already applied. This way we can now focus only on the data that needs to be added to the basemap.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="modeling-complex-entities.html#cb196-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;./data/basemap/base_plot_andalus_themed.RData&quot;</span>)</span>
-<span id="cb196-2"><a href="modeling-complex-entities.html#cb196-2" tabindex="-1"></a>base_plot_andalus_themed</span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="modeling-complex-entities.html#cb2-1" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;./data/basemap/base_plot_andalus_themed.RData&quot;</span>)</span>
+<span id="cb2-2"><a href="modeling-complex-entities.html#cb2-2" tabindex="-1"></a>base_plot_andalus_themed</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>We have discussed an option of grouping toponyms into regions by some kind of historical administrative divisions. However, we also ran into a problem of instability of such aggregations, which complicates this task.</p>
 <p>Another option—or, perhaps, a complimentary option—is to aggregate smaller toponyms into larger places algorithmically. Namely, we can select a certain number of settlements that would act as magnets (let’s call them gravitons), absorbing smaller places (let’s call them satellites). We can make a selection of gravitons based on their importance: for example, based on how many people we find associated with those places in the PUA data. Then, we can then use some algorithmic solution to associate all minor places with the closest graviton. For example, we can calculate distances* from each sattelite to all the gravitons; then we can associate each satellite with the closest graviton. This appraach will not necessarily create the best representation of sub-regions, but it is fast and quite transparent. After creating this algorithmic divisions we can always tweak associations of individual satellites according to our additional knowledge which we did not factor in into the algorithmic implementation. The advantage of such an approach is also in its flexibility: not only can we can always readjust these divisions, we can also experiment with different variations until we find the most optimal one.</p>
 <p>Let’s find our top places first. We can pick them from a map that we generated before. Looking at a map is always a good idea, since we may want to combine two prominent locations that are very close to each other into a single graviton; and we might want to single out a minor location as a graviton in order to preserve a representation of some remote region that does not have locations with high frequencies.</p>
-<p><img src="images/generated/PUAR_Cl09_Map01.png" />
-Based on the map, I would start with a the following vector (roughly, west to east):</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="modeling-complex-entities.html#cb197-1" tabindex="-1"></a>imanes_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Silves&quot;</span>, <span class="st">&quot;Badajoz&quot;</span>, <span class="st">&quot;Sevilla&quot;</span>, <span class="st">&quot;Algeciras&quot;</span>, <span class="st">&quot;Córdoba&quot;</span>,</span>
-<span id="cb197-2"><a href="modeling-complex-entities.html#cb197-2" tabindex="-1"></a>                   <span class="st">&quot;Málaga&quot;</span>, <span class="st">&quot;Toledo&quot;</span>, <span class="st">&quot;Granada&quot;</span>, <span class="st">&quot;Almeria&quot;</span>, <span class="st">&quot;Murcia&quot;</span>,</span>
-<span id="cb197-3"><a href="modeling-complex-entities.html#cb197-3" tabindex="-1"></a>                   <span class="st">&quot;Valencia&quot;</span>, <span class="st">&quot;Zaragoza&quot;</span>, <span class="st">&quot;Mallorca (isla)&quot;</span>)</span>
-<span id="cb197-4"><a href="modeling-complex-entities.html#cb197-4" tabindex="-1"></a></span>
-<span id="cb197-5"><a href="modeling-complex-entities.html#cb197-5" tabindex="-1"></a>imanes <span class="ot">&lt;-</span> PUA<span class="sc">$</span>lugar <span class="sc">%&gt;%</span></span>
-<span id="cb197-6"><a href="modeling-complex-entities.html#cb197-6" tabindex="-1"></a>  <span class="fu">filter</span>(nombre_castellano <span class="sc">%in%</span> imanes_vector) <span class="sc">%&gt;%</span></span>
-<span id="cb197-7"><a href="modeling-complex-entities.html#cb197-7" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">region =</span> nombre_castellano, <span class="at">latR =</span> lat, <span class="at">lngR =</span> lng) <span class="sc">%&gt;%</span></span>
-<span id="cb197-8"><a href="modeling-complex-entities.html#cb197-8" tabindex="-1"></a>  <span class="fu">select</span>(region, latR, lngR)</span>
-<span id="cb197-9"><a href="modeling-complex-entities.html#cb197-9" tabindex="-1"></a></span>
-<span id="cb197-10"><a href="modeling-complex-entities.html#cb197-10" tabindex="-1"></a>imanes</span></code></pre></div>
+<p><img src="images/generated/PUAR_Cl09_Map01.png" /></p>
+<p>Based on the map, I would start with a the following vector (roughly, west to east):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="modeling-complex-entities.html#cb3-1" tabindex="-1"></a>imanes_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Silves&quot;</span>, <span class="st">&quot;Badajoz&quot;</span>, <span class="st">&quot;Sevilla&quot;</span>, <span class="st">&quot;Algeciras&quot;</span>, <span class="st">&quot;Córdoba&quot;</span>,</span>
+<span id="cb3-2"><a href="modeling-complex-entities.html#cb3-2" tabindex="-1"></a>                   <span class="st">&quot;Málaga&quot;</span>, <span class="st">&quot;Toledo&quot;</span>, <span class="st">&quot;Granada&quot;</span>, <span class="st">&quot;Almeria&quot;</span>, <span class="st">&quot;Murcia&quot;</span>,</span>
+<span id="cb3-3"><a href="modeling-complex-entities.html#cb3-3" tabindex="-1"></a>                   <span class="st">&quot;Valencia&quot;</span>, <span class="st">&quot;Zaragoza&quot;</span>, <span class="st">&quot;Mallorca (isla)&quot;</span>)</span>
+<span id="cb3-4"><a href="modeling-complex-entities.html#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="modeling-complex-entities.html#cb3-5" tabindex="-1"></a>imanes <span class="ot">&lt;-</span> PUA<span class="sc">$</span>lugar <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="modeling-complex-entities.html#cb3-6" tabindex="-1"></a>  <span class="fu">filter</span>(nombre_castellano <span class="sc">%in%</span> imanes_vector) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="modeling-complex-entities.html#cb3-7" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">region =</span> nombre_castellano, <span class="at">latR =</span> lat, <span class="at">lngR =</span> lng) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="modeling-complex-entities.html#cb3-8" tabindex="-1"></a>  <span class="fu">select</span>(region, latR, lngR)</span>
+<span id="cb3-9"><a href="modeling-complex-entities.html#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="modeling-complex-entities.html#cb3-10" tabindex="-1"></a>imanes</span></code></pre></div>
 <pre><code>## # A tibble: 12 × 3
 ##    region           latR   lngR
 ##    &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;
@@ -527,17 +503,17 @@ Based on the map, I would start with a the following vector (roughly, west to ea
 ## 11 Silves           37.2 -8.43 
 ## 12 Badajoz          38.9 -6.97</code></pre>
 <p>Now we need to aggregate all locations with these magnets. A way to do that is to calculate the distance between all the places and these magnets. (BTW, feel free to change this list!). In the code below we will connect our <code>PUA$lugar</code> with our magnets (<code>imanes</code>) in such a way that each place in our table will get joined with each and every magnet.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="modeling-complex-entities.html#cb199-1" tabindex="-1"></a>lugares_con_imanes <span class="ot">&lt;-</span> PUA<span class="sc">$</span>lugar <span class="sc">%&gt;%</span></span>
-<span id="cb199-2"><a href="modeling-complex-entities.html#cb199-2" tabindex="-1"></a>  <span class="fu">merge</span>(imanes, <span class="at">by =</span> <span class="cn">NULL</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb199-3"><a href="modeling-complex-entities.html#cb199-3" tabindex="-1"></a>  <span class="co"># REMOVE ALL PLACES WITH NA</span></span>
-<span id="cb199-4"><a href="modeling-complex-entities.html#cb199-4" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lat)) <span class="sc">%&gt;%</span></span>
-<span id="cb199-5"><a href="modeling-complex-entities.html#cb199-5" tabindex="-1"></a>  <span class="fu">filter</span>(FLAG_alandalus <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb199-6"><a href="modeling-complex-entities.html#cb199-6" tabindex="-1"></a>  <span class="fu">arrange</span>(idLugar) <span class="sc">%&gt;%</span></span>
-<span id="cb199-7"><a href="modeling-complex-entities.html#cb199-7" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>notas, <span class="sc">-</span>descripcion)</span>
-<span id="cb199-8"><a href="modeling-complex-entities.html#cb199-8" tabindex="-1"></a></span>
-<span id="cb199-9"><a href="modeling-complex-entities.html#cb199-9" tabindex="-1"></a>lugares_con_imanes <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(lugares_con_imanes)</span>
-<span id="cb199-10"><a href="modeling-complex-entities.html#cb199-10" tabindex="-1"></a></span>
-<span id="cb199-11"><a href="modeling-complex-entities.html#cb199-11" tabindex="-1"></a>lugares_con_imanes</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="modeling-complex-entities.html#cb5-1" tabindex="-1"></a>lugares_con_imanes <span class="ot">&lt;-</span> PUA<span class="sc">$</span>lugar <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="modeling-complex-entities.html#cb5-2" tabindex="-1"></a>  <span class="fu">merge</span>(imanes, <span class="at">by =</span> <span class="cn">NULL</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="modeling-complex-entities.html#cb5-3" tabindex="-1"></a>  <span class="co"># REMOVE ALL PLACES WITH NA</span></span>
+<span id="cb5-4"><a href="modeling-complex-entities.html#cb5-4" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(lat)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="modeling-complex-entities.html#cb5-5" tabindex="-1"></a>  <span class="fu">filter</span>(FLAG_alandalus <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="modeling-complex-entities.html#cb5-6" tabindex="-1"></a>  <span class="fu">arrange</span>(idLugar) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="modeling-complex-entities.html#cb5-7" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>notas, <span class="sc">-</span>descripcion)</span>
+<span id="cb5-8"><a href="modeling-complex-entities.html#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="modeling-complex-entities.html#cb5-9" tabindex="-1"></a>lugares_con_imanes <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(lugares_con_imanes)</span>
+<span id="cb5-10"><a href="modeling-complex-entities.html#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="modeling-complex-entities.html#cb5-11" tabindex="-1"></a>lugares_con_imanes</span></code></pre></div>
 <pre><code>## # A tibble: 4,764 × 9
 ##    idLugar FLAG_alandalus nombre nombre_castellano   lat   lng region           latR   lngR
 ##      &lt;dbl&gt;          &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;             &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;
@@ -554,37 +530,37 @@ Based on the map, I would start with a the following vector (roughly, west to ea
 ## # ℹ 4,754 more rows</code></pre>
 <p>Now, we need a way to calculate distances between the places. The issue here is that we need to use a special complex formula that would allow us to calculate the length of so-called “great circles” (or arcs), which is the shortest distance over the earth’s surface, giving “as-the-crow-flies” distance between each pair of points. For that we need to use the <a href="https://en.wikipedia.org/wiki/Haversine_formula">Haversine formula</a>. We can write a function that would do the calculations and then apply it to the table.
 This is where ChatGPT can be very helpful, since you can ask it to implement the formula in R:</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="modeling-complex-entities.html#cb201-1" tabindex="-1"></a><span class="co"># Haversine function to calculate distance between two coordinates</span></span>
-<span id="cb201-2"><a href="modeling-complex-entities.html#cb201-2" tabindex="-1"></a></span>
-<span id="cb201-3"><a href="modeling-complex-entities.html#cb201-3" tabindex="-1"></a>haversine <span class="ot">&lt;-</span> <span class="cf">function</span>(long1, lat1, long2, lat2) {</span>
-<span id="cb201-4"><a href="modeling-complex-entities.html#cb201-4" tabindex="-1"></a>  <span class="co"># Convert degrees to radians</span></span>
-<span id="cb201-5"><a href="modeling-complex-entities.html#cb201-5" tabindex="-1"></a>  long1 <span class="ot">&lt;-</span> long1 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
-<span id="cb201-6"><a href="modeling-complex-entities.html#cb201-6" tabindex="-1"></a>  lat1 <span class="ot">&lt;-</span> lat1 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
-<span id="cb201-7"><a href="modeling-complex-entities.html#cb201-7" tabindex="-1"></a>  long2 <span class="ot">&lt;-</span> long2 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
-<span id="cb201-8"><a href="modeling-complex-entities.html#cb201-8" tabindex="-1"></a>  lat2 <span class="ot">&lt;-</span> lat2 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
-<span id="cb201-9"><a href="modeling-complex-entities.html#cb201-9" tabindex="-1"></a></span>
-<span id="cb201-10"><a href="modeling-complex-entities.html#cb201-10" tabindex="-1"></a>  <span class="co"># Haversine formula</span></span>
-<span id="cb201-11"><a href="modeling-complex-entities.html#cb201-11" tabindex="-1"></a>  dlon <span class="ot">&lt;-</span> long2 <span class="sc">-</span> long1</span>
-<span id="cb201-12"><a href="modeling-complex-entities.html#cb201-12" tabindex="-1"></a>  dlat <span class="ot">&lt;-</span> lat2 <span class="sc">-</span> lat1</span>
-<span id="cb201-13"><a href="modeling-complex-entities.html#cb201-13" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="fu">sin</span>(dlat <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">cos</span>(lat1) <span class="sc">*</span> <span class="fu">cos</span>(lat2) <span class="sc">*</span> <span class="fu">sin</span>(dlon <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb201-14"><a href="modeling-complex-entities.html#cb201-14" tabindex="-1"></a>  c <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">atan2</span>(<span class="fu">sqrt</span>(a), <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> a))</span>
-<span id="cb201-15"><a href="modeling-complex-entities.html#cb201-15" tabindex="-1"></a></span>
-<span id="cb201-16"><a href="modeling-complex-entities.html#cb201-16" tabindex="-1"></a>  <span class="co"># Radius of the earth in kilometers</span></span>
-<span id="cb201-17"><a href="modeling-complex-entities.html#cb201-17" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fl">6371.0</span></span>
-<span id="cb201-18"><a href="modeling-complex-entities.html#cb201-18" tabindex="-1"></a></span>
-<span id="cb201-19"><a href="modeling-complex-entities.html#cb201-19" tabindex="-1"></a>  <span class="co"># Distance in kilometers</span></span>
-<span id="cb201-20"><a href="modeling-complex-entities.html#cb201-20" tabindex="-1"></a>  <span class="fu">return</span>(r <span class="sc">*</span> c)</span>
-<span id="cb201-21"><a href="modeling-complex-entities.html#cb201-21" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="modeling-complex-entities.html#cb7-1" tabindex="-1"></a><span class="co"># Haversine function to calculate distance between two coordinates</span></span>
+<span id="cb7-2"><a href="modeling-complex-entities.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="modeling-complex-entities.html#cb7-3" tabindex="-1"></a>haversine <span class="ot">&lt;-</span> <span class="cf">function</span>(long1, lat1, long2, lat2) {</span>
+<span id="cb7-4"><a href="modeling-complex-entities.html#cb7-4" tabindex="-1"></a>  <span class="co"># Convert degrees to radians</span></span>
+<span id="cb7-5"><a href="modeling-complex-entities.html#cb7-5" tabindex="-1"></a>  long1 <span class="ot">&lt;-</span> long1 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb7-6"><a href="modeling-complex-entities.html#cb7-6" tabindex="-1"></a>  lat1 <span class="ot">&lt;-</span> lat1 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb7-7"><a href="modeling-complex-entities.html#cb7-7" tabindex="-1"></a>  long2 <span class="ot">&lt;-</span> long2 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb7-8"><a href="modeling-complex-entities.html#cb7-8" tabindex="-1"></a>  lat2 <span class="ot">&lt;-</span> lat2 <span class="sc">*</span> pi <span class="sc">/</span> <span class="dv">180</span></span>
+<span id="cb7-9"><a href="modeling-complex-entities.html#cb7-9" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="modeling-complex-entities.html#cb7-10" tabindex="-1"></a>  <span class="co"># Haversine formula</span></span>
+<span id="cb7-11"><a href="modeling-complex-entities.html#cb7-11" tabindex="-1"></a>  dlon <span class="ot">&lt;-</span> long2 <span class="sc">-</span> long1</span>
+<span id="cb7-12"><a href="modeling-complex-entities.html#cb7-12" tabindex="-1"></a>  dlat <span class="ot">&lt;-</span> lat2 <span class="sc">-</span> lat1</span>
+<span id="cb7-13"><a href="modeling-complex-entities.html#cb7-13" tabindex="-1"></a>  a <span class="ot">&lt;-</span> <span class="fu">sin</span>(dlat <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">cos</span>(lat1) <span class="sc">*</span> <span class="fu">cos</span>(lat2) <span class="sc">*</span> <span class="fu">sin</span>(dlon <span class="sc">/</span> <span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb7-14"><a href="modeling-complex-entities.html#cb7-14" tabindex="-1"></a>  c <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">atan2</span>(<span class="fu">sqrt</span>(a), <span class="fu">sqrt</span>(<span class="dv">1</span> <span class="sc">-</span> a))</span>
+<span id="cb7-15"><a href="modeling-complex-entities.html#cb7-15" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="modeling-complex-entities.html#cb7-16" tabindex="-1"></a>  <span class="co"># Radius of the earth in kilometers</span></span>
+<span id="cb7-17"><a href="modeling-complex-entities.html#cb7-17" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fl">6371.0</span></span>
+<span id="cb7-18"><a href="modeling-complex-entities.html#cb7-18" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="modeling-complex-entities.html#cb7-19" tabindex="-1"></a>  <span class="co"># Distance in kilometers</span></span>
+<span id="cb7-20"><a href="modeling-complex-entities.html#cb7-20" tabindex="-1"></a>  <span class="fu">return</span>(r <span class="sc">*</span> c)</span>
+<span id="cb7-21"><a href="modeling-complex-entities.html#cb7-21" tabindex="-1"></a>}</span></code></pre></div>
 <blockquote>
 <p><strong>Note:</strong> since ChatGPT is a generative model, it will always try to give you some answer, but it does not mean that the answer will be correct. One should always keep this in mind and cross-examine ChatGPT results. In this specific case we can simply google distances between specific places and check how close those results are to what we have calculated with the ChatGPT-provided function. One other thing to keep in mind: ChatGPT often tries to use some libraries as shortcuts to solving specific problems, but this approach tends to fail quite often with R. For example, ChatGPT initially suggested code that uses some obscure R library—and it did not work. Instead I asked to implement the Harvestine formula from scratch and wrap it into a function that can be reused.</p>
 </blockquote>
 <p>Now, let’s calculate these distances in our data and pick the closest graviton (i.e., a prominent location for which we have the shortest distance):</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="modeling-complex-entities.html#cb202-1" tabindex="-1"></a>lugares_con_imanes_ultimas <span class="ot">&lt;-</span> lugares_con_imanes <span class="sc">%&gt;%</span></span>
-<span id="cb202-2"><a href="modeling-complex-entities.html#cb202-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distancia =</span> <span class="fu">haversine</span>(lng, lat, lngR, latR)) <span class="sc">%&gt;%</span></span>
-<span id="cb202-3"><a href="modeling-complex-entities.html#cb202-3" tabindex="-1"></a>  <span class="fu">group_by</span>(idLugar) <span class="sc">%&gt;%</span></span>
-<span id="cb202-4"><a href="modeling-complex-entities.html#cb202-4" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="at">wt =</span> distancia)</span>
-<span id="cb202-5"><a href="modeling-complex-entities.html#cb202-5" tabindex="-1"></a></span>
-<span id="cb202-6"><a href="modeling-complex-entities.html#cb202-6" tabindex="-1"></a>lugares_con_imanes_ultimas</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="modeling-complex-entities.html#cb8-1" tabindex="-1"></a>lugares_con_imanes_ultimas <span class="ot">&lt;-</span> lugares_con_imanes <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="modeling-complex-entities.html#cb8-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distancia =</span> <span class="fu">haversine</span>(lng, lat, lngR, latR)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="modeling-complex-entities.html#cb8-3" tabindex="-1"></a>  <span class="fu">group_by</span>(idLugar) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="modeling-complex-entities.html#cb8-4" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="at">wt =</span> distancia)</span>
+<span id="cb8-5"><a href="modeling-complex-entities.html#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="modeling-complex-entities.html#cb8-6" tabindex="-1"></a>lugares_con_imanes_ultimas</span></code></pre></div>
 <pre><code>## # A tibble: 397 × 10
 ## # Groups:   idLugar [397]
 ##    idLugar FLAG_alandalus nombre    nombre_castellano   lat    lng region     latR   lngR distancia
@@ -602,33 +578,33 @@ This is where ChatGPT can be very helpful, since you can ask it to implement the
 ## # ℹ 387 more rows</code></pre>
 <p>Keep in mind that this is not necessarily intended to be the final version. You can play around with this data and manually move some locations from one region to another; you can also include other “magnets” and re-classify all places.</p>
 <p>Let’s now try to visualize these regions:</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="modeling-complex-entities.html#cb204-1" tabindex="-1"></a>modeledAndalusianRegions <span class="ot">&lt;-</span> base_plot_andalus_themed <span class="sc">+</span> </span>
-<span id="cb204-2"><a href="modeling-complex-entities.html#cb204-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> lugares_con_imanes_ultimas,</span>
-<span id="cb204-3"><a href="modeling-complex-entities.html#cb204-3" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat, <span class="at">col =</span> region),</span>
-<span id="cb204-4"><a href="modeling-complex-entities.html#cb204-4" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.85</span>)</span>
-<span id="cb204-5"><a href="modeling-complex-entities.html#cb204-5" tabindex="-1"></a></span>
-<span id="cb204-6"><a href="modeling-complex-entities.html#cb204-6" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;PUAR_Cl10_Map01.png&quot;</span>, <span class="at">plot =</span> modeledAndalusianRegions,</span>
-<span id="cb204-7"><a href="modeling-complex-entities.html#cb204-7" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">200</span>, <span class="at">height =</span> <span class="dv">150</span>, <span class="at">units =</span> <span class="st">&quot;mm&quot;</span>, <span class="at">dpi =</span> <span class="st">&quot;retina&quot;</span>)</span>
-<span id="cb204-8"><a href="modeling-complex-entities.html#cb204-8" tabindex="-1"></a></span>
-<span id="cb204-9"><a href="modeling-complex-entities.html#cb204-9" tabindex="-1"></a>modeledAndalusianRegions</span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-39-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="modeling-complex-entities.html#cb10-1" tabindex="-1"></a>modeledAndalusianRegions <span class="ot">&lt;-</span> base_plot_andalus_themed <span class="sc">+</span> </span>
+<span id="cb10-2"><a href="modeling-complex-entities.html#cb10-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> lugares_con_imanes_ultimas,</span>
+<span id="cb10-3"><a href="modeling-complex-entities.html#cb10-3" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat, <span class="at">col =</span> region),</span>
+<span id="cb10-4"><a href="modeling-complex-entities.html#cb10-4" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> <span class="fl">0.85</span>)</span>
+<span id="cb10-5"><a href="modeling-complex-entities.html#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="modeling-complex-entities.html#cb10-6" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;PUAR_Cl10_Map01.png&quot;</span>, <span class="at">plot =</span> modeledAndalusianRegions,</span>
+<span id="cb10-7"><a href="modeling-complex-entities.html#cb10-7" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">200</span>, <span class="at">height =</span> <span class="dv">150</span>, <span class="at">units =</span> <span class="st">&quot;mm&quot;</span>, <span class="at">dpi =</span> <span class="st">&quot;retina&quot;</span>)</span>
+<span id="cb10-8"><a href="modeling-complex-entities.html#cb10-8" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="modeling-complex-entities.html#cb10-9" tabindex="-1"></a>modeledAndalusianRegions</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Now, we can use <code>lugares_con_imanes_ultimas</code> instead of <code>PUA$lugar</code> to group multiple locations into our modeled regions.</p>
 <p>By the way, we can save this data back into our <code>PUA</code> data and reuse it later. But let’s keep the original file intact, just in case.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="modeling-complex-entities.html#cb205-1" tabindex="-1"></a>PUA<span class="sc">$</span>lugares_con_imanes <span class="ot">&lt;-</span> lugares_con_imanes_ultimas</span>
-<span id="cb205-2"><a href="modeling-complex-entities.html#cb205-2" tabindex="-1"></a><span class="fu">saveRDS</span>(PUA, <span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="modeling-complex-entities.html#cb11-1" tabindex="-1"></a>PUA<span class="sc">$</span>lugares_con_imanes <span class="ot">&lt;-</span> lugares_con_imanes_ultimas</span>
+<span id="cb11-2"><a href="modeling-complex-entities.html#cb11-2" tabindex="-1"></a><span class="fu">saveRDS</span>(PUA, <span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds&quot;</span>)</span></code></pre></div>
 </div>
 <div id="modeling-periods" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> Modeling Periods<a href="modeling-complex-entities.html#modeling-periods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Another important task that we may want to consider is modifying our data in such a way that individuals would be included not only into a specific decade when they died, but rather into all the decades when they lived. Here we have a bit of a problem. For some individuals we have both birth and death dates, so there we can easily get their life spans. What do we do with others for whom we know only death dates?</p>
 <p>There is a variety of ways we can go about this issue. We will try the following: for every individual without date of birth (or age), we will assign a life span by randomly sampling ages that we have in the data.</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="modeling-complex-entities.html#cb206-1" tabindex="-1"></a>ages <span class="ot">&lt;-</span> PUA<span class="sc">$</span>personaje <span class="sc">%&gt;%</span></span>
-<span id="cb206-2"><a href="modeling-complex-entities.html#cb206-2" tabindex="-1"></a>  <span class="fu">filter</span>(edad <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb206-3"><a href="modeling-complex-entities.html#cb206-3" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
-<span id="cb206-4"><a href="modeling-complex-entities.html#cb206-4" tabindex="-1"></a>  <span class="fu">select</span>(edad)</span>
-<span id="cb206-5"><a href="modeling-complex-entities.html#cb206-5" tabindex="-1"></a></span>
-<span id="cb206-6"><a href="modeling-complex-entities.html#cb206-6" tabindex="-1"></a><span class="fu">length</span>(ages<span class="sc">$</span>edad)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="modeling-complex-entities.html#cb12-1" tabindex="-1"></a>ages <span class="ot">&lt;-</span> PUA<span class="sc">$</span>personaje <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="modeling-complex-entities.html#cb12-2" tabindex="-1"></a>  <span class="fu">filter</span>(edad <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="modeling-complex-entities.html#cb12-3" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="modeling-complex-entities.html#cb12-4" tabindex="-1"></a>  <span class="fu">select</span>(edad)</span>
+<span id="cb12-5"><a href="modeling-complex-entities.html#cb12-5" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="modeling-complex-entities.html#cb12-6" tabindex="-1"></a><span class="fu">length</span>(ages<span class="sc">$</span>edad)</span></code></pre></div>
 <pre><code>## [1] 1998</code></pre>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="modeling-complex-entities.html#cb208-1" tabindex="-1"></a><span class="fu">summary</span>(ages<span class="sc">$</span>edad)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="modeling-complex-entities.html#cb14-1" tabindex="-1"></a><span class="fu">summary</span>(ages<span class="sc">$</span>edad)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    7.00   62.25   73.00   70.94   80.00  118.00</code></pre>
 <p>As we see above, we have age information for about 2,000 individuals.</p>
@@ -637,71 +613,71 @@ This is where ChatGPT can be very helpful, since you can ask it to implement the
 <li>if we have age, we keep it;</li>
 <li>else, we add some value;</li>
 </ul>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="modeling-complex-entities.html#cb210-1" tabindex="-1"></a>PUA_personaje_fechas <span class="ot">&lt;-</span> PUA<span class="sc">$</span>personaje <span class="sc">%&gt;%</span></span>
-<span id="cb210-2"><a href="modeling-complex-entities.html#cb210-2" tabindex="-1"></a>  <span class="fu">select</span>(idPersonaje, nacimiento, muerte, edad) <span class="sc">%&gt;%</span></span>
-<span id="cb210-3"><a href="modeling-complex-entities.html#cb210-3" tabindex="-1"></a>  <span class="fu">mutate_all</span>(<span class="sc">~</span><span class="fu">replace</span>(., . <span class="sc">==</span> <span class="dv">0</span>, <span class="cn">NA</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="modeling-complex-entities.html#cb16-1" tabindex="-1"></a>PUA_personaje_fechas <span class="ot">&lt;-</span> PUA<span class="sc">$</span>personaje <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="modeling-complex-entities.html#cb16-2" tabindex="-1"></a>  <span class="fu">select</span>(idPersonaje, nacimiento, muerte, edad) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="modeling-complex-entities.html#cb16-3" tabindex="-1"></a>  <span class="fu">mutate_all</span>(<span class="sc">~</span><span class="fu">replace</span>(., . <span class="sc">==</span> <span class="dv">0</span>, <span class="cn">NA</span>))</span></code></pre></div>
 <p>Now, the question is what value we should add? We can randomly pull age values from our existing data and assign them to individuals who do not have age information. Doing this, we can reproduce the same distribution as we have in the original data.</p>
 <p>This is how we can check if we got the distribution right. Essentially, we can visualize both vectors as histograms and check if their shapes are similar or not. If similar, we got the distribution right.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="modeling-complex-entities.html#cb211-1" tabindex="-1"></a>missingAgesNumber <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
-<span id="cb211-2"><a href="modeling-complex-entities.html#cb211-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
-<span id="cb211-3"><a href="modeling-complex-entities.html#cb211-3" tabindex="-1"></a>  <span class="fu">nrow</span>() <span class="co"># 10815 missing ages</span></span>
-<span id="cb211-4"><a href="modeling-complex-entities.html#cb211-4" tabindex="-1"></a>  </span>
-<span id="cb211-5"><a href="modeling-complex-entities.html#cb211-5" tabindex="-1"></a>agesExisting <span class="ot">&lt;-</span> ages<span class="sc">$</span>edad <span class="co"># 1998 available ages</span></span>
-<span id="cb211-6"><a href="modeling-complex-entities.html#cb211-6" tabindex="-1"></a>agesExtrapolated <span class="ot">&lt;-</span> <span class="fu">sample</span>(agesExisting, <span class="at">size =</span> missingAgesNumber, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb211-7"><a href="modeling-complex-entities.html#cb211-7" tabindex="-1"></a></span>
-<span id="cb211-8"><a href="modeling-complex-entities.html#cb211-8" tabindex="-1"></a><span class="co"># now, we visualize two AGE vectors as histograms. Their shapes must be very similar:</span></span>
-<span id="cb211-9"><a href="modeling-complex-entities.html#cb211-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb211-10"><a href="modeling-complex-entities.html#cb211-10" tabindex="-1"></a><span class="fu">hist</span>(agesExisting)</span>
-<span id="cb211-11"><a href="modeling-complex-entities.html#cb211-11" tabindex="-1"></a><span class="fu">hist</span>(agesExtrapolated)</span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="modeling-complex-entities.html#cb212-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="modeling-complex-entities.html#cb17-1" tabindex="-1"></a>missingAgesNumber <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
+<span id="cb17-2"><a href="modeling-complex-entities.html#cb17-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="modeling-complex-entities.html#cb17-3" tabindex="-1"></a>  <span class="fu">nrow</span>() <span class="co"># 10815 missing ages</span></span>
+<span id="cb17-4"><a href="modeling-complex-entities.html#cb17-4" tabindex="-1"></a>  </span>
+<span id="cb17-5"><a href="modeling-complex-entities.html#cb17-5" tabindex="-1"></a>agesExisting <span class="ot">&lt;-</span> ages<span class="sc">$</span>edad <span class="co"># 1998 available ages</span></span>
+<span id="cb17-6"><a href="modeling-complex-entities.html#cb17-6" tabindex="-1"></a>agesExtrapolated <span class="ot">&lt;-</span> <span class="fu">sample</span>(agesExisting, <span class="at">size =</span> missingAgesNumber, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb17-7"><a href="modeling-complex-entities.html#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="modeling-complex-entities.html#cb17-8" tabindex="-1"></a><span class="co"># now, we visualize two AGE vectors as histograms. Their shapes must be very similar:</span></span>
+<span id="cb17-9"><a href="modeling-complex-entities.html#cb17-9" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb17-10"><a href="modeling-complex-entities.html#cb17-10" tabindex="-1"></a><span class="fu">hist</span>(agesExisting)</span>
+<span id="cb17-11"><a href="modeling-complex-entities.html#cb17-11" tabindex="-1"></a><span class="fu">hist</span>(agesExtrapolated)</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="modeling-complex-entities.html#cb18-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 <p>We can also run <code>summary()</code> on both vectors. As you can see, our extrapolated vector is just a teeny-tiny bit different.</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="modeling-complex-entities.html#cb213-1" tabindex="-1"></a><span class="fu">summary</span>(agesExisting)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="modeling-complex-entities.html#cb19-1" tabindex="-1"></a><span class="fu">summary</span>(agesExisting)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    7.00   62.25   73.00   70.94   80.00  118.00</code></pre>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="modeling-complex-entities.html#cb215-1" tabindex="-1"></a><span class="fu">summary</span>(agesExtrapolated)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="modeling-complex-entities.html#cb21-1" tabindex="-1"></a><span class="fu">summary</span>(agesExtrapolated)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##    7.00   63.00   73.00   71.25   81.00  118.00</code></pre>
 <p>A better way may be to apply this period by period, for example going by 100-year time spans. This way we can also get the chronological distribution with more nuance.</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="modeling-complex-entities.html#cb217-1" tabindex="-1"></a>agesByAges <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
-<span id="cb217-2"><a href="modeling-complex-entities.html#cb217-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
-<span id="cb217-3"><a href="modeling-complex-entities.html#cb217-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">century =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">100</span>)) <span class="sc">*</span> <span class="dv">100</span>)</span>
-<span id="cb217-4"><a href="modeling-complex-entities.html#cb217-4" tabindex="-1"></a></span>
-<span id="cb217-5"><a href="modeling-complex-entities.html#cb217-5" tabindex="-1"></a>valuesPerCentury <span class="ot">&lt;-</span> agesByAges <span class="sc">%&gt;%</span></span>
-<span id="cb217-6"><a href="modeling-complex-entities.html#cb217-6" tabindex="-1"></a>  <span class="fu">group_by</span>(century) <span class="sc">%&gt;%</span></span>
-<span id="cb217-7"><a href="modeling-complex-entities.html#cb217-7" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb217-8"><a href="modeling-complex-entities.html#cb217-8" tabindex="-1"></a></span>
-<span id="cb217-9"><a href="modeling-complex-entities.html#cb217-9" tabindex="-1"></a><span class="fu">ggplot</span>(agesByAges, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(century), <span class="at">y =</span> edad)) <span class="sc">+</span></span>
-<span id="cb217-10"><a href="modeling-complex-entities.html#cb217-10" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb217-11"><a href="modeling-complex-entities.html#cb217-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Century&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Age at Death&quot;</span>) <span class="sc">+</span></span>
-<span id="cb217-12"><a href="modeling-complex-entities.html#cb217-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Optional: Apply a minimal theme</span></span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="modeling-complex-entities.html#cb23-1" tabindex="-1"></a>agesByAges <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="modeling-complex-entities.html#cb23-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="modeling-complex-entities.html#cb23-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">century =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">100</span>)) <span class="sc">*</span> <span class="dv">100</span>)</span>
+<span id="cb23-4"><a href="modeling-complex-entities.html#cb23-4" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="modeling-complex-entities.html#cb23-5" tabindex="-1"></a>valuesPerCentury <span class="ot">&lt;-</span> agesByAges <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="modeling-complex-entities.html#cb23-6" tabindex="-1"></a>  <span class="fu">group_by</span>(century) <span class="sc">%&gt;%</span></span>
+<span id="cb23-7"><a href="modeling-complex-entities.html#cb23-7" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb23-8"><a href="modeling-complex-entities.html#cb23-8" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="modeling-complex-entities.html#cb23-9" tabindex="-1"></a><span class="fu">ggplot</span>(agesByAges, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(century), <span class="at">y =</span> edad)) <span class="sc">+</span></span>
+<span id="cb23-10"><a href="modeling-complex-entities.html#cb23-10" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb23-11"><a href="modeling-complex-entities.html#cb23-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Century&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Age at Death&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-12"><a href="modeling-complex-entities.html#cb23-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Optional: Apply a minimal theme</span></span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p>But let’s go with the simpler approach. Let’s extrapolate ages:</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="modeling-complex-entities.html#cb218-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">786</span>)</span>
-<span id="cb218-2"><a href="modeling-complex-entities.html#cb218-2" tabindex="-1"></a>agesExtrapolated <span class="ot">&lt;-</span> <span class="fu">sample</span>(agesExisting, <span class="at">size =</span> missingAgesNumber, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb218-3"><a href="modeling-complex-entities.html#cb218-3" tabindex="-1"></a></span>
-<span id="cb218-4"><a href="modeling-complex-entities.html#cb218-4" tabindex="-1"></a>PUA_personaje_fechas_modelled <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
-<span id="cb218-5"><a href="modeling-complex-entities.html#cb218-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
-<span id="cb218-6"><a href="modeling-complex-entities.html#cb218-6" tabindex="-1"></a>  <span class="fu">add_column</span>(<span class="at">edad_extrapolated =</span> agesExtrapolated)</span>
-<span id="cb218-7"><a href="modeling-complex-entities.html#cb218-7" tabindex="-1"></a></span>
-<span id="cb218-8"><a href="modeling-complex-entities.html#cb218-8" tabindex="-1"></a>PUA_personaje_fechas_existing <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
-<span id="cb218-9"><a href="modeling-complex-entities.html#cb218-9" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
-<span id="cb218-10"><a href="modeling-complex-entities.html#cb218-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">edad_extrapolated =</span> edad)</span>
-<span id="cb218-11"><a href="modeling-complex-entities.html#cb218-11" tabindex="-1"></a></span>
-<span id="cb218-12"><a href="modeling-complex-entities.html#cb218-12" tabindex="-1"></a></span>
-<span id="cb218-13"><a href="modeling-complex-entities.html#cb218-13" tabindex="-1"></a>PUA_personaje_decadas <span class="ot">&lt;-</span> PUA_personaje_fechas_modelled <span class="sc">%&gt;%</span></span>
-<span id="cb218-14"><a href="modeling-complex-entities.html#cb218-14" tabindex="-1"></a>  <span class="fu">add_row</span>(PUA_personaje_fechas_existing) <span class="sc">%&gt;%</span></span>
-<span id="cb218-15"><a href="modeling-complex-entities.html#cb218-15" tabindex="-1"></a>  <span class="fu">arrange</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
-<span id="cb218-16"><a href="modeling-complex-entities.html#cb218-16" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(muerte)) <span class="sc">%&gt;%</span></span>
-<span id="cb218-17"><a href="modeling-complex-entities.html#cb218-17" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">nacimiento1 =</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(nacimiento), nacimiento, muerte <span class="sc">-</span> edad_extrapolated)) <span class="sc">%&gt;%</span></span>
-<span id="cb218-18"><a href="modeling-complex-entities.html#cb218-18" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decada_n =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(nacimiento1 <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb218-19"><a href="modeling-complex-entities.html#cb218-19" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decada_m =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb218-20"><a href="modeling-complex-entities.html#cb218-20" tabindex="-1"></a>  <span class="fu">select</span>(idPersonaje, decada_n, decada_m) <span class="sc">%&gt;%</span></span>
-<span id="cb218-21"><a href="modeling-complex-entities.html#cb218-21" tabindex="-1"></a>  <span class="fu">group_by</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
-<span id="cb218-22"><a href="modeling-complex-entities.html#cb218-22" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">decadas =</span> <span class="fu">list</span>(<span class="fu">seq</span>(<span class="at">from =</span> decada_n, <span class="at">to =</span> decada_m, <span class="at">by =</span> <span class="dv">10</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb218-23"><a href="modeling-complex-entities.html#cb218-23" tabindex="-1"></a>  <span class="fu">unnest</span>(decadas)</span>
-<span id="cb218-24"><a href="modeling-complex-entities.html#cb218-24" tabindex="-1"></a></span>
-<span id="cb218-25"><a href="modeling-complex-entities.html#cb218-25" tabindex="-1"></a>PUA_personaje_decadas</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="modeling-complex-entities.html#cb24-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">786</span>)</span>
+<span id="cb24-2"><a href="modeling-complex-entities.html#cb24-2" tabindex="-1"></a>agesExtrapolated <span class="ot">&lt;-</span> <span class="fu">sample</span>(agesExisting, <span class="at">size =</span> missingAgesNumber, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb24-3"><a href="modeling-complex-entities.html#cb24-3" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="modeling-complex-entities.html#cb24-4" tabindex="-1"></a>PUA_personaje_fechas_modelled <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="modeling-complex-entities.html#cb24-5" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-6"><a href="modeling-complex-entities.html#cb24-6" tabindex="-1"></a>  <span class="fu">add_column</span>(<span class="at">edad_extrapolated =</span> agesExtrapolated)</span>
+<span id="cb24-7"><a href="modeling-complex-entities.html#cb24-7" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="modeling-complex-entities.html#cb24-8" tabindex="-1"></a>PUA_personaje_fechas_existing <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
+<span id="cb24-9"><a href="modeling-complex-entities.html#cb24-9" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-10"><a href="modeling-complex-entities.html#cb24-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">edad_extrapolated =</span> edad)</span>
+<span id="cb24-11"><a href="modeling-complex-entities.html#cb24-11" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="modeling-complex-entities.html#cb24-12" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="modeling-complex-entities.html#cb24-13" tabindex="-1"></a>PUA_personaje_decadas <span class="ot">&lt;-</span> PUA_personaje_fechas_modelled <span class="sc">%&gt;%</span></span>
+<span id="cb24-14"><a href="modeling-complex-entities.html#cb24-14" tabindex="-1"></a>  <span class="fu">add_row</span>(PUA_personaje_fechas_existing) <span class="sc">%&gt;%</span></span>
+<span id="cb24-15"><a href="modeling-complex-entities.html#cb24-15" tabindex="-1"></a>  <span class="fu">arrange</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
+<span id="cb24-16"><a href="modeling-complex-entities.html#cb24-16" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(muerte)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-17"><a href="modeling-complex-entities.html#cb24-17" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">nacimiento1 =</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(nacimiento), nacimiento, muerte <span class="sc">-</span> edad_extrapolated)) <span class="sc">%&gt;%</span></span>
+<span id="cb24-18"><a href="modeling-complex-entities.html#cb24-18" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decada_n =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(nacimiento1 <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-19"><a href="modeling-complex-entities.html#cb24-19" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decada_m =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb24-20"><a href="modeling-complex-entities.html#cb24-20" tabindex="-1"></a>  <span class="fu">select</span>(idPersonaje, decada_n, decada_m) <span class="sc">%&gt;%</span></span>
+<span id="cb24-21"><a href="modeling-complex-entities.html#cb24-21" tabindex="-1"></a>  <span class="fu">group_by</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
+<span id="cb24-22"><a href="modeling-complex-entities.html#cb24-22" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">decadas =</span> <span class="fu">list</span>(<span class="fu">seq</span>(<span class="at">from =</span> decada_n, <span class="at">to =</span> decada_m, <span class="at">by =</span> <span class="dv">10</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb24-23"><a href="modeling-complex-entities.html#cb24-23" tabindex="-1"></a>  <span class="fu">unnest</span>(decadas)</span>
+<span id="cb24-24"><a href="modeling-complex-entities.html#cb24-24" tabindex="-1"></a></span>
+<span id="cb24-25"><a href="modeling-complex-entities.html#cb24-25" tabindex="-1"></a>PUA_personaje_decadas</span></code></pre></div>
 <pre><code>## # A tibble: 56,166 × 2
 ##    idPersonaje decadas
 ##          &lt;dbl&gt;   &lt;dbl&gt;
@@ -717,77 +693,77 @@ This is where ChatGPT can be very helpful, since you can ask it to implement the
 ## 10           7     370
 ## # ℹ 56,156 more rows</code></pre>
 <p>Now, let’s compare two graphs: the graph of people when we do it only by their death dates, and another — where we consider people who is alive in those decades:</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="modeling-complex-entities.html#cb220-1" tabindex="-1"></a>muerte_decadas <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
-<span id="cb220-2"><a href="modeling-complex-entities.html#cb220-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(muerte)) <span class="sc">%&gt;%</span></span>
-<span id="cb220-3"><a href="modeling-complex-entities.html#cb220-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decadas =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb220-4"><a href="modeling-complex-entities.html#cb220-4" tabindex="-1"></a>  <span class="fu">group_by</span>(decadas) <span class="sc">%&gt;%</span></span>
-<span id="cb220-5"><a href="modeling-complex-entities.html#cb220-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb220-6"><a href="modeling-complex-entities.html#cb220-6" tabindex="-1"></a></span>
-<span id="cb220-7"><a href="modeling-complex-entities.html#cb220-7" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb220-8"><a href="modeling-complex-entities.html#cb220-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> muerte_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb220-9"><a href="modeling-complex-entities.html#cb220-9" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
-<span id="cb220-10"><a href="modeling-complex-entities.html#cb220-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="modeling-complex-entities.html#cb221-1" tabindex="-1"></a>vida_decadas <span class="ot">&lt;-</span> PUA_personaje_decadas <span class="sc">%&gt;%</span></span>
-<span id="cb221-2"><a href="modeling-complex-entities.html#cb221-2" tabindex="-1"></a>  <span class="fu">group_by</span>(decadas) <span class="sc">%&gt;%</span></span>
-<span id="cb221-3"><a href="modeling-complex-entities.html#cb221-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
-<span id="cb221-4"><a href="modeling-complex-entities.html#cb221-4" tabindex="-1"></a></span>
-<span id="cb221-5"><a href="modeling-complex-entities.html#cb221-5" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb221-6"><a href="modeling-complex-entities.html#cb221-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb221-7"><a href="modeling-complex-entities.html#cb221-7" tabindex="-1"></a>    <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
-<span id="cb221-8"><a href="modeling-complex-entities.html#cb221-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-48-1.png" width="672" />
-As you can see on the graph above, we now have more data—each decade is now much more robust—ans a much smoother curve.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="modeling-complex-entities.html#cb26-1" tabindex="-1"></a>muerte_decadas <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="modeling-complex-entities.html#cb26-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(muerte)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="modeling-complex-entities.html#cb26-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decadas =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-4"><a href="modeling-complex-entities.html#cb26-4" tabindex="-1"></a>  <span class="fu">group_by</span>(decadas) <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="modeling-complex-entities.html#cb26-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb26-6"><a href="modeling-complex-entities.html#cb26-6" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="modeling-complex-entities.html#cb26-7" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb26-8"><a href="modeling-complex-entities.html#cb26-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> muerte_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="modeling-complex-entities.html#cb26-9" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
+<span id="cb26-10"><a href="modeling-complex-entities.html#cb26-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="modeling-complex-entities.html#cb27-1" tabindex="-1"></a>vida_decadas <span class="ot">&lt;-</span> PUA_personaje_decadas <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="modeling-complex-entities.html#cb27-2" tabindex="-1"></a>  <span class="fu">group_by</span>(decadas) <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="modeling-complex-entities.html#cb27-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>())</span>
+<span id="cb27-4"><a href="modeling-complex-entities.html#cb27-4" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="modeling-complex-entities.html#cb27-5" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb27-6"><a href="modeling-complex-entities.html#cb27-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="modeling-complex-entities.html#cb27-7" tabindex="-1"></a>    <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
+<span id="cb27-8"><a href="modeling-complex-entities.html#cb27-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>As you can see on the graph above, we now have more data—each decade is now much more robust—and a much smoother curve.</p>
 <div id="a-1000-and-1-tries" class="section level3 hasAnchor" number="12.2.1">
 <h3><span class="header-section-number">12.2.1</span> A 1000 And 1 Tries<a href="modeling-complex-entities.html#a-1000-and-1-tries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As you can see, with extrapolated ages we have much more data and the graph is much smoother. There is a bit of a problem in our data, however. Since there is quite a lot of generated data, this curve is just one of the possible states. A possible solution to this can be a creation of, say, 1,000 of such distributions and finding some average between them. For this, we essentially will need to loop all the previous steps.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="modeling-complex-entities.html#cb222-1" tabindex="-1"></a>vida_decadas_modelled <span class="ot">&lt;-</span> vida_decadas <span class="sc">%&gt;%</span></span>
-<span id="cb222-2"><a href="modeling-complex-entities.html#cb222-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">version =</span> <span class="dv">0</span>, <span class="at">.before =</span> decadas)</span>
-<span id="cb222-3"><a href="modeling-complex-entities.html#cb222-3" tabindex="-1"></a></span>
-<span id="cb222-4"><a href="modeling-complex-entities.html#cb222-4" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">1000</span>, <span class="dv">1</span>)){</span>
-<span id="cb222-5"><a href="modeling-complex-entities.html#cb222-5" tabindex="-1"></a>  <span class="co"># here we do not use set.seed !</span></span>
-<span id="cb222-6"><a href="modeling-complex-entities.html#cb222-6" tabindex="-1"></a>  agesExtrapolated <span class="ot">&lt;-</span> <span class="fu">sample</span>(agesExisting, <span class="at">size =</span> missingAgesNumber, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb222-7"><a href="modeling-complex-entities.html#cb222-7" tabindex="-1"></a></span>
-<span id="cb222-8"><a href="modeling-complex-entities.html#cb222-8" tabindex="-1"></a>  PUA_personaje_fechas_modelled <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
-<span id="cb222-9"><a href="modeling-complex-entities.html#cb222-9" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
-<span id="cb222-10"><a href="modeling-complex-entities.html#cb222-10" tabindex="-1"></a>    <span class="fu">add_column</span>(<span class="at">edad_extrapolated =</span> agesExtrapolated)</span>
-<span id="cb222-11"><a href="modeling-complex-entities.html#cb222-11" tabindex="-1"></a></span>
-<span id="cb222-12"><a href="modeling-complex-entities.html#cb222-12" tabindex="-1"></a>  PUA_personaje_fechas_existing <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
-<span id="cb222-13"><a href="modeling-complex-entities.html#cb222-13" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
-<span id="cb222-14"><a href="modeling-complex-entities.html#cb222-14" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">edad_extrapolated =</span> edad)</span>
-<span id="cb222-15"><a href="modeling-complex-entities.html#cb222-15" tabindex="-1"></a></span>
-<span id="cb222-16"><a href="modeling-complex-entities.html#cb222-16" tabindex="-1"></a>  PUA_personaje_decadas <span class="ot">&lt;-</span> PUA_personaje_fechas_modelled <span class="sc">%&gt;%</span></span>
-<span id="cb222-17"><a href="modeling-complex-entities.html#cb222-17" tabindex="-1"></a>    <span class="fu">add_row</span>(PUA_personaje_fechas_existing) <span class="sc">%&gt;%</span></span>
-<span id="cb222-18"><a href="modeling-complex-entities.html#cb222-18" tabindex="-1"></a>    <span class="fu">arrange</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
-<span id="cb222-19"><a href="modeling-complex-entities.html#cb222-19" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(muerte)) <span class="sc">%&gt;%</span></span>
-<span id="cb222-20"><a href="modeling-complex-entities.html#cb222-20" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">nacimiento1 =</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(nacimiento), nacimiento, muerte <span class="sc">-</span> edad_extrapolated)) <span class="sc">%&gt;%</span></span>
-<span id="cb222-21"><a href="modeling-complex-entities.html#cb222-21" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">decada_n =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(nacimiento1 <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb222-22"><a href="modeling-complex-entities.html#cb222-22" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">decada_m =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb222-23"><a href="modeling-complex-entities.html#cb222-23" tabindex="-1"></a>    <span class="fu">select</span>(idPersonaje, decada_n, decada_m) <span class="sc">%&gt;%</span></span>
-<span id="cb222-24"><a href="modeling-complex-entities.html#cb222-24" tabindex="-1"></a>    <span class="fu">group_by</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
-<span id="cb222-25"><a href="modeling-complex-entities.html#cb222-25" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">decadas =</span> <span class="fu">list</span>(<span class="fu">seq</span>(<span class="at">from =</span> decada_n, <span class="at">to =</span> decada_m, <span class="at">by =</span> <span class="dv">10</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb222-26"><a href="modeling-complex-entities.html#cb222-26" tabindex="-1"></a>    <span class="fu">unnest</span>(decadas)</span>
-<span id="cb222-27"><a href="modeling-complex-entities.html#cb222-27" tabindex="-1"></a></span>
-<span id="cb222-28"><a href="modeling-complex-entities.html#cb222-28" tabindex="-1"></a>  vida_decadas_temp <span class="ot">&lt;-</span> PUA_personaje_decadas <span class="sc">%&gt;%</span></span>
-<span id="cb222-29"><a href="modeling-complex-entities.html#cb222-29" tabindex="-1"></a>    <span class="fu">group_by</span>(decadas) <span class="sc">%&gt;%</span></span>
-<span id="cb222-30"><a href="modeling-complex-entities.html#cb222-30" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb222-31"><a href="modeling-complex-entities.html#cb222-31" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">version =</span> i, <span class="at">.before =</span> decadas)</span>
-<span id="cb222-32"><a href="modeling-complex-entities.html#cb222-32" tabindex="-1"></a></span>
-<span id="cb222-33"><a href="modeling-complex-entities.html#cb222-33" tabindex="-1"></a>  vida_decadas_modelled <span class="ot">&lt;-</span> vida_decadas_modelled <span class="sc">%&gt;%</span></span>
-<span id="cb222-34"><a href="modeling-complex-entities.html#cb222-34" tabindex="-1"></a>    <span class="fu">add_row</span>(vida_decadas_temp)</span>
-<span id="cb222-35"><a href="modeling-complex-entities.html#cb222-35" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="modeling-complex-entities.html#cb28-1" tabindex="-1"></a>vida_decadas_modelled <span class="ot">&lt;-</span> vida_decadas <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="modeling-complex-entities.html#cb28-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">version =</span> <span class="dv">0</span>, <span class="at">.before =</span> decadas)</span>
+<span id="cb28-3"><a href="modeling-complex-entities.html#cb28-3" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="modeling-complex-entities.html#cb28-4" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">1000</span>, <span class="dv">1</span>)){</span>
+<span id="cb28-5"><a href="modeling-complex-entities.html#cb28-5" tabindex="-1"></a>  <span class="co"># here we do not use set.seed !</span></span>
+<span id="cb28-6"><a href="modeling-complex-entities.html#cb28-6" tabindex="-1"></a>  agesExtrapolated <span class="ot">&lt;-</span> <span class="fu">sample</span>(agesExisting, <span class="at">size =</span> missingAgesNumber, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-7"><a href="modeling-complex-entities.html#cb28-7" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="modeling-complex-entities.html#cb28-8" tabindex="-1"></a>  PUA_personaje_fechas_modelled <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
+<span id="cb28-9"><a href="modeling-complex-entities.html#cb28-9" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-10"><a href="modeling-complex-entities.html#cb28-10" tabindex="-1"></a>    <span class="fu">add_column</span>(<span class="at">edad_extrapolated =</span> agesExtrapolated)</span>
+<span id="cb28-11"><a href="modeling-complex-entities.html#cb28-11" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="modeling-complex-entities.html#cb28-12" tabindex="-1"></a>  PUA_personaje_fechas_existing <span class="ot">&lt;-</span> PUA_personaje_fechas <span class="sc">%&gt;%</span></span>
+<span id="cb28-13"><a href="modeling-complex-entities.html#cb28-13" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(edad)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-14"><a href="modeling-complex-entities.html#cb28-14" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">edad_extrapolated =</span> edad)</span>
+<span id="cb28-15"><a href="modeling-complex-entities.html#cb28-15" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="modeling-complex-entities.html#cb28-16" tabindex="-1"></a>  PUA_personaje_decadas <span class="ot">&lt;-</span> PUA_personaje_fechas_modelled <span class="sc">%&gt;%</span></span>
+<span id="cb28-17"><a href="modeling-complex-entities.html#cb28-17" tabindex="-1"></a>    <span class="fu">add_row</span>(PUA_personaje_fechas_existing) <span class="sc">%&gt;%</span></span>
+<span id="cb28-18"><a href="modeling-complex-entities.html#cb28-18" tabindex="-1"></a>    <span class="fu">arrange</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
+<span id="cb28-19"><a href="modeling-complex-entities.html#cb28-19" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(muerte)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-20"><a href="modeling-complex-entities.html#cb28-20" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">nacimiento1 =</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(nacimiento), nacimiento, muerte <span class="sc">-</span> edad_extrapolated)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-21"><a href="modeling-complex-entities.html#cb28-21" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">decada_n =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(nacimiento1 <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-22"><a href="modeling-complex-entities.html#cb28-22" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">decada_m =</span> <span class="fu">ceiling</span>(<span class="fu">as.numeric</span>(muerte <span class="sc">/</span> <span class="dv">10</span>)) <span class="sc">*</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb28-23"><a href="modeling-complex-entities.html#cb28-23" tabindex="-1"></a>    <span class="fu">select</span>(idPersonaje, decada_n, decada_m) <span class="sc">%&gt;%</span></span>
+<span id="cb28-24"><a href="modeling-complex-entities.html#cb28-24" tabindex="-1"></a>    <span class="fu">group_by</span>(idPersonaje) <span class="sc">%&gt;%</span></span>
+<span id="cb28-25"><a href="modeling-complex-entities.html#cb28-25" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">decadas =</span> <span class="fu">list</span>(<span class="fu">seq</span>(<span class="at">from =</span> decada_n, <span class="at">to =</span> decada_m, <span class="at">by =</span> <span class="dv">10</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb28-26"><a href="modeling-complex-entities.html#cb28-26" tabindex="-1"></a>    <span class="fu">unnest</span>(decadas)</span>
+<span id="cb28-27"><a href="modeling-complex-entities.html#cb28-27" tabindex="-1"></a></span>
+<span id="cb28-28"><a href="modeling-complex-entities.html#cb28-28" tabindex="-1"></a>  vida_decadas_temp <span class="ot">&lt;-</span> PUA_personaje_decadas <span class="sc">%&gt;%</span></span>
+<span id="cb28-29"><a href="modeling-complex-entities.html#cb28-29" tabindex="-1"></a>    <span class="fu">group_by</span>(decadas) <span class="sc">%&gt;%</span></span>
+<span id="cb28-30"><a href="modeling-complex-entities.html#cb28-30" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb28-31"><a href="modeling-complex-entities.html#cb28-31" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">version =</span> i, <span class="at">.before =</span> decadas)</span>
+<span id="cb28-32"><a href="modeling-complex-entities.html#cb28-32" tabindex="-1"></a></span>
+<span id="cb28-33"><a href="modeling-complex-entities.html#cb28-33" tabindex="-1"></a>  vida_decadas_modelled <span class="ot">&lt;-</span> vida_decadas_modelled <span class="sc">%&gt;%</span></span>
+<span id="cb28-34"><a href="modeling-complex-entities.html#cb28-34" tabindex="-1"></a>    <span class="fu">add_row</span>(vida_decadas_temp)</span>
+<span id="cb28-35"><a href="modeling-complex-entities.html#cb28-35" tabindex="-1"></a>}</span></code></pre></div>
 <p>Now, let’s graph is and see how 1,000 iterations would be different from a single iteration. Thus, on the graph below we have two lines: 1) a light blue line of varying width, which represents the results of 1,000 iterations; and 2) a black line that represents a single variation.</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="modeling-complex-entities.html#cb223-1" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb223-2"><a href="modeling-complex-entities.html#cb223-2" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas_modelled,</span>
-<span id="cb223-3"><a href="modeling-complex-entities.html#cb223-3" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count,</span>
-<span id="cb223-4"><a href="modeling-complex-entities.html#cb223-4" tabindex="-1"></a>                <span class="at">group =</span> <span class="fu">as.factor</span>(version)),</span>
-<span id="cb223-5"><a href="modeling-complex-entities.html#cb223-5" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
-<span id="cb223-6"><a href="modeling-complex-entities.html#cb223-6" tabindex="-1"></a>            <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb223-7"><a href="modeling-complex-entities.html#cb223-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb223-8"><a href="modeling-complex-entities.html#cb223-8" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
-<span id="cb223-9"><a href="modeling-complex-entities.html#cb223-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb223-10"><a href="modeling-complex-entities.html#cb223-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) </span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="modeling-complex-entities.html#cb29-1" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb29-2"><a href="modeling-complex-entities.html#cb29-2" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas_modelled,</span>
+<span id="cb29-3"><a href="modeling-complex-entities.html#cb29-3" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count,</span>
+<span id="cb29-4"><a href="modeling-complex-entities.html#cb29-4" tabindex="-1"></a>                <span class="at">group =</span> <span class="fu">as.factor</span>(version)),</span>
+<span id="cb29-5"><a href="modeling-complex-entities.html#cb29-5" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb29-6"><a href="modeling-complex-entities.html#cb29-6" tabindex="-1"></a>            <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="modeling-complex-entities.html#cb29-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb29-8"><a href="modeling-complex-entities.html#cb29-8" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
+<span id="cb29-9"><a href="modeling-complex-entities.html#cb29-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb29-10"><a href="modeling-complex-entities.html#cb29-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) </span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>For the most part, the black line seems to be within the range of the blue lines, suggesting that the single extrapolation is not an extreme outlier. There are more robust techniques that can be used to improve this distribution, but for our purposes here we may consider a single extrapolation more or less acceptable. The most important value of this extrapolation is that now for each date we have an estimate of individuals who are alive at that moment in time.</p>
 <p>[<strong>#TODO</strong>: other techniques should be discussed, explained, and demonstrated.]</p>
 <!--
@@ -835,20 +811,20 @@ In conclusion, while visual inspection can provide some insights, combining it w
 
 -->
 <p>Another approach that we can potentially try is “moving sum”. We can use the <code>zoo</code> package—a versatile package for working with time series data. (Make sure to install it first!). Let’s try to apply the moving sum for 3, 5, 7, 8, and 9 decades—and check how the results may look. <strong>Note:</strong> <code>align = "left"</code> means that the current value is summed with the values from the next X decades.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="modeling-complex-entities.html#cb224-1" tabindex="-1"></a><span class="fu">library</span>(zoo)</span>
-<span id="cb224-2"><a href="modeling-complex-entities.html#cb224-2" tabindex="-1"></a></span>
-<span id="cb224-3"><a href="modeling-complex-entities.html#cb224-3" tabindex="-1"></a>alignValue <span class="ot">&lt;-</span> <span class="st">&quot;left&quot;</span></span>
-<span id="cb224-4"><a href="modeling-complex-entities.html#cb224-4" tabindex="-1"></a></span>
-<span id="cb224-5"><a href="modeling-complex-entities.html#cb224-5" tabindex="-1"></a>muerte_decadas_MA <span class="ot">&lt;-</span> muerte_decadas <span class="sc">%&gt;%</span></span>
-<span id="cb224-6"><a href="modeling-complex-entities.html#cb224-6" tabindex="-1"></a>  <span class="fu">arrange</span>(decadas) <span class="sc">%&gt;%</span></span>
-<span id="cb224-7"><a href="modeling-complex-entities.html#cb224-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_3 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">3</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
-<span id="cb224-8"><a href="modeling-complex-entities.html#cb224-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_5 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
-<span id="cb224-9"><a href="modeling-complex-entities.html#cb224-9" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_7 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">7</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
-<span id="cb224-10"><a href="modeling-complex-entities.html#cb224-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_8 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">8</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
-<span id="cb224-11"><a href="modeling-complex-entities.html#cb224-11" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_9 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">9</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
-<span id="cb224-12"><a href="modeling-complex-entities.html#cb224-12" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>decadas, <span class="at">names_to =</span> <span class="st">&quot;types&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;values&quot;</span>)</span>
-<span id="cb224-13"><a href="modeling-complex-entities.html#cb224-13" tabindex="-1"></a></span>
-<span id="cb224-14"><a href="modeling-complex-entities.html#cb224-14" tabindex="-1"></a>muerte_decadas_MA</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="modeling-complex-entities.html#cb30-1" tabindex="-1"></a><span class="fu">library</span>(zoo)</span>
+<span id="cb30-2"><a href="modeling-complex-entities.html#cb30-2" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="modeling-complex-entities.html#cb30-3" tabindex="-1"></a>alignValue <span class="ot">&lt;-</span> <span class="st">&quot;left&quot;</span></span>
+<span id="cb30-4"><a href="modeling-complex-entities.html#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="modeling-complex-entities.html#cb30-5" tabindex="-1"></a>muerte_decadas_MA <span class="ot">&lt;-</span> muerte_decadas <span class="sc">%&gt;%</span></span>
+<span id="cb30-6"><a href="modeling-complex-entities.html#cb30-6" tabindex="-1"></a>  <span class="fu">arrange</span>(decadas) <span class="sc">%&gt;%</span></span>
+<span id="cb30-7"><a href="modeling-complex-entities.html#cb30-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_3 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">3</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-8"><a href="modeling-complex-entities.html#cb30-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_5 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">5</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-9"><a href="modeling-complex-entities.html#cb30-9" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_7 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">7</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-10"><a href="modeling-complex-entities.html#cb30-10" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_8 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">8</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-11"><a href="modeling-complex-entities.html#cb30-11" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">moving_sum_9 =</span> <span class="fu">rollsum</span>(count, <span class="at">k =</span> <span class="dv">9</span>, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">align =</span> alignValue)) <span class="sc">%&gt;%</span></span>
+<span id="cb30-12"><a href="modeling-complex-entities.html#cb30-12" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>decadas, <span class="at">names_to =</span> <span class="st">&quot;types&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;values&quot;</span>)</span>
+<span id="cb30-13"><a href="modeling-complex-entities.html#cb30-13" tabindex="-1"></a></span>
+<span id="cb30-14"><a href="modeling-complex-entities.html#cb30-14" tabindex="-1"></a>muerte_decadas_MA</span></code></pre></div>
 <pre><code>## # A tibble: 504 × 3
 ##    decadas types        values
 ##      &lt;dbl&gt; &lt;chr&gt;         &lt;int&gt;
@@ -864,18 +840,18 @@ In conclusion, while visual inspection can provide some insights, combining it w
 ## 10     110 moving_sum_7     38
 ## # ℹ 494 more rows</code></pre>
 <p>The following code will give us a visualization, which will help us to check the results:</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="modeling-complex-entities.html#cb226-1" tabindex="-1"></a><span class="fu">ggplot</span>(muerte_decadas_MA) <span class="sc">+</span></span>
-<span id="cb226-2"><a href="modeling-complex-entities.html#cb226-2" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas_modelled,</span>
-<span id="cb226-3"><a href="modeling-complex-entities.html#cb226-3" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count,</span>
-<span id="cb226-4"><a href="modeling-complex-entities.html#cb226-4" tabindex="-1"></a>                <span class="at">group =</span> <span class="fu">as.factor</span>(version)),</span>
-<span id="cb226-5"><a href="modeling-complex-entities.html#cb226-5" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
-<span id="cb226-6"><a href="modeling-complex-entities.html#cb226-6" tabindex="-1"></a>            <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb226-7"><a href="modeling-complex-entities.html#cb226-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> values, <span class="at">col =</span> types), <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb226-8"><a href="modeling-complex-entities.html#cb226-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb226-9"><a href="modeling-complex-entities.html#cb226-9" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
-<span id="cb226-10"><a href="modeling-complex-entities.html#cb226-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<p><img src="handbook_files/figure-html/unnamed-chunk-54-1.png" width="672" />
-The rolling summary of 8 decades gives us a curve which is most close to the our modeled curve. However, here we can see that results of the “moving sum” are much more extreme, often leaving the zone of 1,000 extrapolation curves. Keeping this in mind, our age-based extrapolated curve is a better fit. Additionally, our age-based model gives us more flexibility, since the data here is highly detailed (for each individual), while the “rolling sum” approach only gives us cumulative numbers for each decade.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="modeling-complex-entities.html#cb32-1" tabindex="-1"></a><span class="fu">ggplot</span>(muerte_decadas_MA) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="modeling-complex-entities.html#cb32-2" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas_modelled,</span>
+<span id="cb32-3"><a href="modeling-complex-entities.html#cb32-3" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count,</span>
+<span id="cb32-4"><a href="modeling-complex-entities.html#cb32-4" tabindex="-1"></a>                <span class="at">group =</span> <span class="fu">as.factor</span>(version)),</span>
+<span id="cb32-5"><a href="modeling-complex-entities.html#cb32-5" tabindex="-1"></a>            <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb32-6"><a href="modeling-complex-entities.html#cb32-6" tabindex="-1"></a>            <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb32-7"><a href="modeling-complex-entities.html#cb32-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> values, <span class="at">col =</span> types), <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb32-8"><a href="modeling-complex-entities.html#cb32-8" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> vida_decadas, <span class="fu">aes</span>(<span class="at">x =</span> decadas, <span class="at">y =</span> count), <span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb32-9"><a href="modeling-complex-entities.html#cb32-9" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">950</span>)) <span class="sc">+</span></span>
+<span id="cb32-10"><a href="modeling-complex-entities.html#cb32-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p>The rolling summary of 8 decades gives us a curve which is most close to the our modeled curve. However, here we can see that results of the “moving sum” are much more extreme, often leaving the zone of 1,000 extrapolation curves. Keeping this in mind, our age-based extrapolated curve is a better fit. Additionally, our age-based model gives us more flexibility, since the data here is highly detailed (for each individual), while the “rolling sum” approach only gives us cumulative numbers for each decade.</p>
 </div>
 </div>
 <div id="intermediate-summary" class="section level2 hasAnchor" number="12.3">
@@ -886,12 +862,12 @@ The rolling summary of 8 decades gives us a curve which is most close to the our
 <li>we have extrapolated chronological data, which will give us more dense chronological snapshots;</li>
 </ul>
 <p>We can save both tables into our updated PUA dataset:</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="modeling-complex-entities.html#cb227-1" tabindex="-1"></a>PUA <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList.rds&quot;</span>)</span>
-<span id="cb227-2"><a href="modeling-complex-entities.html#cb227-2" tabindex="-1"></a></span>
-<span id="cb227-3"><a href="modeling-complex-entities.html#cb227-3" tabindex="-1"></a>PUA<span class="sc">$</span>lugar_con_imanes <span class="ot">&lt;-</span> lugares_con_imanes_ultimas</span>
-<span id="cb227-4"><a href="modeling-complex-entities.html#cb227-4" tabindex="-1"></a>PUA<span class="sc">$</span>personaje_decadas_modeladas <span class="ot">&lt;-</span> PUA_personaje_decadas</span>
-<span id="cb227-5"><a href="modeling-complex-entities.html#cb227-5" tabindex="-1"></a></span>
-<span id="cb227-6"><a href="modeling-complex-entities.html#cb227-6" tabindex="-1"></a><span class="fu">saveRDS</span>(PUA, <span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="modeling-complex-entities.html#cb33-1" tabindex="-1"></a>PUA <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList.rds&quot;</span>)</span>
+<span id="cb33-2"><a href="modeling-complex-entities.html#cb33-2" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="modeling-complex-entities.html#cb33-3" tabindex="-1"></a>PUA<span class="sc">$</span>lugar_con_imanes <span class="ot">&lt;-</span> lugares_con_imanes_ultimas</span>
+<span id="cb33-4"><a href="modeling-complex-entities.html#cb33-4" tabindex="-1"></a>PUA<span class="sc">$</span>personaje_decadas_modeladas <span class="ot">&lt;-</span> PUA_personaje_decadas</span>
+<span id="cb33-5"><a href="modeling-complex-entities.html#cb33-5" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="modeling-complex-entities.html#cb33-6" tabindex="-1"></a><span class="fu">saveRDS</span>(PUA, <span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds&quot;</span>)</span></code></pre></div>
 
 </div>
 </div>

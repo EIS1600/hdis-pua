@@ -5336,6 +5336,7 @@ Another option---or, perhaps, a complimentary option---is to aggregate smaller t
 Let's find our top places first. We can pick them from a map that we generated before. Looking at a map is always a good idea, since we may want to combine two prominent locations that are very close to each other into a single graviton; and we might want to single out a minor location as a graviton in order to preserve a representation of some remote region that does not have locations with high frequencies.
 
 ![](./images/generated/PUAR_Cl09_Map01.png)
+
 Based on the map, I would start with a the following vector (roughly, west to east):
 
 ```{r}
@@ -5575,7 +5576,8 @@ ggplot() +
     xlim(c(0, 950)) +
   theme_minimal()
 ```
-As you can see on the graph above, we now have more data---each decade is now much more robust---ans a much smoother curve.
+
+As you can see on the graph above, we now have more data---each decade is now much more robust---and a much smoother curve.
 
 ### A 1000 And 1 Tries
 
@@ -5714,6 +5716,7 @@ muerte_decadas_MA <- muerte_decadas %>%
 
 muerte_decadas_MA
 ```
+
 The following code will give us a visualization, which will help us to check the results:
 
 ```{r message=FALSE, warning=FALSE}
@@ -5729,6 +5732,7 @@ ggplot(muerte_decadas_MA) +
   xlim(c(0, 950)) +
   theme_minimal()
 ```
+
 The rolling summary of 8 decades gives us a curve which is most close to the our modeled curve. However, here we can see that results of the “moving sum” are much more extreme, often leaving the zone of 1,000 extrapolation curves. Keeping this in mind, our age-based extrapolated curve is a better fit. Additionally, our age-based model gives us more flexibility, since the data here is highly detailed (for each individual), while the "rolling sum" approach only gives us cumulative numbers for each decade.
 
 ## Intermediate Summary
