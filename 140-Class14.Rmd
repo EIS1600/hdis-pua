@@ -1,6 +1,5 @@
-# Class 14
+# Social Networks
 
-[*subject to updates and corrections*]
-
+- modeling social networks from the PUA data
 
 

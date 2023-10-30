@@ -1,9 +1,376 @@
 # Data Manipulation II
 
+```{r eval=TRUE, include=FALSE}
+
+library(tidyverse)
+PUA <- readRDS("./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds")
+
+```
+
 ## This Chapter
 
 - we will go over the solutions to the problems from the previous Chapter
 
 ## Problems
 
-...
+Your homework task is to create a notebook for this lesson. For part I, rerun all the code from this lesson in your notebook to make sure it works and you are gaining some understanding of how it works; for the second part, give solutions to all the problems that are given below. Your code chunks should print the answer that comes from your calculations and manipulations. After your code chunk provide a human-readable answer — one or two sentences is sufficient.
+
+Below you will find solutions to the first few problems. 
+
+### [1] Who is the oldest individual we have in the PUA data?
+
+- *algorithmic solution*: we need to find a person with the highest value in the column where ages are recorded; 
+- *complete solution*: we need to find a person with the highest value in column `edad` in the table `personaje`; the easiest way will be to use `top_n` function (`top_n(1, wt = edad)`);
+
+```{r}
+oldest <- PUA$personaje %>%
+  top_n(1, wt = edad)
+
+oldest
+```
+
+- *human readable solution, based on results*:
+
+```{r eval=FALSE, include=TRUE}
+The oldest person in the PUA database is: `r oldest$nombreE`.
+His Arabic name is: ``r oldest$nombreA``. He died at the age
+of `r oldest$edad` in `r oldest$muerte` AH / `r oldest$muerteec` CE.
+```
+
+This solution will be rendered in the notebook as:
+
+> The oldest person in the PUA database is: Ṣabbāḥ / al-Ṣabbāḥ b. ʿAbd al-Raḥmān b. al-Faḍl (b. ʿAmāra) b. ʿAmīra b. Rāšid b. ʿAbd Allāh b. Saʿīd b. Šarīk b. ʿAbd Allāh b. Muslim b. Nawfal b. Rabīʿa b. Mālik b. ʿAtīq b. Malkān b. Kināna al-Kinānī, al ʿUtaqī, Abū l-Guṣn (Abū l-Faḍl). His Arabic name is: `صباح (الصباح) بن عبد الرحمن بن الفضل (بن عمارة) بن عميرة بن راشد بن عبد الله بن سعيد بن شريك بن عبد الله بن مسلم بن نوفل بن ربيعة بن مالك بن عتيق بن ملكان بن كنانة الكناني العتقي، أبو الغصن (أبو الفضل).` He died at the age of 118 in 295 AH / 907 CE.
+
+### [2] Which places did this individual visit?
+
+- *algorithmic solution*: we already found the oldest person, so now we only need his ID. We can use that id to filter the table which records relationships between individuals and places. After that we need to join those results with the table on places (to get their human-readable names) and with the table on relationships to places (to get more details on how exactly our oldest person is connected to those places). We can simply print out the resultant table in order to sum up the results.
+- *complete solution*:
+
+```{r}
+oldestPersonID <- oldest$idPersonaje
+
+places <- PUA$personaje_lugar %>%
+  filter(idPersonaje == oldestPersonID) %>%
+  left_join(PUA$lugar, by = c("idLugar" = "idLugar")) %>%
+  left_join(PUA$tiporelacionlugar, by = c("idTipoRelacionLugar" = "idTipoRelacionLugar"))
+
+placesLite <- places %>%
+  select(nombre.x, nombre_castellano, nombre.y)
+
+placesLite
+```
+
+- *human-readable solution:* just add the description based on the table; you can incorporate in-text code chunks like in the problem before, but it is not really necessary, since the data is more complex here.
+
+```{r eval=FALSE, include=TRUE}
+From the results we know that the oldest individual (let's call him al-Ṣabbāḥ,
+by his first name) has connections to the following places:
+`r paste0(placesLite$nombre_castellano)` (In Arabic their names would be,
+respectively: `r paste0(placesLite$nombre.x)`). From the types of relationships
+to places we can say that he was most closely connected to the cities of Tudmīr
+and Murcia (*min ahl ...*, “from the people of ...”). We know that he made a trip
+(*riḥlaŧ*) to the East of the Islamic world (*raḥala ilá al-Mašriq*). He “was”
+(*kāna*) in Qayrawan and Cairo (El Cairo); and that he performed “the greater
+pilgrimage” (*ḥajja*), meaning that he also visited Mecca (La Meca).
+```
+
+> **The result will look like**: From the results we know that the oldest individual (let’s call him al-Ṣabbāḥ, by his first name) has connections to the following places: Tudmīr, Murcia, Oriente, La Meca, Qayrawan, El Cairo (In Arabic their names would be, respectively: تدمير, مرسية, المشرق, مكة, القيروان, مصر). From the types of relationships to places we can say that he was most closely connected to the cities of Tudmīr and Murcia (_min ahl …_, “from the people of …”). We know that he made a trip (_riḥlaŧ_) to the East of the Islamic world (_raḥala ilá al-Mašriq_). He “was” (_kāna_) in Qayrawan and Cairo (El Cairo); and that he performed “the greater pilgrimage” (_ḥajja_), meaning that he also visited Mecca (La Meca).
+
+### [3] What kind of activities was that individual involved in?
+
+- *algorithmic solution*: we do have the ID of al-Ṣabbāḥ. Now, we essentially need to repeat the steps that we did in the previous problem, but we need to focus on the tables that record relationships between individuals and activities.
+- *complete solution*:
+
+**Note:** it makes sense to always check your intermediary results—this will allow you to check whether your steps are correct, and, perhaps, discover that your do not need to go all the way, like in the example below.
+
+```
+oldestPersonID <- oldest$idPersonaje
+
+activities <- PUA$personaje_actividad %>%
+  filter(idPersonaje == oldestPersonID)
+
+activities
+```
+
+Our intermediary results will look like the following:
+
+```
+# A tibble: 0 × 4
+# ℹ 4 variables: idPersonaje <dbl>, idActividad <dbl>, fechaActividad <dbl>,
+#   notas <chr>
+```
+
+Essentially, we got an empty tibble. What does this mean? This means that we have no records on the activities of al-Ṣabbāḥ. And that is your solution/answer to the problem. Data in Arabic biographical dictionaries is often quite robust, but also quite often we have only very scarce details on specific individuals. 
+
+- *human-readable solution:*
+
+> We do not have any information on any activities of al-Ṣabbāḥ, the oldest individual in the PUA database.
+
+### [4] Who is the oldest jurist (*faqīh*) in the PUA data?
+
+- *algorithmic solution*: first of all, we need to find all the activities that can be classified as *jurist* in the table on activities. The only way to do that is actually to eyeball the table with activities: you need to open the table and find all the fitting activities. (To simplify things a little bit, we can focus only on activities that have “alfaquí” in the column `nombre_castellano`—there are 4 of those; if you do a serious research, however, you should carefully study the list of activities and check what else might fit the definition of a jurist.). Second, we need to filter the table that records relationships between activities and individuals, so that we only have individuals with activities in the area of jurisprudence. Third, we need to join our results with the main table on individuals—and then find the oldest of these individuals (like we did in the very first problem). 
+- *complete solution*:
+
+```{r eval=TRUE, include=TRUE}
+#View(PUA$actividad) # use this to view the table, but do not include it into
+#the active chunk as it may interfere with the knitting of your notebook.
+
+juristActivities <- PUA$actividad %>%
+  filter(str_detect(nombre_castellano, "alfaquí"))
+
+juristActivitiesIDs <- juristActivities$idActividad
+# This step will give us the vector of IDs of relevant activities: 174, 59, 60, 67
+
+oldestJurist <- PUA$personaje_actividad %>%
+  filter(idActividad %in% juristActivitiesIDs) %>%
+  left_join(PUA$personaje, by = c("idPersonaje" = "idPersonaje")) %>%
+  top_n(1, edad)
+```
+
+**Note:** the operator `%in%` is used in R to test whether the elements of one vector are present in another vector. This is the best way to filter one vector by another.
+
+The table below shows different types of jurists that we have in the activities table:
+
+```{r eval=TRUE, include=TRUE}
+juristActivities
+```
+
+- *human-readable solution:* since our results are structurally very similar to those of the first problem, we can format our reply in a similar manner.
+
+```{r eval=FALSE, include=TRUE}
+The oldest jurist in the PUA database is: `r oldestJurist$nombreE`.
+His Arabic name is ``r oldestJurist$nombreA``. He died at the age
+of `r oldestJurist$edad` in `r oldestJurist$muerte` AH /
+`r oldestJurist$muerteec` CE.`
+```
+
+> **The result will look like**:  The oldest jurist in the PUA database is: ʿAbd Allāh b. Ayyūb al-Anṣārī, Ibn Ḫayruǧ (/Ḫaḏūg / Ḫarūg), Abū Muḥammad,. His Arabic name is `عبد الله بن أيوب الأنصاري، ابن خيروج (/ ابن خذوج / ابن خروج)، أبو محمد`. He died at the age of 100 in 562 AH / 1166 CE.
+
+###[5] Can you find a person who traveled the most?
+
+- *algorithmic solution*: This problem is a bit tricky. We need to begin with a quick discussion of how exactly we represent “traveled the most”. The easiest way would be to think of an individual who has the highest number of places associated with his/her name. Thus, we need to count the number of places associated with each individual in the table that records relationships between individuals and places. Then, we need to find an individual who has the highest number of places. We, then, may want to join our results with the main table on individuals to get more details on our traveller.  
+- *complete solution*:
+
+```{r}
+traveller <- PUA$personaje_lugar %>%
+  group_by(idPersonaje) %>%
+  summarize(placesTotal = n()) %>%
+  top_n(1, wt = placesTotal) %>%
+  left_join(PUA$personaje)
+```
+
+- *human-readable solution:*
+
+```{r eval=FALSE, include=TRUE}
+The person who travelled the most has visited `r traveller$placesTotal`
+places. His name is: `r traveller$nombreE`. His Arabic name is 
+`r traveller$nombreA``. He died at the age of `r traveller$edad` in
+`r traveller$muerte` AH / `r traveller$muerteec` CE. There is a short
+biographical note on him in Spanish: *`r traveller$resumenBiografico`*.
+```
+
+> **The result will look like**:  The person who travelled the most has visited 32 places. His name is: ʿAlī b. Mūsà b. Muḥammad b. ʿAbd al-Malik b. Saʿīd b. Ḫalaf b. Saʿīd b. Muḥammad b. ʿAbd Allāh b. Saʿīd b. al-Ḥasan b. ʿUṯmān b. ʿAbd Allāh b. Saʿd b. ʿAmmār b. Yāsir b. Kināna b. Qays b. al-Ḥaṣīn b. Lawḏan b. Ṯaʿlaba b. ʿAwf b. Ḥāriṯa b. ʿĀmir al-Akbar b. Nām b. ʿAbs al-ʿAnsī al-Maḏḥiğī, Ibn Saʿīd, Abū l-Ḥasan. His Arabic name is `علي بن موسى بن محمد بن عبد الملك بن سعيد بن خلف بن سعيد بن محمد بن عبد الله بن سعيد بن الحسن بن عثمان بن عبد الله بن سعد بن عمار بن ياسر بن كنانة بن قيس بن الحصين بن لوذم بن ثعلب بن عوف بن حارثة بن عامر الأكبر بن نام بن عبس العنسي المذحجي، ابن سعيد، أبو الحسن`. He died at the age of 75 in 685 AH / 1286 CE. There is a short biographical note on him in Spanish: *Célebre historiador, geógrafo y poeta nacido en 610/1213 en Alcalá la Real. Tras haber viajado por diversas ciudades de Oriente, haciendo varias veces la peregrinación a la Meca, falleció en Túnez en 685/1286. Fue autor, entre otras obras no conservadas, de Al-Mugrib fī ḥulà l-Magrib, Rāyāt al-mubarrizīn wa-gāyāt al-mumayyizīn, Iḫtiṣār al-Qidḥ al-muʿallà fī l-taʾrīḫ al-muḥallà, utilizadas aquí como fuente*.
+
+>> (**English**: Celebrated historian, geographer, and poet born in 610/1213 in Alcalá la Real. After having traveled through various cities in the East, making several pilgrimages to Mecca, he died in Tunisia in 685/1286. He was the author, among other works that have not been preserved, of Al-Mugrib fī ḥulà l-Magrib, Rāyāt al-mubarrizīn wa-gāyāt al-mumayyizīn, Iḫtiṣār al-Qidḥ al-muʿallà fī l-taʾrīḫ al-muḥallà, used here as a source.)
+
+**Note:** a better solution (following Covadonga)
+
+```{r}
+travellerPlaces <- traveller %>%
+  left_join(PUA$personaje_lugar) %>%
+  left_join(PUA$lugar)
+```
+
+> **Additional details:**
+
+```{r eval=FALSE, include=TRUE}
+Our traveller `r length(unique(travellerPlaces$nombre_castellano))` places,
+which are: `r unique(travellerPlaces$nombre_castellano)`.
+```
+
+> **Rendered as:** Our traveller visited 30 places, which are: Ifrīqiya, Alcalá la Real, al-ʿIdwa, Alejandría, El Cairo, Alepo, Mosul, Bagdad, Túnez, Granada, Sevilla, Damasco, Oriente, Egipto, Jerusalén, Émesa, Basora, La Meca, Arrağān, Kelibia, Carmona, Sanğār, Tal Afar, Arcos, Algeciras, Jerez, Medina Sidonia, Málaga, Ceuta, Hama.
+
+
+### [6] Can you find a century in which Andalusians traveled the most?
+
+- *algorithmic solution*: we need to aggregate data on individuals into centuries---for now, let's simply round up death dates to the next 100; in actual research you would prefer doing something more elaborate, but this simplified approach will suffice for now. In any case, however, you always need to explain how you “implement” your data: in our case, we simply round up death dates to the next 100. Second, we will count the number of places associated with each individual. After connecting two tables (which should in the end have columns: person, century, number of visited places), we should calculate some number that would indicate the number of travels. The easiest would be to calculate average mean (`mean()`), but the problem with the mean is that it is too sensitive to outliers.
+
+- In the example below, for `vector` the mean is 8.467, while the majority of numbers are 2s. We can get a better picture by looking at interquartile range, which is the range between the 1st quarter and the 3rd quarter—values that we can get with `summary()`. In both cases we get 2s, which means that the middle 50% of all values are 2s. Since we have the range, we will need to look at the results (but we can still try to arrange by the value of the 1st quartile).
+
+```{r eval=FALSE, include=TRUE}
+vector <- c(1,2,2,2,2,2,2,2,2,2,2,2,2,2,100)
+
+mean(vector)
+# [1] 8.466667
+
+summary(vector)
+#[1] 8.466667
+#   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#  1.000   2.000   2.000   8.467   2.000 100.000
+
+q1 <- summary(vector)[[2]]
+q3 <- summary(vector)[[5]]
+```
+
+- *complete solution*:
+
+```{r}
+visitedPlaces <- PUA$personaje_lugar %>%
+  select(idPersonaje, idLugar) %>%
+  unique()
+
+travellersByCenturies <- PUA$personaje %>%
+  left_join(visitedPlaces) %>%
+  group_by(idPersonaje, muerte) %>%
+  summarize(totalPlaces = n()) %>%
+  mutate(century = ceiling(muerte / 100) * 100) %>%
+  group_by(century) %>%
+  summarize(q1 = summary(totalPlaces)[[2]],
+            q3 = summary(totalPlaces)[[5]],
+            mean = mean(totalPlaces),
+            total = n()) %>%
+  arrange(century)
+```
+
+The results will look like:
+
+```{r}
+travellersByCenturies
+```
+
+
+- *human-readable solution:* On average, 50% of individuals in each century travelled to 1-3 places, with 3rd and 7th centuries having a slightly higher volume of travel between 1 and 4 places for the interquartile range. One may argue that the average level of traveling remained quite similar through the centuries (the average mean does not change significantly either). Alternatively, perhaps, we need a different way to calculate that.
+
+### [7] What are the 10 most common activities Andalusians were involved into?
+
+- *algorithmic solution*: We need to count instances of all activities (table that connects individuals and activities). Then we simply find the top ten.
+- *complete solution*:
+
+```{r}
+activities <- PUA$personaje_actividad %>%
+  group_by(idActividad) %>%
+  summarize(total = n()) %>%
+  left_join(PUA$actividad) %>%
+  top_n(10, wt = total) %>%
+  arrange(desc(total)) %>%
+  mutate(readable = paste0(nombre_castellano, " (", nombre, ") --- ", total, " individuals")) %>%
+  select(readable)
+  
+activities
+```
+
+- *human-readable solution:*
+
+```{r eval=FALSE, include=TRUE}
+The most common activities among Andalusians are:
+`r paste0(activities$readable, collapse = "; ")`.
+```
+
+> **Rendered as:** The most common activities among Andalusians are: alfaquí (فقيه) --- 725 individuals; letrado (أديب) --- 464 individuals; almocrí (مقرىء) --- 417 individuals; poeta (شاعر) --- 406 individuals; tradicionista (محدث) --- 331 individuals; gramático (نحوي) --- 156 individuals; secretario, escribano (كاتب) --- 103 individuals; redactor de contratos (عاقد للشروط) --- 78 individuals; médico (طبيب) --- 52 individuals; lexicógrafo (لغوي) --- 52 individuals.
+
+### [8] What are the most common activities in the 5th AH century?
+
+- *algorithmic solution*: This is very similar to the previous one. What we need to change is, first, to identify all individual from the 5th century AH and then use this data to filter the table that connects individuals and activities. After that we process the results in the exact same way as in the previous problem.
+
+- *complete solution*:
+
+```{r}
+people500AH <- PUA$personaje %>%
+  mutate(century = ceiling(muerte / 100) * 100) %>%
+  filter(century == 500) %>%
+  left_join(PUA$personaje_actividad) %>%
+  select(idActividad) %>%
+  left_join(PUA$actividad) %>%
+  group_by(nombre_castellano, nombre) %>%
+  summarize(total = n()) %>%
+  arrange(desc(total)) %>%
+  mutate(readable = paste0(nombre_castellano, " (", nombre, ") --- ", total, " individuals")) %>%
+  ungroup() %>%
+  top_n(10, wt = total) %>%
+  select(readable)
+
+people500AH
+```
+
+- *human-readable solution:*
+
+```{r eval=FALSE, include=TRUE}
+The most common activities among Andalusians in the 5th century
+AH are: `r paste0(people500AH$readable, collapse = "; ")`. The first result essentially
+means that for most Andalusians in the 5th century we actually
+do not have any information on their activities.
+```
+
+> **Rendered as:** The most common activities among Andalusians in the 5th century AH are: NA (NA) --- 1216 individuals; alfaquí (فقيه) --- 78 individuals; almocrí (مقرىء) --- 63 individuals; poeta (شاعر) --- 60 individuals; letrado (أديب) --- 54 individuals; tradicionista (محدث) --- 27 individuals; comerciante (تاجر) --- 26 individuals; consejero (مشاور) --- 9 individuals; lexicógrafo (لغوي) --- 8 individuals; gramático (نحوي) --- 7 individuals. The first result essentially means that for most Andalusians in the 5th century we actually do not have any information on their activities.
+
+### [9] What are the main locations of the 5 largest families? (places from `familia`)
+
+- *algorithmic solution*: main locations are those that are mentioned in the table `familia`. We need to find those locations in the table `personaje_lugar` (filter by relationship type). We then need to find the top 5 families. Then we filter the table with persons by these top 5 families. We then connect resulting persons with filtered places and count people by places per family. The final results would be to create a “summary” column with readable information. Let's see if this works :)
+
+- *complete solution*:
+
+```{r}
+top5families <- PUA$personaje %>%
+  filter(idFamilia != 0) %>%
+  filter(!is.na(idFamilia)) %>%
+  group_by(idFamilia) %>%
+  summarize(totalMembers = n()) %>%
+  top_n(20, totalMembers) %>%
+  arrange(desc(totalMembers)) %>%
+  left_join(PUA$familia) %>% 
+  select(totalMembers, nombreE, lugar, lugarOrigen, lugarTraslado) %>%
+  left_join(PUA$lugar, by = c("lugar" = "idLugar")) %>%
+  select(totalMembers, nombreE, nombre_castellano, lugarOrigen, lugarTraslado) %>%
+  rename(lugar = nombre_castellano) %>%
+  left_join(PUA$lugar, by = c("lugarOrigen" = "idLugar")) %>%
+  select(totalMembers, nombreE, lugar, nombre_castellano, lugarTraslado) %>%
+  rename(lugarOrigen = nombre_castellano) %>%
+  select(totalMembers, nombreE, lugar, lugarOrigen, lugarTraslado) %>%
+  left_join(PUA$lugar, by = c("lugarTraslado" = "idLugar")) %>%
+  select(totalMembers, nombreE, lugar, lugarOrigen, nombre_castellano) %>%
+  rename(lugarTraslado = nombre_castellano) %>%
+  select(totalMembers, nombreE, lugar, lugarOrigen, lugarTraslado)
+
+top5families
+
+```
+
+- *human-readable solution:* ...
+
+### [10] What are the most visited locations among the members of those families? (places from `personaje_lugar`)
+
+- *algorithmic solution*: we can think of “main locations” as locations that are described with verb of residence and origin (AHL / ASL / SAKAN). We need to find those locations in the table personaje_lugar (filter by relationship type). We then need to find the top 5 families. Then we filter the table with persons by these top 5 families. We then connect resulting persons with filtered places and count people by places per family. The final results would be to create a “summary” column with readable information. Let's see if this works :)
+- *complete solution*: ...
+- *human-readable solution:* ...
+
+### [11] In which century do we have the largest number of families?
+
+- *algorithmic solution*: ...
+- *complete solution*: ...
+- *human-readable solution:* ...
+
+### [12] What is the peak century in the history of al-Andalus? (This can be measured by the highest number of people.)
+
+- *algorithmic solution*: ...
+- *complete solution*: ...
+- *human-readable solution:* ...
+
+### [13] What is the most prominent location in al-Andalus in general? What about by centuries? (Prominent means  that it has the highest number of people associated with it.)
+
+- *algorithmic solution*: ...
+- *complete solution*: ...
+- *human-readable solution:* ...
+
+### [14] What is the most prominent location outside of al-Andalus? What about by centuries?
+
+- *algorithmic solution*: ...
+- *complete solution*: ...
+- *human-readable solution:* ...
+
+### [15] Do the same task, but for common era centuries.
+
+**Hint:** you will also need to use a function from the previous lesson that converts AH dates to CE dates. Think carefully where you need to plug it in, i.e. between what steps.
+
+- *algorithmic solution*: ...
+- *complete solution*: ...
+- *human-readable solution:* ...

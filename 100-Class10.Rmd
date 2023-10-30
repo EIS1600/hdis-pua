@@ -1,4 +1,4 @@
-# Geographical Maps & Cartograms
+# Understanding Geographical Maps
 
 
 ## Creating Base Maps
@@ -258,6 +258,63 @@ ggsave("./Classes/Class_09/PUAR_Cl09_Map01.png", plot=graph02, width = 420, heig
 ggsave("./Classes/Class_09/PUAR_Cl09_Map01.svg", plot=graph02, width = 10, height = 10, units = "in")
 ```
 
+## Reusable Base Map for al-Andalus
+
+We can also save our base map, which we can then quickly re-load whenever we need it. In this case we need to use `.RData` format, rather than `.RDS`. 
+
+```{r eval=FALSE, warning=FALSE, include=TRUE}
+
+world <- ne_countries(scale = "medium", returnclass = "sf")
+rivers_df <- readRDS("./data/map_objects/rivers_df.rds")
+aral_sea_df <- readRDS("./data/map_objects/aral_sea_df.rds")
+routes_df <- readRDS("./data/map_objects/routes_df.rds")
+
+# focus on al-Andalus: we simply need to change xlim and ylim parameters:
+xlimAnd=c(-10,5); ylimAnd=c(35,44)
+
+base_plot_andalus <- ggplot(data = world) +
+  geom_sf(fill="white", color="white") +
+  # routes from Althurayya
+  geom_path(data = routes_df,aes(x = long, y = lat, group = group),
+            color = roadColor, linewidth = .2) +
+  # rivers and the aral sea
+  geom_path(data = rivers_df,aes(x = long, y = lat, group = group),
+            color = waterColor, linewidth = .2) +
+  geom_polygon(data = aral_sea_df,aes(x = long, y = lat, group = group),
+               color = waterColor, fill = waterColor, size = .2) +
+  # annotation scale
+  annotation_scale(location = "bl", width_hint = 0.25) +
+  annotation_north_arrow(location = "bl", which_north = "true",
+                         pad_x = unit(0.0, "in"), pad_y = unit(0.2, "in"),
+                         style = north_arrow_fancy_orienteering) +
+  # map limits and theme
+  coord_sf(xlim = xlimAnd, ylim = ylimAnd, expand = FALSE)
+
+save(base_plot_andalus, file = "./data/basemap/base_plot_andalus.RData")
+
+
+# NOW TRY THEMED
+waterColor <- "lightsteelblue2" #
+roadColor  <- "grey90"
+
+themeParameters <- theme(panel.background = element_rect(fill = waterColor),
+                         axis.title.y=element_blank(),
+                         axis.title.x=element_blank(),
+                         panel.grid.major = element_line(color = waterColor,
+                                                         linetype = "dotted",
+                                                         linewidth = 0.5))
+
+base_plot_andalus_themed <- base_plot_andalus + themeParameters
+save(base_plot_andalus_themed, file = "./data/basemap/base_plot_andalus_themed.RData")
+
+```
+
+A base map saved in such a way can be reloaded in the following manner:
+
+```{r message=FALSE, warning=FALSE}
+load("./data/basemap/base_plot_andalus_themed.RData")
+base_plot_andalus_themed
+```
 
 ## Raster base maps
 

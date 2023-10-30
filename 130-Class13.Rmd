@@ -1,6 +1,6 @@
-# Class 13
+# Geographical Networks
 
-[*subject to updates and corrections*]
-
+- Orbis-esque functionality
+- Networks of connections
 
 

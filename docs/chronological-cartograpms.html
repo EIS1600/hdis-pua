@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13 Chronological Cartograpms | HDIS: Analysis of Prosopographical Data–with R</title>
+  <meta name="description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13 Chronological Cartograpms | HDIS: Analysis of Prosopographical Data–with R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
+  <meta name="github-repo" content="EIS1600/hdis-pua" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13 Chronological Cartograpms | HDIS: Analysis of Prosopographical Data–with R" />
+  
+  <meta name="twitter:description" content="This is a Handbook for Digital Islamicate Studies. Work in progress, based on tought courses." />
+  
+
+<meta name="author" content="Maxim G. Romanov" />
+
+
+<meta name="date" content="2023-10-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="modeling-complex-entities.html"/>
+<link rel="next" href="geographical-networks.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.10/DiagrammeR.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Handbook of Digital Islamicate Studies</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html"><i class="fa fa-check"></i>About the Course</a>
+<ul>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#syllabus"><i class="fa fa-check"></i>Syllabus</a>
+<ul>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#general-description"><i class="fa fa-check"></i>General Description</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#didactic-concept"><i class="fa fa-check"></i>Didactic concept</a></li>
+<li class="chapter" data-level="0.0.1" data-path="about-the-course.html"><a href="about-the-course.html#course-structure-and-learning-objectives"><i class="fa fa-check"></i><b>0.0.1</b> Course structure and learning objectives:</a></li>
+<li class="chapter" data-level="0.0.2" data-path="about-the-course.html"><a href="about-the-course.html#main-object-of-the-course-pua-dataset"><i class="fa fa-check"></i><b>0.0.2</b> Main Object of the Course: PUA Dataset</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#course-evaluation-requirements-for-the-full-credit"><i class="fa fa-check"></i>Course Evaluation: requirements for the full credit</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#class-participation"><i class="fa fa-check"></i>Class Participation</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#homework"><i class="fa fa-check"></i>Homework</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#final-project"><i class="fa fa-check"></i>Final Project</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#additional-study-materials"><i class="fa fa-check"></i>Additional Study Materials</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#software-tools-technologies"><i class="fa fa-check"></i>Software, Tools, &amp; Technologies:</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#submitting-homework"><i class="fa fa-check"></i>Submitting Homework:</a></li>
+<li class="chapter" data-level="" data-path="about-the-course.html"><a href="about-the-course.html#lesson-topics-subject-to-modifications"><i class="fa fa-check"></i>Lesson Topics (<em>subject to modifications</em>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="setting-everything-up.html"><a href="setting-everything-up.html"><i class="fa fa-check"></i><b>1</b> Setting Everything Up</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="setting-everything-up.html"><a href="setting-everything-up.html#links-for-things-to-install"><i class="fa fa-check"></i><b>1.1</b> Links for things to install</a></li>
+<li class="chapter" data-level="1.2" data-path="setting-everything-up.html"><a href="setting-everything-up.html#setting-things-up"><i class="fa fa-check"></i><b>1.2</b> Setting Things Up</a></li>
+<li class="chapter" data-level="1.3" data-path="setting-everything-up.html"><a href="setting-everything-up.html#creating-a-project"><i class="fa fa-check"></i><b>1.3</b> Creating a Project</a></li>
+<li class="chapter" data-level="1.4" data-path="setting-everything-up.html"><a href="setting-everything-up.html#homework-assignments"><i class="fa fa-check"></i><b>1.4</b> Homework assignments</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html"><i class="fa fa-check"></i><b>2</b> RStudio, Basic R Commands, Swirl Tutorials</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#this-chapter"><i class="fa fa-check"></i><b>2.1</b> This Chapter</a></li>
+<li class="chapter" data-level="2.2" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#overview-of-r"><i class="fa fa-check"></i><b>2.2</b> Overview of R</a></li>
+<li class="chapter" data-level="2.3" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#rstudio-interface"><i class="fa fa-check"></i><b>2.3</b> RStudio Interface</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#main-file-types"><i class="fa fa-check"></i><b>2.4</b> Main File Types</a></li>
+<li class="chapter" data-level="2.5" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#projects"><i class="fa fa-check"></i><b>2.5</b> Projects</a></li>
+<li class="chapter" data-level="2.6" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-commands"><i class="fa fa-check"></i><b>2.6</b> Basic Commands</a></li>
+<li class="chapter" data-level="2.7" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#built-in-functions"><i class="fa fa-check"></i><b>2.7</b> Built-in Functions</a></li>
+<li class="chapter" data-level="2.8" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#librariespackages"><i class="fa fa-check"></i><b>2.8</b> Libraries/Packages</a></li>
+<li class="chapter" data-level="2.9" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#values-and-their-types"><i class="fa fa-check"></i><b>2.9</b> Values and their types</a></li>
+<li class="chapter" data-level="2.10" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-data-structures-and-their-practical-usage"><i class="fa fa-check"></i><b>2.10</b> Basic Data Structures and Their Practical Usage</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-data-structures"><i class="fa fa-check"></i><b>2.10.1</b> Basic data structures</a></li>
+<li class="chapter" data-level="2.10.2" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#main-properties-of-basic-data-structures"><i class="fa fa-check"></i><b>2.10.2</b> Main properties of basic data structures</a></li>
+<li class="chapter" data-level="2.10.3" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#most-common-usage-of-basic-data-structures"><i class="fa fa-check"></i><b>2.10.3</b> Most Common Usage of Basic Data Structures:</a></li>
+<li class="chapter" data-level="2.10.4" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#basic-data-structures-examples"><i class="fa fa-check"></i><b>2.10.4</b> Basic Data Structures Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="rstudio-basic-r-commands-swirl-tutorials.html"><a href="rstudio-basic-r-commands-swirl-tutorials.html#homework-with-swirl"><i class="fa fa-check"></i><b>2.11</b> Homework with <code>swirl()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html"><i class="fa fa-check"></i><b>3</b> R Markdown and R Notebooks</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#previous-lesson"><i class="fa fa-check"></i><b>3.1</b> Previous lesson</a></li>
+<li class="chapter" data-level="3.2" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#this-lesson"><i class="fa fa-check"></i><b>3.2</b> This lesson</a></li>
+<li class="chapter" data-level="3.3" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#r-notebookmarkdown"><i class="fa fa-check"></i><b>3.3</b> R Notebook/Markdown</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#r-notebook-yml-header"><i class="fa fa-check"></i><b>3.3.1</b> R Notebook/ YML Header</a></li>
+<li class="chapter" data-level="3.3.2" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#basics-of-markdown"><i class="fa fa-check"></i><b>3.3.2</b> Basics of Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="r-markdown-and-r-notebooks.html"><a href="r-markdown-and-r-notebooks.html#homework-1"><i class="fa fa-check"></i><b>3.4</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation I</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#this-chapter-1"><i class="fa fa-check"></i><b>4.1</b> This Chapter</a></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#why-tidyverse"><i class="fa fa-check"></i><b>4.2</b> Why <code>tidyverse</code>?</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-data-file-formats-csv-and-tsv"><i class="fa fa-check"></i><b>4.3</b> Main Data File Formats: CSV and TSV</a></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-data-into-r"><i class="fa fa-check"></i><b>4.4</b> Loading Data into R</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-csv-and-tsv-files"><i class="fa fa-check"></i><b>4.4.1</b> Loading CSV and TSV files</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#r-specific-data-format-rds"><i class="fa fa-check"></i><b>4.4.2</b> R-specific Data “Format”: RDS</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#loading-pua-data"><i class="fa fa-check"></i><b>4.5</b> Loading PUA data</a></li>
+<li class="chapter" data-level="4.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#exploring-pua-data"><i class="fa fa-check"></i><b>4.6</b> Exploring PUA Data</a></li>
+<li class="chapter" data-level="4.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#main-commands-for-engaging-with-a-tibble"><i class="fa fa-check"></i><b>4.7</b> Main commands for engaging with a tibble</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#chaining-with"><i class="fa fa-check"></i><b>4.7.1</b> Chaining with <code>%&gt;%</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-dplyr"><i class="fa fa-check"></i><b>4.8</b> Important Functions from <code>dplyr</code></a></li>
+<li class="chapter" data-level="4.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#important-functions-from-tidyr"><i class="fa fa-check"></i><b>4.9</b> Important Functions from <code>tidyr</code></a></li>
+<li class="chapter" data-level="4.10" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#function-usage"><i class="fa fa-check"></i><b>4.10</b> Function usage</a>
+<ul>
+<li class="chapter" data-level="4.10.1" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#filter"><i class="fa fa-check"></i><b>4.10.1</b> <code>filter()</code></a></li>
+<li class="chapter" data-level="4.10.2" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#select"><i class="fa fa-check"></i><b>4.10.2</b> <code>select()</code></a></li>
+<li class="chapter" data-level="4.10.3" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#mutate-and-transmute"><i class="fa fa-check"></i><b>4.10.3</b> <code>mutate()</code> and <code>transmute()</code></a></li>
+<li class="chapter" data-level="4.10.4" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#rename"><i class="fa fa-check"></i><b>4.10.4</b> <code>rename()</code></a></li>
+<li class="chapter" data-level="4.10.5" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#arrange"><i class="fa fa-check"></i><b>4.10.5</b> <code>arrange()</code></a></li>
+<li class="chapter" data-level="4.10.6" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#group_by-ungroup"><i class="fa fa-check"></i><b>4.10.6</b> <code>group_by()</code> / <code>ungroup()</code></a></li>
+<li class="chapter" data-level="4.10.7" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#summarise-or-summarize"><i class="fa fa-check"></i><b>4.10.7</b> <code>summarise()</code> or <code>summarize()</code></a></li>
+<li class="chapter" data-level="4.10.8" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#join_-functions"><i class="fa fa-check"></i><b>4.10.8</b> <code>join_*</code> functions</a></li>
+<li class="chapter" data-level="4.10.9" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#pivot_-functions"><i class="fa fa-check"></i><b>4.10.9</b> <code>pivot_*()</code> functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.11" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#homework-tasks"><i class="fa fa-check"></i><b>4.11</b> Homework Tasks</a></li>
+<li class="chapter" data-level="4.12" data-path="data-manipulation-i.html"><a href="data-manipulation-i.html#appendix-window-function-in-tidyverse"><i class="fa fa-check"></i><b>4.12</b> Appendix: “Window” function in <code>tidyverse</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation II</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#this-chapter-2"><i class="fa fa-check"></i><b>5.1</b> This Chapter</a></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#problems"><i class="fa fa-check"></i><b>5.2</b> Problems</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#who-is-the-oldest-individual-we-have-in-the-pua-data"><i class="fa fa-check"></i><b>5.2.1</b> [1] Who is the oldest individual we have in the PUA data?</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#which-places-did-this-individual-visit"><i class="fa fa-check"></i><b>5.2.2</b> [2] Which places did this individual visit?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-kind-of-activities-was-that-individual-involved-in"><i class="fa fa-check"></i><b>5.2.3</b> [3] What kind of activities was that individual involved in?</a></li>
+<li class="chapter" data-level="5.2.4" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#who-is-the-oldest-jurist-faqīh-in-the-pua-data"><i class="fa fa-check"></i><b>5.2.4</b> [4] Who is the oldest jurist (<em>faqīh</em>) in the PUA data?</a></li>
+<li class="chapter" data-level="5.2.5" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#can-you-find-a-century-in-which-andalusians-traveled-the-most"><i class="fa fa-check"></i><b>5.2.5</b> [6] Can you find a century in which Andalusians traveled the most?</a></li>
+<li class="chapter" data-level="5.2.6" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-10-most-common-activities-andalusians-were-involved-into"><i class="fa fa-check"></i><b>5.2.6</b> [7] What are the 10 most common activities Andalusians were involved into?</a></li>
+<li class="chapter" data-level="5.2.7" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-most-common-activities-in-the-5th-ah-century"><i class="fa fa-check"></i><b>5.2.7</b> [8] What are the most common activities in the 5th AH century?</a></li>
+<li class="chapter" data-level="5.2.8" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-main-locations-of-the-5-largest-families-places-from-familia"><i class="fa fa-check"></i><b>5.2.8</b> [9] What are the main locations of the 5 largest families? (places from <code>familia</code>)</a></li>
+<li class="chapter" data-level="5.2.9" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-most-visited-locations-among-the-members-of-those-families-places-from-personaje_lugar"><i class="fa fa-check"></i><b>5.2.9</b> [10] What are the most visited locations among the members of those families? (places from <code>personaje_lugar</code>)</a></li>
+<li class="chapter" data-level="5.2.10" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#in-which-century-do-we-have-the-largest-number-of-families"><i class="fa fa-check"></i><b>5.2.10</b> [11] In which century do we have the largest number of families?</a></li>
+<li class="chapter" data-level="5.2.11" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-is-the-peak-century-in-the-history-of-al-andalus-this-can-be-measured-by-the-highest-number-of-people."><i class="fa fa-check"></i><b>5.2.11</b> [12] What is the peak century in the history of al-Andalus? (This can be measured by the highest number of people.)</a></li>
+<li class="chapter" data-level="5.2.12" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-is-the-most-prominent-location-in-al-andalus-in-general-what-about-by-centuries-prominent-means-that-it-has-the-highest-number-of-people-associated-with-it."><i class="fa fa-check"></i><b>5.2.12</b> [13] What is the most prominent location in al-Andalus in general? What about by centuries? (Prominent means that it has the highest number of people associated with it.)</a></li>
+<li class="chapter" data-level="5.2.13" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-is-the-most-prominent-location-outside-of-al-andalus-what-about-by-centuries"><i class="fa fa-check"></i><b>5.2.13</b> [14] What is the most prominent location outside of al-Andalus? What about by centuries?</a></li>
+<li class="chapter" data-level="5.2.14" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#do-the-same-task-but-for-common-era-centuries."><i class="fa fa-check"></i><b>5.2.14</b> [15] Do the same task, but for common era centuries.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html"><i class="fa fa-check"></i><b>6</b> Control Flow; Regular Expressions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#this-chapter-3"><i class="fa fa-check"></i><b>6.1</b> This Chapter</a></li>
+<li class="chapter" data-level="6.2" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#control-flow"><i class="fa fa-check"></i><b>6.2</b> Control Flow</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#conditional-statements"><i class="fa fa-check"></i><b>6.2.1</b> Conditional statements</a></li>
+<li class="chapter" data-level="6.2.2" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#loops"><i class="fa fa-check"></i><b>6.2.2</b> Loops</a></li>
+<li class="chapter" data-level="6.2.3" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#functions"><i class="fa fa-check"></i><b>6.2.3</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#regular-expressions-in-r"><i class="fa fa-check"></i><b>6.3</b> Regular Expressions in R</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#basics-of-regular-expressions"><i class="fa fa-check"></i><b>6.3.1</b> Basics of Regular Expressions</a></li>
+<li class="chapter" data-level="6.3.2" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#regular-expressions-in-r-1"><i class="fa fa-check"></i><b>6.3.2</b> Regular Expressions in R</a></li>
+<li class="chapter" data-level="6.3.3" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#tips-for-regular-expressions-in-r"><i class="fa fa-check"></i><b>6.3.3</b> Tips for Regular Expressions in R</a></li>
+<li class="chapter" data-level="6.3.4" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#in-class-practice"><i class="fa fa-check"></i><b>6.3.4</b> In-Class Practice</a></li>
+<li class="chapter" data-level="6.3.5" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html#the-practice-regex-file"><i class="fa fa-check"></i><b>6.3.5</b> The Practice Regex File</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html"><i class="fa fa-check"></i><b>7</b> Getting Your Data Right</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#this-chapter-4"><i class="fa fa-check"></i><b>7.1</b> This Chapter</a></li>
+<li class="chapter" data-level="7.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#getting-your-own-data"><i class="fa fa-check"></i><b>7.2</b> 1. Getting your own data</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#ways-of-obtaining-data"><i class="fa fa-check"></i><b>7.2.1</b> Ways of obtaining data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#major-formats"><i class="fa fa-check"></i><b>7.2.2</b> Major formats</a></li>
+<li class="chapter" data-level="7.2.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#ways-of-obtaining-data-1"><i class="fa fa-check"></i><b>7.2.3</b> Ways of obtaining data</a></li>
+<li class="chapter" data-level="7.2.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#major-formats-1"><i class="fa fa-check"></i><b>7.2.4</b> Major formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#tidying-data"><i class="fa fa-check"></i><b>7.3</b> 2. Tidying Data</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#basic-principles-of-organizing-data-tidy-data"><i class="fa fa-check"></i><b>7.3.1</b> Basic principles of organizing data: <em>Tidy Data</em></a></li>
+<li class="chapter" data-level="7.3.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#clean-data-tidy-data-additional-explanations"><i class="fa fa-check"></i><b>7.3.2</b> Clean Data / Tidy Data: <em>additional explanations</em></a></li>
+<li class="chapter" data-level="7.3.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#discussion-a-bulliet-dataset"><i class="fa fa-check"></i><b>7.3.3</b> <em>Discussion</em>: “A Bulliet Dataset”</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#modeling-data"><i class="fa fa-check"></i><b>7.4</b> 3. Modeling Data</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#categorization-as-a-way-of-modeling-data"><i class="fa fa-check"></i><b>7.4.1</b> Categorization as a Way of modeling data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#normalization"><i class="fa fa-check"></i><b>7.4.2</b> Normalization</a></li>
+<li class="chapter" data-level="7.4.3" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#note-proxies-features-abstractions"><i class="fa fa-check"></i><b>7.4.3</b> Note: <em>Proxies</em>, <em>Features</em>, <em>Abstractions</em></a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="getting-your-data-right.html"><a href="getting-your-data-right.html#appendix-ocr-with-r"><i class="fa fa-check"></i><b>7.5</b> Appendix: OCR with R</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html"><i class="fa fa-check"></i><b>8</b> Deep Look into the PUA Dataset</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#updated-pua-dataset"><i class="fa fa-check"></i><b>8.1</b> Updated PUA Dataset</a></li>
+<li class="chapter" data-level="8.2" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#normalized-and-improved-pua-dataset"><i class="fa fa-check"></i><b>8.2</b> Normalized and Improved PUA Dataset</a></li>
+<li class="chapter" data-level="8.3" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#modeling-pua-dataset"><i class="fa fa-check"></i><b>8.3</b> Modeling PUA Dataset</a></li>
+<li class="chapter" data-level="8.4" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#conceptual-models-for-your-data"><i class="fa fa-check"></i><b>8.4</b> Conceptual Models for Your Data</a></li>
+<li class="chapter" data-level="8.5" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#implementation"><i class="fa fa-check"></i><b>8.5</b> Implementation</a></li>
+<li class="chapter" data-level="8.6" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#homework-assignment"><i class="fa fa-check"></i><b>8.6</b> Homework assignment</a></li>
+<li class="chapter" data-level="8.7" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#reference-materials"><i class="fa fa-check"></i><b>8.7</b> Reference Materials</a></li>
+<li class="chapter" data-level="8.8" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#appendix-1-pua-data-tables"><i class="fa fa-check"></i><b>8.8</b> Appendix 1: PUA Data Tables</a>
+<ul>
+<li class="chapter" data-level="8.8.1" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#main-table"><i class="fa fa-check"></i><b>8.8.1</b> Main Table</a></li>
+<li class="chapter" data-level="8.8.2" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#connection-tables"><i class="fa fa-check"></i><b>8.8.2</b> Connection Tables</a></li>
+<li class="chapter" data-level="8.8.3" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#auxiliary-tables"><i class="fa fa-check"></i><b>8.8.3</b> Auxiliary Tables</a></li>
+<li class="chapter" data-level="8.8.4" data-path="deep-look-into-the-pua-dataset.html"><a href="deep-look-into-the-pua-dataset.html#metadata-tables"><i class="fa fa-check"></i><b>8.8.4</b> Metadata Tables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html"><i class="fa fa-check"></i><b>9</b> Visualizations: <code>plot()</code> and <code>ggplot()</code></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#this-chapter-5"><i class="fa fa-check"></i><b>9.1</b> This Chapter</a></li>
+<li class="chapter" data-level="9.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#conceptual-issues"><i class="fa fa-check"></i><b>9.2</b> Conceptual Issues</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#perception"><i class="fa fa-check"></i><b>9.2.1</b> Perception</a></li>
+<li class="chapter" data-level="9.2.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#the-rules-of-thumb-for-visualizations"><i class="fa fa-check"></i><b>9.2.2</b> The Rules of Thumb for Visualizations</a></li>
+<li class="chapter" data-level="9.2.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#types-of-graphs-and-when-to-use-them"><i class="fa fa-check"></i><b>9.2.3</b> Types of Graphs and When to Use Them</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#r-built-in-graphics-functions-quick-overview"><i class="fa fa-check"></i><b>9.3</b> R Built-in Graphics Functions: Quick Overview</a></li>
+<li class="chapter" data-level="9.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#tidyverse-graphs-ggplot2"><i class="fa fa-check"></i><b>9.4</b> <code>Tidyverse</code> Graphs: <code>ggplot2</code></a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#grammar-of-graphics"><i class="fa fa-check"></i><b>9.4.1</b> Grammar of Graphics</a></li>
+<li class="chapter" data-level="9.4.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#code-breakdown"><i class="fa fa-check"></i><b>9.4.2</b> Code Breakdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#simpler-graphs"><i class="fa fa-check"></i><b>9.5</b> Simpler graphs</a></li>
+<li class="chapter" data-level="9.6" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#other-types-of-graphs"><i class="fa fa-check"></i><b>9.6</b> Other types of graphs</a>
+<ul>
+<li class="chapter" data-level="9.6.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#scatter-plots"><i class="fa fa-check"></i><b>9.6.1</b> 1. Scatter plots</a></li>
+<li class="chapter" data-level="9.6.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts"><i class="fa fa-check"></i><b>9.6.2</b> 2. Line charts</a></li>
+<li class="chapter" data-level="9.6.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts"><i class="fa fa-check"></i><b>9.6.3</b> 3. Bar charts</a></li>
+<li class="chapter" data-level="9.6.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms"><i class="fa fa-check"></i><b>9.6.4</b> 4. Histograms</a></li>
+<li class="chapter" data-level="9.6.5" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds"><i class="fa fa-check"></i><b>9.6.5</b> 5. Wordclouds</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-assignment-1"><i class="fa fa-check"></i><b>9.7</b> Homework assignment</a></li>
+<li class="chapter" data-level="9.8" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendices"><i class="fa fa-check"></i><b>9.8</b> Appendices</a>
+<ul>
+<li class="chapter" data-level="9.8.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-1-when-a-simple-table-may-suffice"><i class="fa fa-check"></i><b>9.8.1</b> Appendix 1: When a “Simple” Table May Suffice</a></li>
+</ul></li>
+<li class="chapter" data-level="9.9" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-interactive-graphs"><i class="fa fa-check"></i><b>9.9</b> Appendix: Interactive Graphs</a>
+<ul>
+<li class="chapter" data-level="9.9.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-checklist-for-creating-visualizations"><i class="fa fa-check"></i><b>9.9.1</b> Appendix: Checklist for Creating Visualizations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.10" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#appendix-scientific-notation"><i class="fa fa-check"></i><b>9.10</b> Appendix: Scientific Notation</a></li>
+<li class="chapter" data-level="9.11" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#homework-solutions-partial"><i class="fa fa-check"></i><b>9.11</b> Homework solutions (partial)</a>
+<ul>
+<li class="chapter" data-level="9.11.1" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#line-charts-1"><i class="fa fa-check"></i><b>9.11.1</b> Line charts</a></li>
+<li class="chapter" data-level="9.11.2" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#bar-charts-1"><i class="fa fa-check"></i><b>9.11.2</b> 3. Bar charts</a></li>
+<li class="chapter" data-level="9.11.3" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#histograms-1"><i class="fa fa-check"></i><b>9.11.3</b> 4. Histograms</a></li>
+<li class="chapter" data-level="9.11.4" data-path="visualizations-plot-and-ggplot.html"><a href="visualizations-plot-and-ggplot.html#wordclouds---homework"><i class="fa fa-check"></i><b>9.11.4</b> 5. Wordclouds - Homework</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html"><i class="fa fa-check"></i><b>10</b> Overview of the PUA dataset</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#the-initial-sql-database-extraction-of-tables"><i class="fa fa-check"></i><b>10.1</b> The initial SQL Database: extraction of tables</a></li>
+<li class="chapter" data-level="10.2" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#extracting-tables-with-r"><i class="fa fa-check"></i><b>10.2</b> Extracting tables with R</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#looking-at-the-data"><i class="fa fa-check"></i><b>10.2.1</b> Looking at the data</a></li>
+<li class="chapter" data-level="10.2.2" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#reorganization-conceptual-model-for-your-data"><i class="fa fa-check"></i><b>10.2.2</b> Reorganization: Conceptual Model For Your Data</a></li>
+<li class="chapter" data-level="10.2.3" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#improving-pua-data"><i class="fa fa-check"></i><b>10.2.3</b> Improving PUA Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html"><i class="fa fa-check"></i><b>11</b> Understanding Geographical Maps</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#creating-base-maps"><i class="fa fa-check"></i><b>11.1</b> Creating Base Maps</a></li>
+<li class="chapter" data-level="11.2" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#core-concepts-and-their-practical-implementations"><i class="fa fa-check"></i><b>11.2</b> Core concepts and their practical implementations</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#projection-issues"><i class="fa fa-check"></i><b>11.2.1</b> Projection Issues</a></li>
+<li class="chapter" data-level="11.2.2" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#a-digital-map-layers-of-goodness"><i class="fa fa-check"></i><b>11.2.2</b> A Digital Map: Layers of Goodness</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#main-types-of-data-points-lines-polygons"><i class="fa fa-check"></i><b>11.3</b> Main Types of Data: Points, Lines, Polygons</a></li>
+<li class="chapter" data-level="11.4" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#base-maps"><i class="fa fa-check"></i><b>11.4</b> Base maps</a>
+<ul>
+<li class="chapter" data-level="11.4.1" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#new-libraries"><i class="fa fa-check"></i><b>11.4.1</b> New libraries</a></li>
+<li class="chapter" data-level="11.4.2" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#compiling-the-base-map"><i class="fa fa-check"></i><b>11.4.2</b> Compiling the base map</a></li>
+<li class="chapter" data-level="11.4.3" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#adding-data"><i class="fa fa-check"></i><b>11.4.3</b> Adding data</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#reusable-base-map-for-al-andalus"><i class="fa fa-check"></i><b>11.5</b> Reusable Base Map for al-Andalus</a></li>
+<li class="chapter" data-level="11.6" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#raster-base-maps"><i class="fa fa-check"></i><b>11.6</b> Raster base maps</a></li>
+<li class="chapter" data-level="11.7" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#homework-2"><i class="fa fa-check"></i><b>11.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html"><i class="fa fa-check"></i><b>12</b> Modeling Complex Entities</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#modeling-regions"><i class="fa fa-check"></i><b>12.1</b> Modeling Regions</a></li>
+<li class="chapter" data-level="12.2" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#modeling-periods"><i class="fa fa-check"></i><b>12.2</b> Modeling Periods</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#a-1000-and-1-tries"><i class="fa fa-check"></i><b>12.2.1</b> A 1000 And 1 Tries</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#intermediate-summary"><i class="fa fa-check"></i><b>12.3</b> Intermediate Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html"><i class="fa fa-check"></i><b>13</b> Chronological Cartograpms</a>
+<ul>
+<li class="chapter" data-level="13.0.1" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html#animated-map-approach"><i class="fa fa-check"></i><b>13.0.1</b> Animated Map Approach</a></li>
+<li class="chapter" data-level="13.0.2" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html#frame-by-frame-approach"><i class="fa fa-check"></i><b>13.0.2</b> “Frame-by-Frame” Approach</a></li>
+<li class="chapter" data-level="13.1" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html#chrono-geographical-information-without-maps"><i class="fa fa-check"></i><b>13.1</b> Chrono-Geographical Information without Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="geographical-networks.html"><a href="geographical-networks.html"><i class="fa fa-check"></i><b>14</b> Geographical Networks</a></li>
+<li class="chapter" data-level="15" data-path="social-networks.html"><a href="social-networks.html"><i class="fa fa-check"></i><b>15</b> Social Networks</a></li>
+<li class="chapter" data-level="16" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html"><i class="fa fa-check"></i><b>16</b> Glossary of Computer Terms</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#general-computer-terms"><i class="fa fa-check"></i><b>16.1</b> General Computer Terms</a></li>
+<li class="chapter" data-level="16.2" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#r-specific-terms"><i class="fa fa-check"></i><b>16.2</b> R-Specific Terms</a></li>
+<li class="chapter" data-level="16.3" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#nlp-and-linguistics"><i class="fa fa-check"></i><b>16.3</b> NLP and Linguistics</a></li>
+<li class="chapter" data-level="16.4" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#machine-learning"><i class="fa fa-check"></i><b>16.4</b> Machine Learning</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="appendices-1.html"><a href="appendices-1.html"><i class="fa fa-check"></i><b>17</b> Appendices</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="appendices-1.html"><a href="appendices-1.html#appendix-i-importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>17.1</b> Appendix I: Importance of basic computer skills for humanists</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="appendices-1.html"><a href="appendices-1.html#importance-of-basic-computer-skills-for-humanists"><i class="fa fa-check"></i><b>17.1.1</b> Importance of basic computer skills for humanists</a></li>
+<li class="chapter" data-level="17.1.2" data-path="appendices-1.html"><a href="appendices-1.html#access-to-information"><i class="fa fa-check"></i><b>17.1.2</b> Access to information</a></li>
+<li class="chapter" data-level="17.1.3" data-path="appendices-1.html"><a href="appendices-1.html#organization-and-management-of-research-material"><i class="fa fa-check"></i><b>17.1.3</b> Organization and management of research material</a></li>
+<li class="chapter" data-level="17.1.4" data-path="appendices-1.html"><a href="appendices-1.html#file-organization"><i class="fa fa-check"></i><b>17.1.4</b> File Organization</a></li>
+<li class="chapter" data-level="17.1.5" data-path="appendices-1.html"><a href="appendices-1.html#finding-your-way-around-the-computer"><i class="fa fa-check"></i><b>17.1.5</b> Finding your way around the computer</a></li>
+<li class="chapter" data-level="17.1.6" data-path="appendices-1.html"><a href="appendices-1.html#common-file-formats-and-extensions"><i class="fa fa-check"></i><b>17.1.6</b> Common file formats and extensions</a></li>
+<li class="chapter" data-level="17.1.7" data-path="appendices-1.html"><a href="appendices-1.html#organizing-files-and-folders-for-research-projects"><i class="fa fa-check"></i><b>17.1.7</b> Organizing files and folders for research projects</a></li>
+<li class="chapter" data-level="17.1.8" data-path="appendices-1.html"><a href="appendices-1.html#demonstration-of-file-navigation-using-a-file-explorer-windows-or-finder-mac"><i class="fa fa-check"></i><b>17.1.8</b> Demonstration of file navigation using a file explorer (Windows) or Finder (Mac)</a></li>
+<li class="chapter" data-level="17.1.9" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basics"><i class="fa fa-check"></i><b>17.1.9</b> Command Line Basics</a></li>
+<li class="chapter" data-level="17.1.10" data-path="appendices-1.html"><a href="appendices-1.html#introduction-to-command-line-interfaces"><i class="fa fa-check"></i><b>17.1.10</b> Introduction to command line interfaces</a></li>
+<li class="chapter" data-level="17.1.11" data-path="appendices-1.html"><a href="appendices-1.html#command-line-basic-commands"><i class="fa fa-check"></i><b>17.1.11</b> Command Line: Basic Commands</a></li>
+<li class="chapter" data-level="17.1.12" data-path="appendices-1.html"><a href="appendices-1.html#creating-moving-renaming-and-deleting-files-and-folders"><i class="fa fa-check"></i><b>17.1.12</b> Creating, moving, renaming, and deleting files and folders</a></li>
+<li class="chapter" data-level="17.1.13" data-path="appendices-1.html"><a href="appendices-1.html#tips-for-efficient-command-line-usage"><i class="fa fa-check"></i><b>17.1.13</b> Tips for efficient command line usage</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="bibliography.html"><a href="bibliography.html"><i class="fa fa-check"></i><b>18</b> Bibliography</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HDIS: Analysis of Prosopographical Data–with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chronological-cartograpms" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">13</span> Chronological Cartograpms<a href="chronological-cartograpms.html#chronological-cartograpms" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Let’s now create a series of maps on all the people that we have in PUA within al-Andalus across the covered period. (Following the US cities example from the previous lesson).</p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="chronological-cartograpms.html#cb228-1" tabindex="-1"></a>PUA <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds&quot;</span>)</span>
+<span id="cb228-2"><a href="chronological-cartograpms.html#cb228-2" tabindex="-1"></a></span>
+<span id="cb228-3"><a href="chronological-cartograpms.html#cb228-3" tabindex="-1"></a>personaje_with_dates <span class="ot">&lt;-</span> PUA<span class="sc">$</span>personaje_decadas_modeladas</span>
+<span id="cb228-4"><a href="chronological-cartograpms.html#cb228-4" tabindex="-1"></a></span>
+<span id="cb228-5"><a href="chronological-cartograpms.html#cb228-5" tabindex="-1"></a>personaje_with_places <span class="ot">&lt;-</span> PUA<span class="sc">$</span>personaje_lugar <span class="sc">%&gt;%</span></span>
+<span id="cb228-6"><a href="chronological-cartograpms.html#cb228-6" tabindex="-1"></a>  <span class="fu">filter</span>(idPersonaje <span class="sc">%in%</span> personaje_with_dates<span class="sc">$</span>idPersonaje) <span class="sc">%&gt;%</span></span>
+<span id="cb228-7"><a href="chronological-cartograpms.html#cb228-7" tabindex="-1"></a>  <span class="fu">select</span>(idPersonaje, idLugar) <span class="sc">%&gt;%</span></span>
+<span id="cb228-8"><a href="chronological-cartograpms.html#cb228-8" tabindex="-1"></a>  <span class="fu">left_join</span>(PUA<span class="sc">$</span>lugar) <span class="sc">%&gt;%</span></span>
+<span id="cb228-9"><a href="chronological-cartograpms.html#cb228-9" tabindex="-1"></a>  <span class="fu">select</span>(idPersonaje, idLugar, lat, lng) <span class="sc">%&gt;%</span></span>
+<span id="cb228-10"><a href="chronological-cartograpms.html#cb228-10" tabindex="-1"></a>  <span class="fu">left_join</span>(PUA<span class="sc">$</span>lugar_con_imanes) <span class="sc">%&gt;%</span></span>
+<span id="cb228-11"><a href="chronological-cartograpms.html#cb228-11" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(region)) <span class="sc">%&gt;%</span></span>
+<span id="cb228-12"><a href="chronological-cartograpms.html#cb228-12" tabindex="-1"></a>  <span class="fu">select</span>(idPersonaje, idLugar, lat, lng, region, latR, lngR)</span></code></pre></div>
+<pre><code>## Joining with `by = join_by(idLugar)`
+## Joining with `by = join_by(idLugar, lat, lng)`</code></pre>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="chronological-cartograpms.html#cb230-1" tabindex="-1"></a>personaje_with_places</span></code></pre></div>
+<pre><code>## # A tibble: 10,188 × 7
+##    idPersonaje idLugar   lat    lng region     latR   lngR
+##          &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;
+##  1           1       4  37.9 -4.78  Córdoba    37.9 -4.78 
+##  2           7       4  37.9 -4.78  Córdoba    37.9 -4.78 
+##  3           8       8  36.5 -5.93  Algeciras  36.1 -5.45 
+##  4           9       4  37.9 -4.78  Córdoba    37.9 -4.78 
+##  5        4159       4  37.9 -4.78  Córdoba    37.9 -4.78 
+##  6          12      10  41.6 -0.883 Zaragoza   41.6 -0.883
+##  7          19      15  37.2 -5.10  Córdoba    37.9 -4.78 
+##  8          21      17  39.2 -0.435 Valencia   39.5 -0.375
+##  9          21      18  38.0 -1.13  Murcia     38.0 -1.13 
+## 10          22      19  39.0 -0.519 Valencia   39.5 -0.375
+## # ℹ 10,178 more rows</code></pre>
+<p>Now, let’s <code>left_join</code> with modeled decades. Essentially, this will create lots of “duplicates” for each person—a single person-place row will be duplicated as many times as there are decades for that individual.</p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="chronological-cartograpms.html#cb232-1" tabindex="-1"></a>personaje_with_places_and_dates <span class="ot">&lt;-</span> personaje_with_places <span class="sc">%&gt;%</span></span>
+<span id="cb232-2"><a href="chronological-cartograpms.html#cb232-2" tabindex="-1"></a>  <span class="fu">left_join</span>(personaje_with_dates)</span>
+<span id="cb232-3"><a href="chronological-cartograpms.html#cb232-3" tabindex="-1"></a></span>
+<span id="cb232-4"><a href="chronological-cartograpms.html#cb232-4" tabindex="-1"></a>personaje_with_places_and_dates</span></code></pre></div>
+<pre><code>## # A tibble: 82,261 × 8
+##    idPersonaje idLugar   lat   lng region   latR  lngR decadas
+##          &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+##  1           1       4  37.9 -4.78 Córdoba  37.9 -4.78     120
+##  2           1       4  37.9 -4.78 Córdoba  37.9 -4.78     130
+##  3           1       4  37.9 -4.78 Córdoba  37.9 -4.78     140
+##  4           1       4  37.9 -4.78 Córdoba  37.9 -4.78     150
+##  5           1       4  37.9 -4.78 Córdoba  37.9 -4.78     160
+##  6           1       4  37.9 -4.78 Córdoba  37.9 -4.78     170
+##  7           1       4  37.9 -4.78 Córdoba  37.9 -4.78     180
+##  8           7       4  37.9 -4.78 Córdoba  37.9 -4.78     350
+##  9           7       4  37.9 -4.78 Córdoba  37.9 -4.78     360
+## 10           7       4  37.9 -4.78 Córdoba  37.9 -4.78     370
+## # ℹ 82,251 more rows</code></pre>
+<p>Now we can split this table into two: one will have the minor places count, while the other will have counts for our magnets.</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="chronological-cartograpms.html#cb234-1" tabindex="-1"></a>minor_places_over_time <span class="ot">&lt;-</span> personaje_with_places_and_dates <span class="sc">%&gt;%</span></span>
+<span id="cb234-2"><a href="chronological-cartograpms.html#cb234-2" tabindex="-1"></a>  <span class="fu">group_by</span>(idLugar, lat, lng, decadas, region) <span class="sc">%&gt;%</span></span>
+<span id="cb234-3"><a href="chronological-cartograpms.html#cb234-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">people =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb234-4"><a href="chronological-cartograpms.html#cb234-4" tabindex="-1"></a>  <span class="fu">arrange</span>(decadas) <span class="sc">%&gt;%</span></span>
+<span id="cb234-5"><a href="chronological-cartograpms.html#cb234-5" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> decadas, <span class="at">values_from =</span> people) <span class="sc">%&gt;%</span></span>
+<span id="cb234-6"><a href="chronological-cartograpms.html#cb234-6" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">&quot;20&quot;</span><span class="sc">:</span><span class="st">&quot;930&quot;</span>, <span class="at">names_to =</span> <span class="st">&quot;decadas&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;people&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb234-7"><a href="chronological-cartograpms.html#cb234-7" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;idLugar&#39;, &#39;lat&#39;, &#39;lng&#39;, &#39;decadas&#39;. You can override using the `.groups`
+## argument.</code></pre>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="chronological-cartograpms.html#cb236-1" tabindex="-1"></a>imanes_decadas <span class="ot">&lt;-</span> personaje_with_places_and_dates <span class="sc">%&gt;%</span></span>
+<span id="cb236-2"><a href="chronological-cartograpms.html#cb236-2" tabindex="-1"></a>  <span class="fu">group_by</span>(region, latR, lngR, decadas) <span class="sc">%&gt;%</span></span>
+<span id="cb236-3"><a href="chronological-cartograpms.html#cb236-3" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">people =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb236-4"><a href="chronological-cartograpms.html#cb236-4" tabindex="-1"></a>  <span class="fu">arrange</span>(decadas) <span class="sc">%&gt;%</span></span>
+<span id="cb236-5"><a href="chronological-cartograpms.html#cb236-5" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> decadas, <span class="at">values_from =</span> people) <span class="sc">%&gt;%</span></span>
+<span id="cb236-6"><a href="chronological-cartograpms.html#cb236-6" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">&quot;20&quot;</span><span class="sc">:</span><span class="st">&quot;930&quot;</span>, <span class="at">names_to =</span> <span class="st">&quot;decadas&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;people&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb236-7"><a href="chronological-cartograpms.html#cb236-7" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">decadas =</span> <span class="fu">as.numeric</span>(decadas)) <span class="sc">%&gt;%</span></span>
+<span id="cb236-8"><a href="chronological-cartograpms.html#cb236-8" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<pre><code>## `summarise()` has grouped output by &#39;region&#39;, &#39;latR&#39;, &#39;lngR&#39;. You can override using the `.groups` argument.</code></pre>
+<p>We can now use both layers to map data at two scales:</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="chronological-cartograpms.html#cb238-1" tabindex="-1"></a>andalus <span class="ot">&lt;-</span> base_plot_andalus_themed <span class="sc">+</span> </span>
+<span id="cb238-2"><a href="chronological-cartograpms.html#cb238-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> imanes_decadas,</span>
+<span id="cb238-3"><a href="chronological-cartograpms.html#cb238-3" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> lngR, <span class="at">y =</span> latR, <span class="at">size =</span> people, <span class="at">col =</span> region),</span>
+<span id="cb238-4"><a href="chronological-cartograpms.html#cb238-4" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span>  </span>
+<span id="cb238-5"><a href="chronological-cartograpms.html#cb238-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> minor_places_over_time,</span>
+<span id="cb238-6"><a href="chronological-cartograpms.html#cb238-6" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat, <span class="at">size =</span> people, <span class="at">col =</span> region),</span>
+<span id="cb238-7"><a href="chronological-cartograpms.html#cb238-7" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.75</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb238-8"><a href="chronological-cartograpms.html#cb238-8" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> imanes_decadas,</span>
+<span id="cb238-9"><a href="chronological-cartograpms.html#cb238-9" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> lngR <span class="sc">+</span> <span class="fl">0.05</span>, <span class="at">y =</span> latR <span class="sc">+</span> <span class="fl">0.05</span>, <span class="at">label =</span> region),</span>
+<span id="cb238-10"><a href="chronological-cartograpms.html#cb238-10" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb238-11"><a href="chronological-cartograpms.html#cb238-11" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="dv">20</span>))</span>
+<span id="cb238-12"><a href="chronological-cartograpms.html#cb238-12" tabindex="-1"></a></span>
+<span id="cb238-13"><a href="chronological-cartograpms.html#cb238-13" tabindex="-1"></a>andalus</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<div id="animated-map-approach" class="section level3 hasAnchor" number="13.0.1">
+<h3><span class="header-section-number">13.0.1</span> Animated Map Approach<a href="chronological-cartograpms.html#animated-map-approach" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Animating the map can be quite annoying. however, below is the code. Keep in mind that it takes a while to generate animation. While you are developing it, it is worth reducing the quality of the animation: 1) reduce the duration to 10-20 seconds; 2) reduce the width and height; 3) reduce the resolution to 100 or less. If your animation looks like what you want, you can then select all the high quality parameters and generate the final result.</p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="chronological-cartograpms.html#cb239-1" tabindex="-1"></a><span class="fu">library</span>(gganimate)</span>
+<span id="cb239-2"><a href="chronological-cartograpms.html#cb239-2" tabindex="-1"></a><span class="fu">library</span>(gifski)</span>
+<span id="cb239-3"><a href="chronological-cartograpms.html#cb239-3" tabindex="-1"></a></span>
+<span id="cb239-4"><a href="chronological-cartograpms.html#cb239-4" tabindex="-1"></a>andalusAnimated <span class="ot">&lt;-</span> andalus <span class="sc">+</span></span>
+<span id="cb239-5"><a href="chronological-cartograpms.html#cb239-5" tabindex="-1"></a>  <span class="fu">transition_states</span>(decadas) <span class="sc">+</span></span>
+<span id="cb239-6"><a href="chronological-cartograpms.html#cb239-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;al-Andalus: {closest_state} AH&quot;</span>)</span>
+<span id="cb239-7"><a href="chronological-cartograpms.html#cb239-7" tabindex="-1"></a></span>
+<span id="cb239-8"><a href="chronological-cartograpms.html#cb239-8" tabindex="-1"></a><span class="fu">anim_save</span>(<span class="st">&quot;./images/generated/Andalus_Animated_01.gif&quot;</span>, <span class="at">animation =</span> andalusAnimated,</span>
+<span id="cb239-9"><a href="chronological-cartograpms.html#cb239-9" tabindex="-1"></a>          <span class="at">duration =</span> <span class="dv">60</span>, <span class="at">fps =</span> <span class="dv">2</span>, <span class="at">end_pause =</span> <span class="dv">10</span>,</span>
+<span id="cb239-10"><a href="chronological-cartograpms.html#cb239-10" tabindex="-1"></a>          <span class="at">rewind =</span> <span class="cn">FALSE</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">units =</span> <span class="st">&quot;in&quot;</span>, <span class="at">res =</span> <span class="dv">200</span>)</span></code></pre></div>
+<p><img src="images/generated/Andalus_Animated_01.gif" /></p>
+</div>
+<div id="frame-by-frame-approach" class="section level3 hasAnchor" number="13.0.2">
+<h3><span class="header-section-number">13.0.2</span> “Frame-by-Frame” Approach<a href="chronological-cartograpms.html#frame-by-frame-approach" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Alternatively, one can generate individual maps of each and every decade and aggregate them into an animation using other means. However, in most cases, static maps of specific periods would be of much greater use, both for presentations and for publications. We can generate such maps using a loop. We can either loop over all the decades (which we have in the vector <code>imanes_decadas$decadas</code>), or, we can reduce the number of decades for which we generate maps (using for example this vector: <code>seq(100, 900, 100)</code>).</p>
+<p><strong>Note:</strong> we need to add some modification to the scaling parameters, expressed in the <code>global_range</code> variable. Essentially, we need to adjust our scaling to the values <em>for all the periods</em>.</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="chronological-cartograpms.html#cb240-1" tabindex="-1"></a>global_range <span class="ot">&lt;-</span> <span class="fu">range</span>(imanes_decadas<span class="sc">$</span>people, minor_places_over_time<span class="sc">$</span>people, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb240-2"><a href="chronological-cartograpms.html#cb240-2" tabindex="-1"></a></span>
+<span id="cb240-3"><a href="chronological-cartograpms.html#cb240-3" tabindex="-1"></a><span class="cf">for</span> (d <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">100</span>, <span class="dv">900</span>, <span class="dv">100</span>)) {</span>
+<span id="cb240-4"><a href="chronological-cartograpms.html#cb240-4" tabindex="-1"></a>  </span>
+<span id="cb240-5"><a href="chronological-cartograpms.html#cb240-5" tabindex="-1"></a>  <span class="co"># TEMP DATA</span></span>
+<span id="cb240-6"><a href="chronological-cartograpms.html#cb240-6" tabindex="-1"></a>  imanes_decadas_temp <span class="ot">&lt;-</span> imanes_decadas <span class="sc">%&gt;%</span></span>
+<span id="cb240-7"><a href="chronological-cartograpms.html#cb240-7" tabindex="-1"></a>    <span class="fu">filter</span>(decadas <span class="sc">==</span> d)</span>
+<span id="cb240-8"><a href="chronological-cartograpms.html#cb240-8" tabindex="-1"></a>  minor_places_over_time_temp <span class="ot">&lt;-</span> minor_places_over_time <span class="sc">%&gt;%</span></span>
+<span id="cb240-9"><a href="chronological-cartograpms.html#cb240-9" tabindex="-1"></a>    <span class="fu">filter</span>(decadas <span class="sc">==</span> d)</span>
+<span id="cb240-10"><a href="chronological-cartograpms.html#cb240-10" tabindex="-1"></a>  </span>
+<span id="cb240-11"><a href="chronological-cartograpms.html#cb240-11" tabindex="-1"></a>  <span class="co"># TEMP MAP</span></span>
+<span id="cb240-12"><a href="chronological-cartograpms.html#cb240-12" tabindex="-1"></a>  map_temp <span class="ot">&lt;-</span> base_plot_andalus_themed <span class="sc">+</span> </span>
+<span id="cb240-13"><a href="chronological-cartograpms.html#cb240-13" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> imanes_decadas_temp,</span>
+<span id="cb240-14"><a href="chronological-cartograpms.html#cb240-14" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> lngR, <span class="at">y =</span> latR, <span class="at">size =</span> people, <span class="at">col =</span> region),</span>
+<span id="cb240-15"><a href="chronological-cartograpms.html#cb240-15" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span>  </span>
+<span id="cb240-16"><a href="chronological-cartograpms.html#cb240-16" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> minor_places_over_time_temp,</span>
+<span id="cb240-17"><a href="chronological-cartograpms.html#cb240-17" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat, <span class="at">size =</span> people, <span class="at">col =</span> region),</span>
+<span id="cb240-18"><a href="chronological-cartograpms.html#cb240-18" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.75</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb240-19"><a href="chronological-cartograpms.html#cb240-19" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> imanes_decadas_temp,</span>
+<span id="cb240-20"><a href="chronological-cartograpms.html#cb240-20" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> lngR <span class="sc">+</span> <span class="fl">0.05</span>, <span class="at">y =</span> latR <span class="sc">+</span> <span class="fl">0.05</span>, <span class="at">label =</span> region),</span>
+<span id="cb240-21"><a href="chronological-cartograpms.html#cb240-21" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">family =</span> <span class="st">&quot;Brill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb240-22"><a href="chronological-cartograpms.html#cb240-22" tabindex="-1"></a>    <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="dv">20</span>), <span class="at">limits =</span> global_range) <span class="sc">+</span></span>
+<span id="cb240-23"><a href="chronological-cartograpms.html#cb240-23" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="fu">paste0</span>(<span class="st">&quot;al-Andalus in &quot;</span>, d, <span class="st">&quot;AH&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb240-24"><a href="chronological-cartograpms.html#cb240-24" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">&quot;Brill&quot;</span>))</span>
+<span id="cb240-25"><a href="chronological-cartograpms.html#cb240-25" tabindex="-1"></a></span>
+<span id="cb240-26"><a href="chronological-cartograpms.html#cb240-26" tabindex="-1"></a>  <span class="co"># SAVE TEMP MAP</span></span>
+<span id="cb240-27"><a href="chronological-cartograpms.html#cb240-27" tabindex="-1"></a>  fileName <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;PUA_Andalus_BubbleMap_&quot;</span>,</span>
+<span id="cb240-28"><a href="chronological-cartograpms.html#cb240-28" tabindex="-1"></a>                     stringr<span class="sc">::</span><span class="fu">str_pad</span>(d, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">side =</span> <span class="st">&quot;left&quot;</span>, <span class="at">pad =</span> <span class="st">&quot;0&quot;</span>),</span>
+<span id="cb240-29"><a href="chronological-cartograpms.html#cb240-29" tabindex="-1"></a>                     <span class="st">&quot;.png&quot;</span>)</span>
+<span id="cb240-30"><a href="chronological-cartograpms.html#cb240-30" tabindex="-1"></a>  fullPath <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;./images/generated/&quot;</span>, fileName)</span>
+<span id="cb240-31"><a href="chronological-cartograpms.html#cb240-31" tabindex="-1"></a>  <span class="fu">ggsave</span>(fullPath, <span class="at">plot =</span> map_temp, <span class="at">width =</span> <span class="dv">160</span>, <span class="at">height =</span> <span class="dv">120</span>,</span>
+<span id="cb240-32"><a href="chronological-cartograpms.html#cb240-32" tabindex="-1"></a>         <span class="at">units =</span> <span class="st">&quot;mm&quot;</span>, <span class="at">dpi =</span> <span class="st">&quot;retina&quot;</span>)</span>
+<span id="cb240-33"><a href="chronological-cartograpms.html#cb240-33" tabindex="-1"></a>  </span>
+<span id="cb240-34"><a href="chronological-cartograpms.html#cb240-34" tabindex="-1"></a>}</span></code></pre></div>
+<p>Our results are for the following time frames: 100, 200, 300, 400, 500, … 900 AH.</p>
+<p><img src="images/generated/PUA_Andalus_BubbleMap_0100.png" />
+<img src="images/generated/PUA_Andalus_BubbleMap_0200.png" />
+<img src="images/generated/PUA_Andalus_BubbleMap_0300.png" /></p>
+<p><img src="images/generated/PUA_Andalus_BubbleMap_0400.png" />
+<img src="images/generated/PUA_Andalus_BubbleMap_0500.png" /></p>
+<p><img src="images/generated/PUA_Andalus_BubbleMap_0600.png" /></p>
+<p><img src="images/generated/PUA_Andalus_BubbleMap_0700.png" /></p>
+<p><img src="images/generated/PUA_Andalus_BubbleMap_0800.png" /></p>
+<p><img src="images/generated/PUA_Andalus_BubbleMap_0900.png" /></p>
+</div>
+<div id="chrono-geographical-information-without-maps" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Chrono-Geographical Information without Maps<a href="chronological-cartograpms.html#chrono-geographical-information-without-maps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can visualize our data by regions in a manner we have already used:</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="chronological-cartograpms.html#cb241-1" tabindex="-1"></a>andalus_01 <span class="ot">&lt;-</span>  <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb241-2"><a href="chronological-cartograpms.html#cb241-2" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> imanes_decadas, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.integer</span>(decadas), <span class="at">y =</span> people, <span class="at">color =</span> region), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb241-3"><a href="chronological-cartograpms.html#cb241-3" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> region) <span class="sc">+</span></span>
+<span id="cb241-4"><a href="chronological-cartograpms.html#cb241-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb241-5"><a href="chronological-cartograpms.html#cb241-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Andalusian regions over time&quot;</span>)</span>
+<span id="cb241-6"><a href="chronological-cartograpms.html#cb241-6" tabindex="-1"></a>  </span>
+<span id="cb241-7"><a href="chronological-cartograpms.html#cb241-7" tabindex="-1"></a>andalus_01</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<p>Alternatively, we can also arrange this tabular format in such a way that would visually resemble the geography of al-Andalus. For this we can use the library <code>geofacet</code> that also has a nice interface for arranging the grid:</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="chronological-cartograpms.html#cb242-1" tabindex="-1"></a><span class="fu">library</span>(geofacet)</span>
+<span id="cb242-2"><a href="chronological-cartograpms.html#cb242-2" tabindex="-1"></a></span>
+<span id="cb242-3"><a href="chronological-cartograpms.html#cb242-3" tabindex="-1"></a>andalusGridInitial <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb242-4"><a href="chronological-cartograpms.html#cb242-4" tabindex="-1"></a>  <span class="at">code =</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">12</span>),</span>
+<span id="cb242-5"><a href="chronological-cartograpms.html#cb242-5" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">unique</span>(imanes_decadas<span class="sc">$</span>region),</span>
+<span id="cb242-6"><a href="chronological-cartograpms.html#cb242-6" tabindex="-1"></a>  <span class="at">row =</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">12</span>),</span>
+<span id="cb242-7"><a href="chronological-cartograpms.html#cb242-7" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">12</span>),</span>
+<span id="cb242-8"><a href="chronological-cartograpms.html#cb242-8" tabindex="-1"></a>) </span>
+<span id="cb242-9"><a href="chronological-cartograpms.html#cb242-9" tabindex="-1"></a></span>
+<span id="cb242-10"><a href="chronological-cartograpms.html#cb242-10" tabindex="-1"></a><span class="fu">grid_design</span>(<span class="at">data =</span> andalusGridInitial)</span></code></pre></div>
+<p><img src="images/extra/geofacet_01.png" />
+Using this convenient interface, one can easily rearrange squares into a more geographically suggestive table. In our case it may look like the following:</p>
+<p><img src="images/extra/geofacet_02.png" /></p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="chronological-cartograpms.html#cb243-1" tabindex="-1"></a>andalusGrid <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb243-2"><a href="chronological-cartograpms.html#cb243-2" tabindex="-1"></a>  <span class="at">code =</span> <span class="fu">c</span>(<span class="st">&quot; 1&quot;</span>, <span class="st">&quot;11&quot;</span>, <span class="st">&quot; 8&quot;</span>, <span class="st">&quot; 9&quot;</span>, <span class="st">&quot; 4&quot;</span>, <span class="st">&quot; 2&quot;</span>, <span class="st">&quot;12&quot;</span>, <span class="st">&quot; 3&quot;</span>, <span class="st">&quot; 7&quot;</span>, <span class="st">&quot; 5&quot;</span>, <span class="st">&quot; 6&quot;</span>, <span class="st">&quot;10&quot;</span>),</span>
+<span id="cb243-3"><a href="chronological-cartograpms.html#cb243-3" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Zaragoza&quot;</span>, <span class="st">&quot;Valencia&quot;</span>, <span class="st">&quot;Toledo&quot;</span>, <span class="st">&quot;Murcia&quot;</span>, <span class="st">&quot;Córdoba&quot;</span>, <span class="st">&quot;Badajoz&quot;</span>, <span class="st">&quot;Mallorca (isla)&quot;</span>, <span class="st">&quot;Silves&quot;</span>, <span class="st">&quot;Sevilla&quot;</span>, <span class="st">&quot;Granada&quot;</span>, <span class="st">&quot;Algeciras&quot;</span>, <span class="st">&quot;Málaga&quot;</span>),</span>
+<span id="cb243-4"><a href="chronological-cartograpms.html#cb243-4" tabindex="-1"></a>  <span class="at">row =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>),</span>
+<span id="cb243-5"><a href="chronological-cartograpms.html#cb243-5" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb243-6"><a href="chronological-cartograpms.html#cb243-6" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb243-7"><a href="chronological-cartograpms.html#cb243-7" tabindex="-1"></a>)</span>
+<span id="cb243-8"><a href="chronological-cartograpms.html#cb243-8" tabindex="-1"></a></span>
+<span id="cb243-9"><a href="chronological-cartograpms.html#cb243-9" tabindex="-1"></a><span class="co"># run this line separately , if you want to open grid editor;</span></span>
+<span id="cb243-10"><a href="chronological-cartograpms.html#cb243-10" tabindex="-1"></a><span class="co"># no need to have it uncommented, if you want to generate a notebook</span></span>
+<span id="cb243-11"><a href="chronological-cartograpms.html#cb243-11" tabindex="-1"></a>geofacet<span class="sc">::</span><span class="fu">grid_preview</span>(andalusGrid)</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<p>Now, we can use this grid to visualize our geographical curves:</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="chronological-cartograpms.html#cb244-1" tabindex="-1"></a>imanes_decadas_test <span class="ot">&lt;-</span> imanes_decadas <span class="sc">%&gt;%</span></span>
+<span id="cb244-2"><a href="chronological-cartograpms.html#cb244-2" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">name =</span> region)</span>
+<span id="cb244-3"><a href="chronological-cartograpms.html#cb244-3" tabindex="-1"></a></span>
+<span id="cb244-4"><a href="chronological-cartograpms.html#cb244-4" tabindex="-1"></a>andalusGridGraph <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> imanes_decadas_test,</span>
+<span id="cb244-5"><a href="chronological-cartograpms.html#cb244-5" tabindex="-1"></a>                           <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.integer</span>(decadas), <span class="at">y =</span> people)) <span class="sc">+</span></span>
+<span id="cb244-6"><a href="chronological-cartograpms.html#cb244-6" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb244-7"><a href="chronological-cartograpms.html#cb244-7" tabindex="-1"></a>  <span class="fu">facet_geo</span>(<span class="sc">~</span> name, <span class="at">grid =</span> andalusGrid, <span class="at">label =</span> <span class="st">&quot;name&quot;</span>) <span class="sc">+</span></span>
+<span id="cb244-8"><a href="chronological-cartograpms.html#cb244-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;al-Andalus of the Islamic Period, c. 100-900 AH&quot;</span>,</span>
+<span id="cb244-9"><a href="chronological-cartograpms.html#cb244-9" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Data Source: `PUA Database`&quot;</span>,</span>
+<span id="cb244-10"><a href="chronological-cartograpms.html#cb244-10" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Decade&quot;</span>, <span class="at">y =</span> <span class="st">&quot;People&quot;</span>, <span class="at">family =</span> <span class="st">&quot;Brill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb244-11"><a href="chronological-cartograpms.html#cb244-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb244-12"><a href="chronological-cartograpms.html#cb244-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span>
+<span id="cb244-13"><a href="chronological-cartograpms.html#cb244-13" tabindex="-1"></a></span>
+<span id="cb244-14"><a href="chronological-cartograpms.html#cb244-14" tabindex="-1"></a>andalusGridGraph</span></code></pre></div>
+<p><img src="handbook_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="chronological-cartograpms.html#cb245-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;./images/generated/andalusGridGraph.png&quot;</span>,</span>
+<span id="cb245-2"><a href="chronological-cartograpms.html#cb245-2" tabindex="-1"></a>       <span class="at">plot =</span> andalusGridGraph, <span class="at">width =</span> <span class="dv">420</span>, <span class="at">height =</span> <span class="dv">297</span>,</span>
+<span id="cb245-3"><a href="chronological-cartograpms.html#cb245-3" tabindex="-1"></a>       <span class="at">units =</span> <span class="st">&quot;mm&quot;</span>, <span class="at">dpi =</span> <span class="st">&quot;retina&quot;</span>)</span></code></pre></div>
+<p><img src="images/generated/andalusGridGraph.png" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modeling-complex-entities.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="geographical-networks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "github"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/eis1600/hdis-audition-statements/edit/main/120-Class12.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/eis1600/hdis-audition-statements/blob/main/120-Class12.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>

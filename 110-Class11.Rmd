@@ -19,69 +19,16 @@ library(ggrepel)
 PUA <- readRDS("./data/PUA_processed/PUA_allDataTables_asList.rds")
 ```
 
-### Base map for al-Andalus
-
-Let's create a basemap for al-Andalus, which we can then quicly re-load whenever we need it:
-
-```{r eval=FALSE, warning=FALSE, include=TRUE}
-
-world <- ne_countries(scale = "medium", returnclass = "sf")
-rivers_df <- readRDS("./data/map_objects/rivers_df.rds")
-aral_sea_df <- readRDS("./data/map_objects/aral_sea_df.rds")
-routes_df <- readRDS("./data/map_objects/routes_df.rds")
-
-# focus on al-Andalus: we simply need to change xlim and ylim parameters:
-xlimAnd=c(-10,5); ylimAnd=c(35,44)
-
-base_plot_andalus <- ggplot(data = world) +
-  geom_sf(fill="white", color="white") +
-  # routes from Althurayya
-  geom_path(data = routes_df,aes(x = long, y = lat, group = group),
-            color = roadColor, linewidth = .2) +
-  # rivers and the aral sea
-  geom_path(data = rivers_df,aes(x = long, y = lat, group = group),
-            color = waterColor, linewidth = .2) +
-  geom_polygon(data = aral_sea_df,aes(x = long, y = lat, group = group),
-               color = waterColor, fill = waterColor, size = .2) +
-  # annotation scale
-  annotation_scale(location = "bl", width_hint = 0.25) +
-  annotation_north_arrow(location = "bl", which_north = "true",
-                         pad_x = unit(0.0, "in"), pad_y = unit(0.2, "in"),
-                         style = north_arrow_fancy_orienteering) +
-  # map limits and theme
-  coord_sf(xlim = xlimAnd, ylim = ylimAnd, expand = FALSE)
-
-save(base_plot_andalus, file = "./data/basemap/base_plot_andalus.RData")
-
-
-# NOW TRY THEMED
-waterColor <- "lightsteelblue2" #
-roadColor  <- "grey90"
-
-themeParameters <- theme(panel.background = element_rect(fill = waterColor),
-                         axis.title.y=element_blank(),
-                         axis.title.x=element_blank(),
-                         panel.grid.major = element_line(color = waterColor,
-                                                         linetype = "dotted",
-                                                         linewidth = 0.5))
-
-base_plot_andalus_themed <- base_plot_andalus + themeParameters
-save(base_plot_andalus_themed, file = "./data/basemap/base_plot_andalus_themed.RData")
-
-```
-
-We now can load the prepared basemap and them customize its appearance with a theme, or load a basemaps with a theme already applied. This way we can now focus only on the data that needs to be added to the basemap.
+We now can load the prepared basemap and then customize its appearance with a theme, or load a basemaps with a theme already applied. This way we can now focus only on the data that needs to be added to the basemap.
 
 ```{r message=FALSE, warning=FALSE}
-
 load("./data/basemap/base_plot_andalus_themed.RData")
 base_plot_andalus_themed
-
 ```
 
 We have discussed an option of grouping toponyms into regions by some kind of historical administrative divisions. However, we also ran into a problem of instability of such aggregations, which complicates this task.
 
-Another option — or, perhaps, a complimentary option — is to aggregate smaller toponyms into larger places algorithmically. Namely, we can select a certain number of settlements that would act as magnets (let's call them gravitons), absorbing smaller places (let's call them satellites). We can make a selection of gravitons based on their importance: for example, based on how many people we find associated with those places in the PUA data. Then, we can then use some algorithmic solution to associate all minor places with the closest graviton. For example, we can calculate distances* from each sattelite to all the gravitons; then we can associate each satellite with the closest graviton. This appraach will not necessarily create the best representation of sub-regions, but it is fast and quite transparent. After creating this algorithmic divisions we can always tweak associations of individual satellites according to our additional knowledge which we did not factor in into the algorithmic implementation. The advantage of such an approach is also in its flexibility: not only can we can always readjust these divisions, we can also experiment with different variations until we find the most optimal one.
+Another option---or, perhaps, a complimentary option---is to aggregate smaller toponyms into larger places algorithmically. Namely, we can select a certain number of settlements that would act as magnets (let's call them gravitons), absorbing smaller places (let's call them satellites). We can make a selection of gravitons based on their importance: for example, based on how many people we find associated with those places in the PUA data. Then, we can then use some algorithmic solution to associate all minor places with the closest graviton. For example, we can calculate distances* from each sattelite to all the gravitons; then we can associate each satellite with the closest graviton. This appraach will not necessarily create the best representation of sub-regions, but it is fast and quite transparent. After creating this algorithmic divisions we can always tweak associations of individual satellites according to our additional knowledge which we did not factor in into the algorithmic implementation. The advantage of such an approach is also in its flexibility: not only can we can always readjust these divisions, we can also experiment with different variations until we find the most optimal one.
 
 Let's find our top places first. We can pick them from a map that we generated before. Looking at a map is always a good idea, since we may want to combine two prominent locations that are very close to each other into a single graviton; and we might want to single out a minor location as a graviton in order to preserve a representation of some remote region that does not have locations with high frequencies.
 
@@ -147,7 +94,7 @@ haversine <- function(long1, lat1, long2, lat2) {
 }
 ```
 
-**Note:** since ChatGPT is a generative model, it will always try to give you an answer, but it does not mean that the answer will be correct. One should always keep this in mind and cross-examine ChatGPT results. In this specific case we can simply goggle distances between specific places and check how close those results are to what we have calculated with ChatGPT-provided function. One other thing to keep in mind: ChatGPT often tries to use some libraries as shortcuts to solving specific problems, but this approach tends to fail quite often with R. For example, ChatGPT initially suggested code that uses some obscure R library---and it did not work. Instead I asked to implement the Harvestine formula from scratch and package it into a function that I can reuse.
+> **Note:** since ChatGPT is a generative model, it will always try to give you some answer, but it does not mean that the answer will be correct. One should always keep this in mind and cross-examine ChatGPT results. In this specific case we can simply google distances between specific places and check how close those results are to what we have calculated with the ChatGPT-provided function. One other thing to keep in mind: ChatGPT often tries to use some libraries as shortcuts to solving specific problems, but this approach tends to fail quite often with R. For example, ChatGPT initially suggested code that uses some obscure R library---and it did not work. Instead I asked to implement the Harvestine formula from scratch and wrap it into a function that can be reused.
 
 Now, let's calculate these distances in our data and pick the closest graviton (i.e., a prominent location for which we have the shortest distance):
 
@@ -193,11 +140,7 @@ saveRDS(PUA, "./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds")
 
 Another important task that we may want to consider is modifying our data in such a way that individuals would be included not only into a specific decade when they died, but rather into all the decades when they lived. Here we have a bit of a problem. For some individuals we have both birth and death dates, so there we can easily get their life spans. What do we do with others for whom we know only death dates?
 
-There is a variety of ways we can go about this issue. For the sake of simplicity, we can extrapolate birth dates using the average life span of people in our data. This may be a little too simplistic, but this should suffice for now.
-
-> Alternatively, we can assign randomized life spans recreating the distribution of ages that we have in the data. We can apply more complex extrapolations by calculating average life spans for different periods and applying those life spans to individuals from relevant periods. We may also try to cluster individuals by their mutual similarities and extrapolate life span data within each cluster. And so on...
-
-Back to a simpler solution. It should suffice, since we are rounding up dates to decades anyway.
+There is a variety of ways we can go about this issue. We will try the following: for every individual without date of birth (or age), we will assign a life span by randomly sampling ages that we have in the data.
 
 ```{r}
 
@@ -211,31 +154,22 @@ summary(ages$edad)
 
 ```
 
-```{r}
-
-PUA_personaje_fechas <- PUA$personaje %>%
-  select(idPersonaje, nacimiento, muerte, edad) %>%
-  mutate_all(~replace(., . == 0, NA))
-
-# potentially, we can try to add more dates from the table on offices (personaje_cargo), but
-# for all those individuals with office dates we have at least death dates.
-# So, this step does not really add anything. So, I comment out this step
-
-#otras_fechas <- PUA$personaje_cargo %>%
-#  filter(fechaCargo != 0) %>%
-#  select(idPersonaje, fechaCargo)
-
-#PUAages <- PUAages %>%
-#  left_join(otras_fechas)
-
-```
+As we see above, we have age information for about 2,000 individuals.
 
 Now, we want to add some kind of value to age. Actually, we want to create a new column with `ifelse`:
 
 - if we have age, we keep it;
 - else, we add some value;
 
-Now, the question is what value we should add? We mentioned average age, but that would be probably too easy and very clear how to do that. Let's try something more interesting: we can randomly pull age values from our existing data and assign them to individuals who do not have age information. Doing this, we can reproduce the same distribution as we have in the original data.
+```{r}
+
+PUA_personaje_fechas <- PUA$personaje %>%
+  select(idPersonaje, nacimiento, muerte, edad) %>%
+  mutate_all(~replace(., . == 0, NA))
+
+```
+
+Now, the question is what value we should add? We can randomly pull age values from our existing data and assign them to individuals who do not have age information. Doing this, we can reproduce the same distribution as we have in the original data.
 
 This is how we can check if we got the distribution right. Essentially, we can visualize both vectors as histograms and check if their shapes are similar or not. If similar, we got the distribution right.
 
@@ -262,8 +196,7 @@ We can also run `summary()` on both vectors. As you can see, our extrapolated ve
 summary(agesExisting)
 summary(agesExtrapolated)
 ```
-
-A better way may be to apply this period by period, for example going by 100-year time spans. This way we can also get the chronological distribution more correctly.
+A better way may be to apply this period by period, for example going by 100-year time spans. This way we can also get the chronological distribution with more nuance.
 
 ```{r}
 
@@ -282,19 +215,7 @@ ggplot(agesByAges, aes(x = as.factor(century), y = edad)) +
 
 ```
 
-So, let's try to implement both. For some centuries we do not have many values (see below).
-
-```{r}
-
-valuesPerCentury <- agesByAges %>%
-  group_by(century) %>%
-  summarize(count = n())
-
-valuesPerCentury
-
-```
-
-Let's extrapolate ages:
+But let's go with the simpler approach. Let's extrapolate ages:
 
 ```{r}
 
@@ -351,6 +272,7 @@ ggplot() +
     xlim(c(0, 950)) +
   theme_minimal()
 ```
+As you can see on the graph above, we now have more data---each decade is now much more robust---ans a much smoother curve.
 
 ### A 1000 And 1 Tries
 
@@ -408,7 +330,7 @@ Now, let's graph is and see how 1,000 iterations would be different from a singl
 
 ```{r message=FALSE, warning=FALSE}
 
-ggplot(vida_decadas_modelled) +
+ggplot() +
   geom_line(data = vida_decadas_modelled,
             aes(x = decadas, y = count,
                 group = as.factor(version)),
@@ -423,7 +345,7 @@ ggplot(vida_decadas_modelled) +
 
 For the most part, the black line seems to be within the range of the blue lines, suggesting that the single extrapolation is not an extreme outlier. There are more robust techniques that can be used to improve this distribution, but for our purposes here we may consider a single extrapolation more or less acceptable. The most important value of this extrapolation is that now for each date we have an estimate of individuals who are alive at that moment in time.
 
-[**#TODO**: these techniques should be discussed, explained and demonstrated.]
+[**#TODO**: other techniques should be discussed, explained, and demonstrated.]
 
 <!--
 
@@ -471,4 +393,58 @@ In conclusion, while visual inspection can provide some insights, combining it w
 
 -->
 
+Another approach that we can potentially try is “moving sum”. We can use the `zoo` package---a versatile package for working with time series data. (Make sure to install it first!). Let's try to apply the moving sum for 3, 5, 7, 8, and 9 decades---and check how the results may look. **Note:** `align = "left"` means that the current value is summed with the values from the next X decades.
+
+```{r}
+library(zoo)
+
+alignValue <- "left"
+
+muerte_decadas_MA <- muerte_decadas %>%
+  arrange(decadas) %>%
+  mutate(moving_sum_3 = rollsum(count, k = 3, fill = NA, align = alignValue)) %>%
+  mutate(moving_sum_5 = rollsum(count, k = 5, fill = NA, align = alignValue)) %>%
+  mutate(moving_sum_7 = rollsum(count, k = 7, fill = NA, align = alignValue)) %>%
+  mutate(moving_sum_8 = rollsum(count, k = 8, fill = NA, align = alignValue)) %>%
+  mutate(moving_sum_9 = rollsum(count, k = 9, fill = NA, align = alignValue)) %>%
+  pivot_longer(!decadas, names_to = "types", values_to = "values")
+
+muerte_decadas_MA
+```
+The following code will give us a visualization, which will help us to check the results:
+
+```{r message=FALSE, warning=FALSE}
+
+ggplot(muerte_decadas_MA) +
+    geom_line(data = vida_decadas_modelled,
+            aes(x = decadas, y = count,
+                group = as.factor(version)),
+            linewidth = 0.5, alpha = 0.5,
+            col = "lightblue") +
+  geom_line(aes(x = decadas, y = values, col = types), linewidth = 0.5) +
+  geom_line(data = vida_decadas, aes(x = decadas, y = count), linewidth = 0.5, col = "black") +
+  xlim(c(0, 950)) +
+  theme_minimal()
+```
+The rolling summary of 8 decades gives us a curve which is most close to the our modeled curve. However, here we can see that results of the “moving sum” are much more extreme, often leaving the zone of 1,000 extrapolation curves. Keeping this in mind, our age-based extrapolated curve is a better fit. Additionally, our age-based model gives us more flexibility, since the data here is highly detailed (for each individual), while the "rolling sum" approach only gives us cumulative numbers for each decade.
+
+## Intermediate Summary
+
+Now we have two important datasets that we can use for further analysis:
+
+- we have modeled regions of al-Andalus, which will allow us to aggregate data;
+- we have extrapolated chronological data, which will give us more dense chronological snapshots;
+
+We can save both tables into our updated PUA dataset:
+
+```{r eval=FALSE, include=TRUE}
+
+PUA <- readRDS("./data/PUA_processed/PUA_allDataTables_asList.rds")
+
+PUA$lugar_con_imanes <- lugares_con_imanes_ultimas
+PUA$personaje_decadas_modeladas <- PUA_personaje_decadas
+
+saveRDS(PUA, "./data/PUA_processed/PUA_allDataTables_asList_UPDATED.rds")
+
+```
 

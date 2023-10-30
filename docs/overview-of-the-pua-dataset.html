@@ -23,7 +23,7 @@
 <meta name="author" content="Maxim G. Romanov" />
 
 
-<meta name="date" content="2023-10-27" />
+<meta name="date" content="2023-10-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="120x120" href="touch-icon.png" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="visualizations-plot-and-ggplot.html"/>
-<link rel="next" href="geographical-maps-cartograms.html"/>
+<link rel="next" href="understanding-geographical-maps.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -100,7 +100,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -113,7 +113,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -264,7 +264,23 @@ div.csl-indent {
 <li class="chapter" data-level="5" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html"><i class="fa fa-check"></i><b>5</b> Data Manipulation II</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#this-chapter-2"><i class="fa fa-check"></i><b>5.1</b> This Chapter</a></li>
-<li class="chapter" data-level="5.2" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#problems"><i class="fa fa-check"></i><b>5.2</b> Problems</a></li>
+<li class="chapter" data-level="5.2" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#problems"><i class="fa fa-check"></i><b>5.2</b> Problems</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#who-is-the-oldest-individual-we-have-in-the-pua-data"><i class="fa fa-check"></i><b>5.2.1</b> [1] Who is the oldest individual we have in the PUA data?</a></li>
+<li class="chapter" data-level="5.2.2" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#which-places-did-this-individual-visit"><i class="fa fa-check"></i><b>5.2.2</b> [2] Which places did this individual visit?</a></li>
+<li class="chapter" data-level="5.2.3" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-kind-of-activities-was-that-individual-involved-in"><i class="fa fa-check"></i><b>5.2.3</b> [3] What kind of activities was that individual involved in?</a></li>
+<li class="chapter" data-level="5.2.4" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#who-is-the-oldest-jurist-faqīh-in-the-pua-data"><i class="fa fa-check"></i><b>5.2.4</b> [4] Who is the oldest jurist (<em>faqīh</em>) in the PUA data?</a></li>
+<li class="chapter" data-level="5.2.5" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#can-you-find-a-century-in-which-andalusians-traveled-the-most"><i class="fa fa-check"></i><b>5.2.5</b> [6] Can you find a century in which Andalusians traveled the most?</a></li>
+<li class="chapter" data-level="5.2.6" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-10-most-common-activities-andalusians-were-involved-into"><i class="fa fa-check"></i><b>5.2.6</b> [7] What are the 10 most common activities Andalusians were involved into?</a></li>
+<li class="chapter" data-level="5.2.7" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-most-common-activities-in-the-5th-ah-century"><i class="fa fa-check"></i><b>5.2.7</b> [8] What are the most common activities in the 5th AH century?</a></li>
+<li class="chapter" data-level="5.2.8" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-main-locations-of-the-5-largest-families-places-from-familia"><i class="fa fa-check"></i><b>5.2.8</b> [9] What are the main locations of the 5 largest families? (places from <code>familia</code>)</a></li>
+<li class="chapter" data-level="5.2.9" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-are-the-most-visited-locations-among-the-members-of-those-families-places-from-personaje_lugar"><i class="fa fa-check"></i><b>5.2.9</b> [10] What are the most visited locations among the members of those families? (places from <code>personaje_lugar</code>)</a></li>
+<li class="chapter" data-level="5.2.10" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#in-which-century-do-we-have-the-largest-number-of-families"><i class="fa fa-check"></i><b>5.2.10</b> [11] In which century do we have the largest number of families?</a></li>
+<li class="chapter" data-level="5.2.11" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-is-the-peak-century-in-the-history-of-al-andalus-this-can-be-measured-by-the-highest-number-of-people."><i class="fa fa-check"></i><b>5.2.11</b> [12] What is the peak century in the history of al-Andalus? (This can be measured by the highest number of people.)</a></li>
+<li class="chapter" data-level="5.2.12" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-is-the-most-prominent-location-in-al-andalus-in-general-what-about-by-centuries-prominent-means-that-it-has-the-highest-number-of-people-associated-with-it."><i class="fa fa-check"></i><b>5.2.12</b> [13] What is the most prominent location in al-Andalus in general? What about by centuries? (Prominent means that it has the highest number of people associated with it.)</a></li>
+<li class="chapter" data-level="5.2.13" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#what-is-the-most-prominent-location-outside-of-al-andalus-what-about-by-centuries"><i class="fa fa-check"></i><b>5.2.13</b> [14] What is the most prominent location outside of al-Andalus? What about by centuries?</a></li>
+<li class="chapter" data-level="5.2.14" data-path="data-manipulation-ii.html"><a href="data-manipulation-ii.html#do-the-same-task-but-for-common-era-centuries."><i class="fa fa-check"></i><b>5.2.14</b> [15] Do the same task, but for common era centuries.</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="control-flow-regular-expressions.html"><a href="control-flow-regular-expressions.html"><i class="fa fa-check"></i><b>6</b> Control Flow; Regular Expressions</a>
 <ul>
@@ -377,38 +393,42 @@ div.csl-indent {
 <li class="chapter" data-level="10.2.3" data-path="overview-of-the-pua-dataset.html"><a href="overview-of-the-pua-dataset.html#improving-pua-data"><i class="fa fa-check"></i><b>10.2.3</b> Improving PUA Data</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html"><i class="fa fa-check"></i><b>11</b> Geographical Maps &amp; Cartograms</a>
+<li class="chapter" data-level="11" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html"><i class="fa fa-check"></i><b>11</b> Understanding Geographical Maps</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#creating-base-maps"><i class="fa fa-check"></i><b>11.1</b> Creating Base Maps</a></li>
-<li class="chapter" data-level="11.2" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#core-concepts-and-their-practical-implementations"><i class="fa fa-check"></i><b>11.2</b> Core concepts and their practical implementations</a>
+<li class="chapter" data-level="11.1" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#creating-base-maps"><i class="fa fa-check"></i><b>11.1</b> Creating Base Maps</a></li>
+<li class="chapter" data-level="11.2" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#core-concepts-and-their-practical-implementations"><i class="fa fa-check"></i><b>11.2</b> Core concepts and their practical implementations</a>
 <ul>
-<li class="chapter" data-level="11.2.1" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#projection-issues"><i class="fa fa-check"></i><b>11.2.1</b> Projection Issues</a></li>
-<li class="chapter" data-level="11.2.2" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#a-digital-map-layers-of-goodness"><i class="fa fa-check"></i><b>11.2.2</b> A Digital Map: Layers of Goodness</a></li>
+<li class="chapter" data-level="11.2.1" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#projection-issues"><i class="fa fa-check"></i><b>11.2.1</b> Projection Issues</a></li>
+<li class="chapter" data-level="11.2.2" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#a-digital-map-layers-of-goodness"><i class="fa fa-check"></i><b>11.2.2</b> A Digital Map: Layers of Goodness</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#main-types-of-data-points-lines-polygons"><i class="fa fa-check"></i><b>11.3</b> Main Types of Data: Points, Lines, Polygons</a></li>
-<li class="chapter" data-level="11.4" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#base-maps"><i class="fa fa-check"></i><b>11.4</b> Base maps</a>
+<li class="chapter" data-level="11.3" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#main-types-of-data-points-lines-polygons"><i class="fa fa-check"></i><b>11.3</b> Main Types of Data: Points, Lines, Polygons</a></li>
+<li class="chapter" data-level="11.4" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#base-maps"><i class="fa fa-check"></i><b>11.4</b> Base maps</a>
 <ul>
-<li class="chapter" data-level="11.4.1" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#new-libraries"><i class="fa fa-check"></i><b>11.4.1</b> New libraries</a></li>
-<li class="chapter" data-level="11.4.2" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#compiling-the-base-map"><i class="fa fa-check"></i><b>11.4.2</b> Compiling the base map</a></li>
-<li class="chapter" data-level="11.4.3" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#adding-data"><i class="fa fa-check"></i><b>11.4.3</b> Adding data</a></li>
+<li class="chapter" data-level="11.4.1" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#new-libraries"><i class="fa fa-check"></i><b>11.4.1</b> New libraries</a></li>
+<li class="chapter" data-level="11.4.2" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#compiling-the-base-map"><i class="fa fa-check"></i><b>11.4.2</b> Compiling the base map</a></li>
+<li class="chapter" data-level="11.4.3" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#adding-data"><i class="fa fa-check"></i><b>11.4.3</b> Adding data</a></li>
 </ul></li>
-<li class="chapter" data-level="11.5" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#raster-base-maps"><i class="fa fa-check"></i><b>11.5</b> Raster base maps</a></li>
-<li class="chapter" data-level="11.6" data-path="geographical-maps-cartograms.html"><a href="geographical-maps-cartograms.html#homework-2"><i class="fa fa-check"></i><b>11.6</b> Homework</a></li>
+<li class="chapter" data-level="11.5" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#reusable-base-map-for-al-andalus"><i class="fa fa-check"></i><b>11.5</b> Reusable Base Map for al-Andalus</a></li>
+<li class="chapter" data-level="11.6" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#raster-base-maps"><i class="fa fa-check"></i><b>11.6</b> Raster base maps</a></li>
+<li class="chapter" data-level="11.7" data-path="understanding-geographical-maps.html"><a href="understanding-geographical-maps.html#homework-2"><i class="fa fa-check"></i><b>11.7</b> Homework</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html"><i class="fa fa-check"></i><b>12</b> Modeling Complex Entities</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#modeling-regions"><i class="fa fa-check"></i><b>12.1</b> Modeling Regions</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#base-map-for-al-andalus"><i class="fa fa-check"></i><b>12.1.1</b> Base map for al-Andalus</a></li>
-</ul></li>
+<li class="chapter" data-level="12.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#modeling-regions"><i class="fa fa-check"></i><b>12.1</b> Modeling Regions</a></li>
 <li class="chapter" data-level="12.2" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#modeling-periods"><i class="fa fa-check"></i><b>12.2</b> Modeling Periods</a>
 <ul>
 <li class="chapter" data-level="12.2.1" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#a-1000-and-1-tries"><i class="fa fa-check"></i><b>12.2.1</b> A 1000 And 1 Tries</a></li>
 </ul></li>
+<li class="chapter" data-level="12.3" data-path="modeling-complex-entities.html"><a href="modeling-complex-entities.html#intermediate-summary"><i class="fa fa-check"></i><b>12.3</b> Intermediate Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="class-12.html"><a href="class-12.html"><i class="fa fa-check"></i><b>13</b> Class 12</a></li>
-<li class="chapter" data-level="14" data-path="class-13.html"><a href="class-13.html"><i class="fa fa-check"></i><b>14</b> Class 13</a></li>
-<li class="chapter" data-level="15" data-path="class-14.html"><a href="class-14.html"><i class="fa fa-check"></i><b>15</b> Class 14</a></li>
+<li class="chapter" data-level="13" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html"><i class="fa fa-check"></i><b>13</b> Chronological Cartograpms</a>
+<ul>
+<li class="chapter" data-level="13.0.1" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html#animated-map-approach"><i class="fa fa-check"></i><b>13.0.1</b> Animated Map Approach</a></li>
+<li class="chapter" data-level="13.0.2" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html#frame-by-frame-approach"><i class="fa fa-check"></i><b>13.0.2</b> “Frame-by-Frame” Approach</a></li>
+<li class="chapter" data-level="13.1" data-path="chronological-cartograpms.html"><a href="chronological-cartograpms.html#chrono-geographical-information-without-maps"><i class="fa fa-check"></i><b>13.1</b> Chrono-Geographical Information without Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="geographical-networks.html"><a href="geographical-networks.html"><i class="fa fa-check"></i><b>14</b> Geographical Networks</a></li>
+<li class="chapter" data-level="15" data-path="social-networks.html"><a href="social-networks.html"><i class="fa fa-check"></i><b>15</b> Social Networks</a></li>
 <li class="chapter" data-level="16" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html"><i class="fa fa-check"></i><b>16</b> Glossary of Computer Terms</a>
 <ul>
 <li class="chapter" data-level="16.1" data-path="glossary-of-computer-terms.html"><a href="glossary-of-computer-terms.html#general-computer-terms"><i class="fa fa-check"></i><b>16.1</b> General Computer Terms</a></li>
@@ -492,85 +512,85 @@ mysql&gt; EXIT;</code></pre>
 <h2><span class="header-section-number">10.2</span> Extracting tables with R<a href="overview-of-the-pua-dataset.html#extracting-tables-with-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You will need to set working directory to the folder where mysql file is. Also, create a subfolder <code>/tables_new/</code>—this is where all the tables will be exported.</p>
 <p>This script connects to a local mysql database, retrieves all tables, and exports them as TSV files in the <code>tables_new</code> directory.</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="overview-of-the-pua-dataset.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RMariaDB)</span>
-<span id="cb138-2"><a href="overview-of-the-pua-dataset.html#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
-<span id="cb138-3"><a href="overview-of-the-pua-dataset.html#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb138-4"><a href="overview-of-the-pua-dataset.html#cb138-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-5"><a href="overview-of-the-pua-dataset.html#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="co"># provide working directory --- where the pua.sql file is</span></span>
-<span id="cb138-6"><a href="overview-of-the-pua-dataset.html#cb138-6" aria-hidden="true" tabindex="-1"></a>workingDirectory <span class="ot">&lt;-</span> <span class="st">&quot;path_to_where_you_want_to_save_tables&quot;</span></span>
-<span id="cb138-7"><a href="overview-of-the-pua-dataset.html#cb138-7" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(workingDirectory)</span>
-<span id="cb138-8"><a href="overview-of-the-pua-dataset.html#cb138-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-9"><a href="overview-of-the-pua-dataset.html#cb138-9" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(RMariaDB<span class="sc">::</span><span class="fu">MariaDB</span>(),</span>
-<span id="cb138-10"><a href="overview-of-the-pua-dataset.html#cb138-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">dbname =</span> <span class="st">&#39;pua&#39;</span>,</span>
-<span id="cb138-11"><a href="overview-of-the-pua-dataset.html#cb138-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">host =</span> <span class="st">&#39;localhost&#39;</span>,</span>
-<span id="cb138-12"><a href="overview-of-the-pua-dataset.html#cb138-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">port =</span> <span class="dv">3306</span>,</span>
-<span id="cb138-13"><a href="overview-of-the-pua-dataset.html#cb138-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">user =</span> <span class="st">&#39;user_pua&#39;</span>,</span>
-<span id="cb138-14"><a href="overview-of-the-pua-dataset.html#cb138-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">password =</span> <span class="st">&#39;pua_pass&#39;</span>)</span>
-<span id="cb138-15"><a href="overview-of-the-pua-dataset.html#cb138-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-16"><a href="overview-of-the-pua-dataset.html#cb138-16" aria-hidden="true" tabindex="-1"></a>tables <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbListTables</span>(con)</span>
-<span id="cb138-17"><a href="overview-of-the-pua-dataset.html#cb138-17" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tables)</span>
-<span id="cb138-18"><a href="overview-of-the-pua-dataset.html#cb138-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-19"><a href="overview-of-the-pua-dataset.html#cb138-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb138-20"><a href="overview-of-the-pua-dataset.html#cb138-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb138-21"><a href="overview-of-the-pua-dataset.html#cb138-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-22"><a href="overview-of-the-pua-dataset.html#cb138-22" aria-hidden="true" tabindex="-1"></a>folderForTables <span class="ot">&lt;-</span> <span class="st">&quot;tables_extracted&quot;</span></span>
-<span id="cb138-23"><a href="overview-of-the-pua-dataset.html#cb138-23" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(folderForTables)</span>
-<span id="cb138-24"><a href="overview-of-the-pua-dataset.html#cb138-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-25"><a href="overview-of-the-pua-dataset.html#cb138-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> tables) {</span>
-<span id="cb138-26"><a href="overview-of-the-pua-dataset.html#cb138-26" aria-hidden="true" tabindex="-1"></a>  pathForTable <span class="ot">&lt;-</span> <span class="fu">file.path</span>(folderForTables, <span class="fu">paste0</span>(t, <span class="st">&quot;.tsv&quot;</span>))</span>
-<span id="cb138-27"><a href="overview-of-the-pua-dataset.html#cb138-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(con, t) <span class="sc">%&gt;%</span> </span>
-<span id="cb138-28"><a href="overview-of-the-pua-dataset.html#cb138-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">collect</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb138-29"><a href="overview-of-the-pua-dataset.html#cb138-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_delim</span>(pathForTable, <span class="at">delim =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
-<span id="cb138-30"><a href="overview-of-the-pua-dataset.html#cb138-30" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb138-31"><a href="overview-of-the-pua-dataset.html#cb138-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-32"><a href="overview-of-the-pua-dataset.html#cb138-32" aria-hidden="true" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="overview-of-the-pua-dataset.html#cb175-1" tabindex="-1"></a><span class="fu">library</span>(RMariaDB)</span>
+<span id="cb175-2"><a href="overview-of-the-pua-dataset.html#cb175-2" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb175-3"><a href="overview-of-the-pua-dataset.html#cb175-3" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb175-4"><a href="overview-of-the-pua-dataset.html#cb175-4" tabindex="-1"></a></span>
+<span id="cb175-5"><a href="overview-of-the-pua-dataset.html#cb175-5" tabindex="-1"></a><span class="co"># provide working directory --- where the pua.sql file is</span></span>
+<span id="cb175-6"><a href="overview-of-the-pua-dataset.html#cb175-6" tabindex="-1"></a>workingDirectory <span class="ot">&lt;-</span> <span class="st">&quot;path_to_where_you_want_to_save_tables&quot;</span></span>
+<span id="cb175-7"><a href="overview-of-the-pua-dataset.html#cb175-7" tabindex="-1"></a><span class="fu">setwd</span>(workingDirectory)</span>
+<span id="cb175-8"><a href="overview-of-the-pua-dataset.html#cb175-8" tabindex="-1"></a></span>
+<span id="cb175-9"><a href="overview-of-the-pua-dataset.html#cb175-9" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(RMariaDB<span class="sc">::</span><span class="fu">MariaDB</span>(),</span>
+<span id="cb175-10"><a href="overview-of-the-pua-dataset.html#cb175-10" tabindex="-1"></a>                      <span class="at">dbname =</span> <span class="st">&#39;pua&#39;</span>,</span>
+<span id="cb175-11"><a href="overview-of-the-pua-dataset.html#cb175-11" tabindex="-1"></a>                      <span class="at">host =</span> <span class="st">&#39;localhost&#39;</span>,</span>
+<span id="cb175-12"><a href="overview-of-the-pua-dataset.html#cb175-12" tabindex="-1"></a>                      <span class="at">port =</span> <span class="dv">3306</span>,</span>
+<span id="cb175-13"><a href="overview-of-the-pua-dataset.html#cb175-13" tabindex="-1"></a>                      <span class="at">user =</span> <span class="st">&#39;user_pua&#39;</span>,</span>
+<span id="cb175-14"><a href="overview-of-the-pua-dataset.html#cb175-14" tabindex="-1"></a>                      <span class="at">password =</span> <span class="st">&#39;pua_pass&#39;</span>)</span>
+<span id="cb175-15"><a href="overview-of-the-pua-dataset.html#cb175-15" tabindex="-1"></a></span>
+<span id="cb175-16"><a href="overview-of-the-pua-dataset.html#cb175-16" tabindex="-1"></a>tables <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbListTables</span>(con)</span>
+<span id="cb175-17"><a href="overview-of-the-pua-dataset.html#cb175-17" tabindex="-1"></a><span class="fu">str</span>(tables)</span>
+<span id="cb175-18"><a href="overview-of-the-pua-dataset.html#cb175-18" tabindex="-1"></a></span>
+<span id="cb175-19"><a href="overview-of-the-pua-dataset.html#cb175-19" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb175-20"><a href="overview-of-the-pua-dataset.html#cb175-20" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb175-21"><a href="overview-of-the-pua-dataset.html#cb175-21" tabindex="-1"></a></span>
+<span id="cb175-22"><a href="overview-of-the-pua-dataset.html#cb175-22" tabindex="-1"></a>folderForTables <span class="ot">&lt;-</span> <span class="st">&quot;tables_extracted&quot;</span></span>
+<span id="cb175-23"><a href="overview-of-the-pua-dataset.html#cb175-23" tabindex="-1"></a><span class="fu">dir.create</span>(folderForTables)</span>
+<span id="cb175-24"><a href="overview-of-the-pua-dataset.html#cb175-24" tabindex="-1"></a></span>
+<span id="cb175-25"><a href="overview-of-the-pua-dataset.html#cb175-25" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> tables) {</span>
+<span id="cb175-26"><a href="overview-of-the-pua-dataset.html#cb175-26" tabindex="-1"></a>  pathForTable <span class="ot">&lt;-</span> <span class="fu">file.path</span>(folderForTables, <span class="fu">paste0</span>(t, <span class="st">&quot;.tsv&quot;</span>))</span>
+<span id="cb175-27"><a href="overview-of-the-pua-dataset.html#cb175-27" tabindex="-1"></a>  <span class="fu">tbl</span>(con, t) <span class="sc">%&gt;%</span> </span>
+<span id="cb175-28"><a href="overview-of-the-pua-dataset.html#cb175-28" tabindex="-1"></a>    <span class="fu">collect</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb175-29"><a href="overview-of-the-pua-dataset.html#cb175-29" tabindex="-1"></a>    <span class="fu">write_delim</span>(pathForTable, <span class="at">delim =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb175-30"><a href="overview-of-the-pua-dataset.html#cb175-30" tabindex="-1"></a>}</span>
+<span id="cb175-31"><a href="overview-of-the-pua-dataset.html#cb175-31" tabindex="-1"></a></span>
+<span id="cb175-32"><a href="overview-of-the-pua-dataset.html#cb175-32" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con)</span></code></pre></div>
 <p>The steps can be explained in the following manner:</p>
 <p>This script is written in R and is used to connect to a MariaDB database, extract data from the tables within that database, and then write each table to a separate .tsv file in a specified directory. Here’s a detailed breakdown of the code:</p>
 <ol style="list-style-type: decimal">
 <li>Libraries are loaded using <code>library()</code>. RMariaDB, dbplyr, and dplyr are packages that provide a connection to a MariaDB database and operations on the database. tidyverse is a package that includes several tools for data manipulation, and readr is a package used for reading rectangular data.</li>
 </ol>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="overview-of-the-pua-dataset.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RMariaDB)</span>
-<span id="cb139-2"><a href="overview-of-the-pua-dataset.html#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
-<span id="cb139-3"><a href="overview-of-the-pua-dataset.html#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb139-4"><a href="overview-of-the-pua-dataset.html#cb139-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb139-5"><a href="overview-of-the-pua-dataset.html#cb139-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="overview-of-the-pua-dataset.html#cb176-1" tabindex="-1"></a><span class="fu">library</span>(RMariaDB)</span>
+<span id="cb176-2"><a href="overview-of-the-pua-dataset.html#cb176-2" tabindex="-1"></a><span class="fu">library</span>(dbplyr)</span>
+<span id="cb176-3"><a href="overview-of-the-pua-dataset.html#cb176-3" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb176-4"><a href="overview-of-the-pua-dataset.html#cb176-4" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb176-5"><a href="overview-of-the-pua-dataset.html#cb176-5" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>A working directory is set. This should be the path where you want to save your .tsv files.</li>
 </ol>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="overview-of-the-pua-dataset.html#cb140-1" aria-hidden="true" tabindex="-1"></a>workingDirectory <span class="ot">&lt;-</span> <span class="st">&quot;path_to_where_you_want_to_save_tables&quot;</span></span>
-<span id="cb140-2"><a href="overview-of-the-pua-dataset.html#cb140-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(workingDirectory)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="overview-of-the-pua-dataset.html#cb177-1" tabindex="-1"></a>workingDirectory <span class="ot">&lt;-</span> <span class="st">&quot;path_to_where_you_want_to_save_tables&quot;</span></span>
+<span id="cb177-2"><a href="overview-of-the-pua-dataset.html#cb177-2" tabindex="-1"></a><span class="fu">setwd</span>(workingDirectory)</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>A connection to a MariaDB database is established using <code>DBI::dbConnect()</code>. The dbname, host, port, user, and password are all parameters to establish the connection.</li>
 </ol>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="overview-of-the-pua-dataset.html#cb141-1" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(RMariaDB<span class="sc">::</span><span class="fu">MariaDB</span>(),</span>
-<span id="cb141-2"><a href="overview-of-the-pua-dataset.html#cb141-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">dbname =</span> <span class="st">&#39;pua&#39;</span>,</span>
-<span id="cb141-3"><a href="overview-of-the-pua-dataset.html#cb141-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">host =</span> <span class="st">&#39;localhost&#39;</span>,</span>
-<span id="cb141-4"><a href="overview-of-the-pua-dataset.html#cb141-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">port =</span> <span class="dv">3306</span>,</span>
-<span id="cb141-5"><a href="overview-of-the-pua-dataset.html#cb141-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">user =</span> <span class="st">&#39;user_pua&#39;</span>,</span>
-<span id="cb141-6"><a href="overview-of-the-pua-dataset.html#cb141-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">password =</span> <span class="st">&#39;pua_pass&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="overview-of-the-pua-dataset.html#cb178-1" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(RMariaDB<span class="sc">::</span><span class="fu">MariaDB</span>(),</span>
+<span id="cb178-2"><a href="overview-of-the-pua-dataset.html#cb178-2" tabindex="-1"></a>                      <span class="at">dbname =</span> <span class="st">&#39;pua&#39;</span>,</span>
+<span id="cb178-3"><a href="overview-of-the-pua-dataset.html#cb178-3" tabindex="-1"></a>                      <span class="at">host =</span> <span class="st">&#39;localhost&#39;</span>,</span>
+<span id="cb178-4"><a href="overview-of-the-pua-dataset.html#cb178-4" tabindex="-1"></a>                      <span class="at">port =</span> <span class="dv">3306</span>,</span>
+<span id="cb178-5"><a href="overview-of-the-pua-dataset.html#cb178-5" tabindex="-1"></a>                      <span class="at">user =</span> <span class="st">&#39;user_pua&#39;</span>,</span>
+<span id="cb178-6"><a href="overview-of-the-pua-dataset.html#cb178-6" tabindex="-1"></a>                      <span class="at">password =</span> <span class="st">&#39;pua_pass&#39;</span>)</span></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>The list of tables in the connected database is retrieved using <code>DBI::dbListTables(con)</code>, and then the structure of this object is printed to the console using <code>str(tables)</code>.</li>
 </ol>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="overview-of-the-pua-dataset.html#cb142-1" aria-hidden="true" tabindex="-1"></a>tables <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbListTables</span>(con)</span>
-<span id="cb142-2"><a href="overview-of-the-pua-dataset.html#cb142-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tables)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="overview-of-the-pua-dataset.html#cb179-1" tabindex="-1"></a>tables <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbListTables</span>(con)</span>
+<span id="cb179-2"><a href="overview-of-the-pua-dataset.html#cb179-2" tabindex="-1"></a><span class="fu">str</span>(tables)</span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>A directory is created in the working directory for saving the .tsv files. If the directory already exists, <code>dir.create()</code> will return a warning.</li>
 </ol>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="overview-of-the-pua-dataset.html#cb143-1" aria-hidden="true" tabindex="-1"></a>folderForTables <span class="ot">&lt;-</span> <span class="st">&quot;tables_extracted&quot;</span></span>
-<span id="cb143-2"><a href="overview-of-the-pua-dataset.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(folderForTables)</span></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="overview-of-the-pua-dataset.html#cb180-1" tabindex="-1"></a>folderForTables <span class="ot">&lt;-</span> <span class="st">&quot;tables_extracted&quot;</span></span>
+<span id="cb180-2"><a href="overview-of-the-pua-dataset.html#cb180-2" tabindex="-1"></a><span class="fu">dir.create</span>(folderForTables)</span></code></pre></div>
 <ol start="6" style="list-style-type: decimal">
 <li>A loop is created to iterate over each table in the <code>tables</code> list. Inside the loop, each table is read from the database connection using <code>tbl(con, t)</code>. The table is collected into memory using <code>collect()</code>, and then written to a .tsv file in the <code>folderForTables</code> directory using <code>write_delim()</code>. The filename for each .tsv file is the name of the table with <code>.tsv</code> appended to it.</li>
 </ol>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="overview-of-the-pua-dataset.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> tables) {</span>
-<span id="cb144-2"><a href="overview-of-the-pua-dataset.html#cb144-2" aria-hidden="true" tabindex="-1"></a>  pathForTable <span class="ot">&lt;-</span> <span class="fu">file.path</span>(folderForTables, <span class="fu">paste0</span>(t, <span class="st">&quot;.tsv&quot;</span>))</span>
-<span id="cb144-3"><a href="overview-of-the-pua-dataset.html#cb144-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(con, t) <span class="sc">%&gt;%</span> </span>
-<span id="cb144-4"><a href="overview-of-the-pua-dataset.html#cb144-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">collect</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb144-5"><a href="overview-of-the-pua-dataset.html#cb144-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">write_delim</span>(pathForTable, <span class="at">delim =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
-<span id="cb144-6"><a href="overview-of-the-pua-dataset.html#cb144-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="overview-of-the-pua-dataset.html#cb181-1" tabindex="-1"></a><span class="cf">for</span>(t <span class="cf">in</span> tables) {</span>
+<span id="cb181-2"><a href="overview-of-the-pua-dataset.html#cb181-2" tabindex="-1"></a>  pathForTable <span class="ot">&lt;-</span> <span class="fu">file.path</span>(folderForTables, <span class="fu">paste0</span>(t, <span class="st">&quot;.tsv&quot;</span>))</span>
+<span id="cb181-3"><a href="overview-of-the-pua-dataset.html#cb181-3" tabindex="-1"></a>  <span class="fu">tbl</span>(con, t) <span class="sc">%&gt;%</span> </span>
+<span id="cb181-4"><a href="overview-of-the-pua-dataset.html#cb181-4" tabindex="-1"></a>    <span class="fu">collect</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb181-5"><a href="overview-of-the-pua-dataset.html#cb181-5" tabindex="-1"></a>    <span class="fu">write_delim</span>(pathForTable, <span class="at">delim =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb181-6"><a href="overview-of-the-pua-dataset.html#cb181-6" tabindex="-1"></a>}</span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Finally, the connection to the database is closed using <code>DBI::dbDisconnect(con)</code>.</li>
 </ol>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="overview-of-the-pua-dataset.html#cb145-1" aria-hidden="true" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="overview-of-the-pua-dataset.html#cb182-1" tabindex="-1"></a>DBI<span class="sc">::</span><span class="fu">dbDisconnect</span>(con)</span></code></pre></div>
 <p>Upon completion of this script, we will have all the tables extracted into a subfolder. The files are names after the names of the tables in the original database file (i.e., they are in Spanish). This code can be useful for backing up a database into a more portable and human-readable format, or for processing the data from the database using R’s powerful data analysis and manipulation tools.</p>
 <div id="looking-at-the-data" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Looking at the data<a href="overview-of-the-pua-dataset.html#looking-at-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -749,7 +769,7 @@ Essentially, most of the tables that were kept separately in the original datase
         </div>
       </div>
 <a href="visualizations-plot-and-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="geographical-maps-cartograms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="understanding-geographical-maps.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
